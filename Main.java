@@ -1,35 +1,18 @@
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import BusinessLayer.DAOLayer.Requete;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Main {
 	public static void main(String[] args) {
-		String url = "jdbc:mysql://localhost:3306/tp_bd";
-		String username = "root";
-		String pass = "";
-		try
-		 {
-			//loading the jdbc driver
-			//get a connection to database
-			Connection connection = DriverManager.getConnection(url, username, pass);
-			//create a statement
-			Statement stmt=connection.createStatement();
-			//execute sql query
-			ResultSet rs=stmt.executeQuery("select * from etudiant");
-			while(rs.next())
-			{
-				System.out.println(rs.getString("nom")+" = "+rs.getString(1));
-			}
-		}
-		catch(SQLException e)
+		Requete request = new Requete();
+		request.executeQuery("SELECT * FROM Utilisateur");
+		while(request.next())
 		{
-			System.out.println(e);
+			System.out.println(request.getString("matricule")+" :: "+request.getString("nom"));
 		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-		}
+		//Requete.executeUpdate("UPDATE Utilisateur SET matricule='18M4687' WHERE matricule='15P4574'");
+		//rs = Requete.executeQuery("SELECT * FROM Etudiant");
+		//Requete.executeUpdate("INSERT INTO Utilisateur VALUES ('19Q2348', 'Landry', 'land56', 'Aurel', 'Yann', 'landryyan12@yahoo.fr', '2000/02/12')");
 	}
 }

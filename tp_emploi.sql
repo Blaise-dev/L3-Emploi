@@ -1,147 +1,271 @@
-CREATE TABLE Annee (
- idAnnee INT NOT NULL,
- anneeDebut VARCHAR(10),
- anneeFin VARCHAR(10)
-);
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Client :  127.0.0.1
+-- Généré le :  Lun 02 Mai 2022 à 21:11
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
-ALTER TABLE Annee ADD CONSTRAINT PK_Annee PRIMARY KEY (idAnnee);
-
-
-CREATE TABLE Departement (
- codeDepartement VARCHAR(10) NOT NULL,
- nomDepartement CHAR(100)
-);
-
-ALTER TABLE Departement ADD CONSTRAINT PK_Departement PRIMARY KEY (codeDepartement);
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
-CREATE TABLE Filiere (
- codeFiliere CHAR(10) NOT NULL,
- nomFiliere CHAR(10)
-);
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
-ALTER TABLE Filiere ADD CONSTRAINT PK_Filiere PRIMARY KEY (codeFiliere);
+--
+-- Base de données :  `tp_emploi`
+--
 
+-- --------------------------------------------------------
 
-CREATE TABLE Matiere (
- codeMatiere VARCHAR(10) NOT NULL,
- intituleMatiere CHAR(200)
-);
+--
+-- Structure de la table `administrateur`
+--
 
-ALTER TABLE Matiere ADD CONSTRAINT PK_Matiere PRIMARY KEY (codeMatiere);
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `matricule` char(7) NOT NULL,
+  PRIMARY KEY (`matricule`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
-CREATE TABLE Niveau (
- idNiveau INT NOT NULL,
- codeNiveau CHAR(10),
- nomNiveau VARCHAR(20),
- codeFiliere CHAR(10) NOT NULL
-);
+--
+-- Structure de la table `annee`
+--
 
-ALTER TABLE Niveau ADD CONSTRAINT PK_Niveau PRIMARY KEY (idNiveau);
+CREATE TABLE IF NOT EXISTS `annee` (
+  `idAnnee` int(11) NOT NULL,
+  `anneeDebut` varchar(10) DEFAULT NULL,
+  `anneeFin` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`idAnnee`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
-CREATE TABLE Salle (
- codeSalle VARCHAR(10) NOT NULL,
- nomSalle VARCHAR(40),
- capacite INT
-);
+--
+-- Structure de la table `departement`
+--
 
-ALTER TABLE Salle ADD CONSTRAINT PK_Salle PRIMARY KEY (codeSalle);
+CREATE TABLE IF NOT EXISTS `departement` (
+  `codeDepartement` varchar(10) NOT NULL,
+  `nomDepartement` char(100) DEFAULT NULL,
+  PRIMARY KEY (`codeDepartement`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
-CREATE TABLE Semestre (
- idSem INT NOT NULL,
- codeSemestre CHAR(10),
- nomSem CHAR(10),
- idAnnee INT NOT NULL
-);
+--
+-- Structure de la table `enseignant`
+--
 
-ALTER TABLE Semestre ADD CONSTRAINT PK_Semestre PRIMARY KEY (idSem);
+CREATE TABLE IF NOT EXISTS `enseignant` (
+  `matricule` char(7) NOT NULL,
+  `gradeEns` varchar(20) DEFAULT NULL,
+  `codeDepartement` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`matricule`),
+  KEY `FK_Enseignant_1` (`codeDepartement`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
-CREATE TABLE Utilisateur (
- matricule CHAR(7) NOT NULL,
- nomUsr VARCHAR(100),
- mdp VARCHAR(100),
- nom VARCHAR(100),
- prenom VARCHAR(100),
- email VARCHAR(100),
- dateNais DATE
-);
+--
+-- Structure de la table `etudiant`
+--
 
-ALTER TABLE Utilisateur ADD CONSTRAINT PK_Utilisateur PRIMARY KEY (matricule);
+CREATE TABLE IF NOT EXISTS `etudiant` (
+  `matricule` char(7) NOT NULL,
+  PRIMARY KEY (`matricule`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `etudiant`
+--
 
-CREATE TABLE Administrateur (
- matricule CHAR(7) NOT NULL
-);
+INSERT INTO `etudiant` (`matricule`) VALUES
+('15P4574');
 
-ALTER TABLE Administrateur ADD CONSTRAINT PK_Administrateur PRIMARY KEY (matricule);
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `fairecours`
+--
 
-CREATE TABLE Enseignant (
- matricule CHAR(7) NOT NULL,
- gradeEns VARCHAR(20),
- codeDepartement VARCHAR(10)
-);
+CREATE TABLE IF NOT EXISTS `fairecours` (
+  `codeSalle` varchar(10) NOT NULL,
+  `matricule` char(7) NOT NULL,
+  `codeMatiere` varchar(10) NOT NULL,
+  `idGrp` int(11) NOT NULL,
+  `idSem` int(11) NOT NULL,
+  `jour` varchar(10) DEFAULT NULL,
+  `heureDebut` char(10) DEFAULT NULL,
+  `heureFin` char(10) DEFAULT NULL,
+  PRIMARY KEY (`codeSalle`,`matricule`,`codeMatiere`,`idGrp`,`idSem`),
+  KEY `FK_FaireCours_1` (`matricule`),
+  KEY `FK_FaireCours_2` (`codeMatiere`),
+  KEY `FK_FaireCours_3` (`idGrp`),
+  KEY `FK_FaireCours_4` (`idSem`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE Enseignant ADD CONSTRAINT PK_Enseignant PRIMARY KEY (matricule);
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `filiere`
+--
 
-CREATE TABLE Etudiant (
- matricule CHAR(7) NOT NULL
-);
+CREATE TABLE IF NOT EXISTS `filiere` (
+  `codeFiliere` char(10) NOT NULL,
+  `nomFiliere` char(10) DEFAULT NULL,
+  PRIMARY KEY (`codeFiliere`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE Etudiant ADD CONSTRAINT PK_Etudiant PRIMARY KEY (matricule);
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `groupe`
+--
 
-CREATE TABLE Groupe (
- idGrp INT NOT NULL,
- groupeClass VARCHAR(10),
- idNiveau INT NOT NULL
-);
+CREATE TABLE IF NOT EXISTS `groupe` (
+  `idGrp` int(11) NOT NULL,
+  `groupeClass` varchar(10) DEFAULT NULL,
+  `idNiveau` int(11) NOT NULL,
+  PRIMARY KEY (`idGrp`),
+  KEY `FK_Groupe_0` (`idNiveau`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE Groupe ADD CONSTRAINT PK_Groupe PRIMARY KEY (idGrp);
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `matiere`
+--
 
-CREATE TABLE FaireCours (
- codeSalle VARCHAR(10) NOT NULL,
- matricule CHAR(7) NOT NULL,
- codeMatiere VARCHAR(10) NOT NULL,
- idGrp INT NOT NULL,
- idSem INT NOT NULL,
- jour VARCHAR(10),
- heureDebut CHAR(10),
- heureFin CHAR(10)
-);
+CREATE TABLE IF NOT EXISTS `matiere` (
+  `codeMatiere` varchar(10) NOT NULL,
+  `intituleMatiere` char(200) DEFAULT NULL,
+  PRIMARY KEY (`codeMatiere`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE FaireCours ADD CONSTRAINT PK_FaireCours PRIMARY KEY (codeSalle,matricule,codeMatiere,idGrp,idSem);
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `niveau`
+--
 
-ALTER TABLE Niveau ADD CONSTRAINT FK_Niveau_0 FOREIGN KEY (codeFiliere) REFERENCES Filiere (codeFiliere);
+CREATE TABLE IF NOT EXISTS `niveau` (
+  `idNiveau` int(11) NOT NULL,
+  `codeNiveau` char(10) DEFAULT NULL,
+  `nomNiveau` varchar(20) DEFAULT NULL,
+  `codeFiliere` char(10) NOT NULL,
+  PRIMARY KEY (`idNiveau`),
+  KEY `FK_Niveau_0` (`codeFiliere`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
-ALTER TABLE Semestre ADD CONSTRAINT FK_Semestre_0 FOREIGN KEY (idAnnee) REFERENCES Annee (idAnnee);
+--
+-- Structure de la table `salle`
+--
 
+CREATE TABLE IF NOT EXISTS `salle` (
+  `codeSalle` varchar(10) NOT NULL,
+  `nomSalle` varchar(40) DEFAULT NULL,
+  `capacite` int(11) DEFAULT NULL,
+  PRIMARY KEY (`codeSalle`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE Administrateur ADD CONSTRAINT FK_Administrateur_0 FOREIGN KEY (matricule) REFERENCES Utilisateur (matricule);
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `semestre`
+--
 
-ALTER TABLE Enseignant ADD CONSTRAINT FK_Enseignant_0 FOREIGN KEY (matricule) REFERENCES Utilisateur (matricule);
-ALTER TABLE Enseignant ADD CONSTRAINT FK_Enseignant_1 FOREIGN KEY (codeDepartement) REFERENCES Departement (codeDepartement);
+CREATE TABLE IF NOT EXISTS `semestre` (
+  `idSem` int(11) NOT NULL,
+  `codeSemestre` char(10) DEFAULT NULL,
+  `nomSem` char(10) DEFAULT NULL,
+  `idAnnee` int(11) NOT NULL,
+  PRIMARY KEY (`idSem`),
+  KEY `FK_Semestre_0` (`idAnnee`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
 
-ALTER TABLE Etudiant ADD CONSTRAINT FK_Etudiant_0 FOREIGN KEY (matricule) REFERENCES Utilisateur (matricule);
+--
+-- Structure de la table `utilisateur`
+--
 
+CREATE TABLE IF NOT EXISTS `utilisateur` (
+  `matricule` char(7) NOT NULL,
+  `nomUsr` varchar(100) DEFAULT NULL,
+  `mdp` varchar(100) DEFAULT NULL,
+  `nom` varchar(100) DEFAULT NULL,
+  `prenom` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `dateNais` date DEFAULT NULL,
+  PRIMARY KEY (`matricule`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE Groupe ADD CONSTRAINT FK_Groupe_0 FOREIGN KEY (idNiveau) REFERENCES Niveau (idNiveau);
+--
+-- Contenu de la table `utilisateur`
+--
 
+INSERT INTO `utilisateur` (`matricule`, `nomUsr`, `mdp`, `nom`, `prenom`, `email`, `dateNais`) VALUES
+('15P4574', 'Alex', NULL, 'Chris', 'Alexy', NULL, NULL);
 
-ALTER TABLE FaireCours ADD CONSTRAINT FK_FaireCours_0 FOREIGN KEY (codeSalle) REFERENCES Salle (codeSalle);
-ALTER TABLE FaireCours ADD CONSTRAINT FK_FaireCours_1 FOREIGN KEY (matricule) REFERENCES Enseignant (matricule);
-ALTER TABLE FaireCours ADD CONSTRAINT FK_FaireCours_2 FOREIGN KEY (codeMatiere) REFERENCES Matiere (codeMatiere);
-ALTER TABLE FaireCours ADD CONSTRAINT FK_FaireCours_3 FOREIGN KEY (idGrp) REFERENCES Groupe (idGrp);
-ALTER TABLE FaireCours ADD CONSTRAINT FK_FaireCours_4 FOREIGN KEY (idSem) REFERENCES Semestre (idSem);
+--
+-- Contraintes pour les tables exportées
+--
 
+--
+-- Contraintes pour la table `administrateur`
+--
+ALTER TABLE `administrateur`
+  ADD CONSTRAINT `FK_Administrateur_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE;
 
+--
+-- Contraintes pour la table `enseignant`
+--
+ALTER TABLE `enseignant`
+  ADD CONSTRAINT `FK_Enseignant_1` FOREIGN KEY (`codeDepartement`) REFERENCES `departement` (`codeDepartement`) ON UPDATE CASCADE ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_Enseignant_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `etudiant`
+--
+ALTER TABLE `etudiant`
+  ADD CONSTRAINT `FK_Etudiant_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `fairecours`
+--
+ALTER TABLE `fairecours`
+  ADD CONSTRAINT `FK_FaireCours_4` FOREIGN KEY (`idSem`) REFERENCES `semestre` (`idSem`) ON UPDATE CASCADE ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_0` FOREIGN KEY (`codeSalle`) REFERENCES `salle` (`codeSalle`) ON UPDATE CASCADE ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_1` FOREIGN KEY (`matricule`) REFERENCES `enseignant` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_2` FOREIGN KEY (`codeMatiere`) REFERENCES `matiere` (`codeMatiere`) ON UPDATE CASCADE ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_3` FOREIGN KEY (`idGrp`) REFERENCES `groupe` (`idGrp`) ON UPDATE CASCADE ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `groupe`
+--
+ALTER TABLE `groupe`
+  ADD CONSTRAINT `FK_Groupe_0` FOREIGN KEY (`idNiveau`) REFERENCES `niveau` (`idNiveau`) ON UPDATE CASCADE ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `niveau`
+--
+ALTER TABLE `niveau`
+  ADD CONSTRAINT `FK_Niveau_0` FOREIGN KEY (`codeFiliere`) REFERENCES `filiere` (`codeFiliere`) ON UPDATE CASCADE ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `semestre`
+--
+ALTER TABLE `semestre`
+  ADD CONSTRAINT `FK_Semestre_0` FOREIGN KEY (`idAnnee`) REFERENCES `annee` (`idAnnee`) ON UPDATE CASCADE ON DELETE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
