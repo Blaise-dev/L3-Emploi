@@ -1,6 +1,5 @@
 package BusinessLayer.InterfacesBusiness;
 
-
 public interface IDepartement {
 
 	public abstract String getCodeDepart();

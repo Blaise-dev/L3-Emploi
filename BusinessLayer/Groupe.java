@@ -4,8 +4,9 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.IGroupe;
 
-
 public class Groupe implements IGroupe {
+
+	private String codeGrp;
 
 	private String libelleGrp;
 
@@ -14,6 +15,15 @@ public class Groupe implements IGroupe {
 	private Collection<SuiviCours> suiviCours;
 
 	private Niveau niveau;
+
+
+	/**
+	 * @see IGroupe#getCodeGrp()
+	 *  
+	 */
+	public String getCodeGrp() {
+		return null;
+	}
 
 
 	/**
@@ -31,6 +41,15 @@ public class Groupe implements IGroupe {
 	 */
 	public int getEffectifGrp() {
 		return 0;
+	}
+
+
+	/**
+	 * @see IGroupe#getCodeGrp()
+	 *  
+	 */
+	public void setCodeGrp(String codeGrp) {
+
 	}
 
 

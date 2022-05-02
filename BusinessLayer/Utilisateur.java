@@ -2,7 +2,6 @@ package BusinessLayer;
 
 import BusinessLayer.InterfacesBusiness.IUtilisateur;
 
-
 public class Utilisateur implements IUtilisateur {
 
 	private String matricule;

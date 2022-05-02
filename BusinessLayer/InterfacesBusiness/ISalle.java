@@ -1,6 +1,5 @@
 package BusinessLayer.InterfacesBusiness;
 
-
 public interface ISalle {
 
 	/**

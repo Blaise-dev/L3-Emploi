@@ -1,7 +1,6 @@
 package BusinessLayer;
 
-import BusinessLayer.InterfacesBusiness.*;
-
+import BusinessLayer.InterfacesBusiness.IAdministrateur;
 
 public class Administrateur extends Utilisateur implements IAdministrateur {
 

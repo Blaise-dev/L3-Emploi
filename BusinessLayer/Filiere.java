@@ -4,10 +4,9 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.IFiliere;
 
-
 public class Filiere implements IFiliere {
 
-	private String libelleFil;
+	private String codeFil;
 
 	private String nomFil;
 
@@ -18,7 +17,7 @@ public class Filiere implements IFiliere {
 	 * @see IFiliere#getLibelleFil()
 	 *  
 	 */
-	public String getLibelleFil() {
+	public String getCodeFil() {
 		return null;
 	}
 
@@ -36,7 +35,7 @@ public class Filiere implements IFiliere {
 	 * @see IFiliere#setLibelleFil(String)
 	 *  
 	 */
-	public void setLibelleFil(String libelleFil) {
+	public void setCodeFil(String codeFil) {
 
 	}
 

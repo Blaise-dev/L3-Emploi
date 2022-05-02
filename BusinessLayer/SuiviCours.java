@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.ISuiviCours;
 
-
 public class SuiviCours implements ISuiviCours {
 
 	private String heureDebut;

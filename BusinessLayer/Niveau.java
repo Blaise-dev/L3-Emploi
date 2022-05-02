@@ -4,18 +4,17 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.INiveau;
 
-
 public class Niveau implements INiveau {
 
 	private String codeNiv;
 
 	private String nomNiv;
 
-	private Collection<Filiere> filiere;
+	private Collection<Semestre> semestre;
 
 	private Groupe groupe;
 
-	private Collection<Semestre> semestre;
+	private Filiere filiere;
 
 
 	/**

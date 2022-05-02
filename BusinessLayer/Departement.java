@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.IDepartement;
 
-
 public class Departement implements IDepartement {
 
 	private String codeDepart;

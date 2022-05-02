@@ -3,7 +3,6 @@ package BusinessLayer.DAOLayer;
 import BusinessLayer.DAOLayer.InterfacesDAO.*;
 import BusinessLayer.InterfacesBusiness.*;
 
-
 public class DeleteDAO implements IDeleteDAO {
 
 

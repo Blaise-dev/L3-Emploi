@@ -1,12 +1,11 @@
 package BusinessLayer.InterfacesBusiness;
 
-
 public interface IGroupe {
 
 	/**
 	 *  
 	 */
-	public abstract String getLibelleGrp();
+	public abstract String getCodeGrp();
 
 	/**
 	 *  
@@ -16,7 +15,7 @@ public interface IGroupe {
 	/**
 	 *  
 	 */
-	public abstract void setLibelleGrp(String libelleGrp);
+	public abstract void setCodeGrp(String codeGrp);
 
 	/**
 	 *  

@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.IMatiere;
 
-
 public class Matiere implements IMatiere {
 
 	private String codeMat;

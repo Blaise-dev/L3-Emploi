@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.ISemestre;
 
-
 public class Semestre implements ISemestre {
 
 	private String codeSem;

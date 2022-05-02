@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.IEnseignant;
 
-
 public class Enseignant extends Utilisateur implements IEnseignant {
 
 	private String gradeEns;

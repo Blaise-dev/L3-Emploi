@@ -2,7 +2,6 @@ package BusinessLayer.DAOLayer.InterfacesDAO;
 
 import BusinessLayer.InterfacesBusiness.*;
 
-
 public interface ISelectDAO {
 
 	public abstract String selPass(String login);

@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.ISalle;
 
-
 public class Salle implements ISalle {
 
 	private String libelleSalle;
