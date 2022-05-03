@@ -1,5 +1,7 @@
 package BusinessLayer.InterfacesBusiness;
 
+import java.util.List;
+
 public interface IEtudiant extends IUtilisateur {
 
 	/**
@@ -15,11 +17,21 @@ public interface IEtudiant extends IUtilisateur {
 	/**
 	 *  
 	 */
+	public abstract List<ISuiviCours> getSuiviCours();
+
+	/**
+	 *  
+	 */
 	public abstract void setIdGrp(int idGrp);
 
 	/**
 	 *  
 	 */
 	public abstract void setGroupe(IGroupe groupe);
+
+	/**
+	 *  
+	 */
+	public abstract void setSuiviCours(IEtudiant etudiant);
 
 }

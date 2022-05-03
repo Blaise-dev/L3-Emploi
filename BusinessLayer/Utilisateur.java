@@ -20,8 +20,8 @@ public class Utilisateur implements IUtilisateur {
 	/**
 	 * @see IUtilisateur#connecter(String, String)
 	 */
-	public void connecter(String login, String pass) {
-
+	public boolean connecter(String login, String pass) {
+		return true;
 	}
 
 
@@ -38,7 +38,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getMatricule() {
-		return matricule;
+		return null;
 	}
 
 
@@ -56,7 +56,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getNom() {
-		return nom;
+		return null;
 	}
 
 
@@ -65,7 +65,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getPrenom() {
-		return prenom;
+		return null;
 	}
 
 
@@ -92,7 +92,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setMatricule(String matricule) {
-		this.matricule = matricule;
+
 	}
 
 
@@ -110,7 +110,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setNom(String nom) {
-		this.nom = nom;
+
 	}
 
 
@@ -119,7 +119,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+
 	}
 
 

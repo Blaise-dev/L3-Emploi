@@ -159,9 +159,17 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.ISelectDAO#selSuivi(ISuiviCours)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selSuiviEtudiant(IEtudiant)
 	 */
-	public List<?> selSuivi(ISuiviCours suivi) {
+	public List<?> selSuiviEtudiant(IEtudiant etudiant) {
+		return null;
+	}
+
+
+	/**
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selSuiviEnseignant(IEnseignant)
+	 */
+	public List<?> selSuiviEnseignant(IEnseignant enseignant) {
 		return null;
 	}
 

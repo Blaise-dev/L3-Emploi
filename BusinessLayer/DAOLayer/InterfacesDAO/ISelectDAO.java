@@ -1,6 +1,5 @@
 package BusinessLayer.DAOLayer.InterfacesDAO;
 
-import java.util.Collection;
 import java.util.List;
 
 import BusinessLayer.InterfacesBusiness.*;
@@ -31,6 +30,8 @@ public interface ISelectDAO {
 
 	public abstract void selEtudiant(IEtudiant etudiant);
 
-	public abstract List<?> selSuivi(ISuiviCours suivi);
+	public List<?> selSuiviEtudiant(IEtudiant etudiant);
+
+	public List<?> selSuiviEnseignant(IEnseignant enseignant);
 
 }

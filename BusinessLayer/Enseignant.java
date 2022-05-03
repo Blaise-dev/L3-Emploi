@@ -1,6 +1,6 @@
 package BusinessLayer;
 
-import java.util.Collection;
+import java.util.List;
 
 import BusinessLayer.InterfacesBusiness.IDepartement;
 import BusinessLayer.InterfacesBusiness.IEnseignant;
@@ -12,7 +12,7 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 
 	private Departement departement;
 
-	private Collection<SuiviCours> suiviCours;
+	private List<SuiviCours> suiviCours;
 
 
 	/**
@@ -48,14 +48,14 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 
 
 	@Override
-	public Collection<ISuiviCours> getSuiviCours() {
+	public List<ISuiviCours> getSuiviCours() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	@Override
-	public void setSuiviCours(Collection<ISuiviCours> suiviCours) {
+	public void setSuiviCours(List<ISuiviCours> suiviCours) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -2,7 +2,7 @@ package BusinessLayer.InterfacesBusiness;
 
 public interface IUtilisateur {
 
-	public abstract void connecter(String login, String pass);
+	public abstract boolean connecter(String login, String pass);
 
 	public abstract void deconnecter(String login, String pass);
 
