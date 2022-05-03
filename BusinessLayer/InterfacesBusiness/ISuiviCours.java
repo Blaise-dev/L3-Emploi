@@ -20,51 +20,24 @@ public interface ISuiviCours {
 	/**
 	 *  
 	 */
-	public abstract String getCodeMat();
+	public abstract IMatiere getMatiere();
 
-	public abstract String getCodeSalle();
-
-	/**
-	 *  
-	 */
-	public abstract String getCodeSem();
+	public abstract ISalle getSalle();
 
 	/**
 	 *  
 	 */
-	public abstract String getCodeGrp();
+	public abstract ISemestre getSemestre();
 
 	/**
 	 *  
 	 */
-	public abstract String getMatriculeEns();
+	public abstract IGroupe getGroupe();
 
 	/**
 	 *  
 	 */
-	public abstract void setJour(String jour);
-
-	/**
-	 *  
-	 */
-	public abstract void setCodeMat(String codeMat);
-
-	public abstract void setCodeSalle(String libelleSalle);
-
-	/**
-	 *  
-	 */
-	public abstract void setCodeSem(String codeSem);
-
-	/**
-	 *  
-	 */
-	public abstract void setCodeGrp(String libelleGrp);
-
-	/**
-	 *  
-	 */
-	public abstract void setMatriculeEns(String matriculeEns);
+	public abstract IEnseignant getEnseignant();
 
 	/**
 	 *  
@@ -75,5 +48,32 @@ public interface ISuiviCours {
 	 *  
 	 */
 	public abstract void setHeureFin(String heure);
+
+	/**
+	 *  
+	 */
+	public abstract void setJour(String jour);
+
+	/**
+	 *  
+	 */
+	public abstract void setMatiere(IMatiere matiere);
+
+	public abstract void setSalle(ISalle salle);
+
+	/**
+	 *  
+	 */
+	public abstract void setSemestre(ISemestre semestre);
+
+	/**
+	 *  
+	 */
+	public abstract void setGroupe(IGroupe groupe);
+
+	/**
+	 *  
+	 */
+	public abstract void setEnseignant(IEnseignant enseignant);
 
 }

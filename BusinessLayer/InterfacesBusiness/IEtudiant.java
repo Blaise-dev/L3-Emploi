@@ -1,5 +1,5 @@
 package BusinessLayer.InterfacesBusiness;
 
-public interface IEtudiant {
+public interface IEtudiant extends IUtilisateur {
 
 }

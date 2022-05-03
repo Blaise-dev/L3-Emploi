@@ -2,6 +2,11 @@ package BusinessLayer;
 
 import java.util.Collection;
 
+import BusinessLayer.InterfacesBusiness.IEnseignant;
+import BusinessLayer.InterfacesBusiness.IGroupe;
+import BusinessLayer.InterfacesBusiness.IMatiere;
+import BusinessLayer.InterfacesBusiness.ISalle;
+import BusinessLayer.InterfacesBusiness.ISemestre;
 import BusinessLayer.InterfacesBusiness.ISuiviCours;
 
 public class SuiviCours implements ISuiviCours {
@@ -10,19 +15,9 @@ public class SuiviCours implements ISuiviCours {
 
 	private String heureFin;
 
-	private String Jour;
+	private String jour;
 
-	private String codeMat;
-
-	private String codeSalle;
-
-	private String codeSem;
-
-	private String codeGrp;
-
-	private String matriculeEns;
-
-	private Collection<Matiere> matiere;
+	private Matiere matiere;
 
 	private Enseignant enseignant;
 
@@ -61,103 +56,6 @@ public class SuiviCours implements ISuiviCours {
 
 
 	/**
-	 * @see ISuiviCours#getCodeMat()
-	 *  
-	 */
-	public String getCodeMat() {
-		return null;
-	}
-
-
-	/**
-	 * @see ISuiviCours#getCodeSalle()
-	 */
-	public String getCodeSalle() {
-		return null;
-	}
-
-
-	/**
-	 * @see ISuiviCours#getCodeSem()
-	 *  
-	 */
-	public String getCodeSem() {
-		return null;
-	}
-
-
-	/**
-	 * @see ISuiviCours#getCodeGrp()
-	 *  
-	 */
-	public String getCodeGrp() {
-		return null;
-	}
-
-
-	/**
-	 * @see ISuiviCours#getMatriculeEns()
-	 *  
-	 */
-	public String getMatriculeEns() {
-		return null;
-	}
-
-
-	/**
-	 * @see ISuiviCours#setJour(String)
-	 *  
-	 */
-	public void setJour(String jour) {
-
-	}
-
-
-	/**
-	 * @see ISuiviCours#setCodeMat(String)
-	 *  
-	 */
-	public void setCodeMat(String codeMat) {
-
-	}
-
-
-	/**
-	 * @see ISuiviCours#setCodeSalle(String)
-	 */
-	public void setCodeSalle(String libelleSalle) {
-
-	}
-
-
-	/**
-	 * @see ISuiviCours#setCodeSem(String)
-	 *  
-	 */
-	public void setCodeSem(String codeSem) {
-
-	}
-
-
-	/**
-	 * @see ISuiviCours#setCodeGrp(String)
-	 *  
-	 */
-	public void setCodeGrp(String libelleGrp) {
-
-	}
-
-
-	/**
-	 * @see ISuiviCours#setMatriculeEns(String)
-	 *  
-	 */
-	public void setMatriculeEns(String matriculeEns) {
-
-	}
-
-
-	/**
 	 * @see ISuiviCours#setHeureDebut(String)
 	 *  
 	 */
@@ -172,6 +70,85 @@ public class SuiviCours implements ISuiviCours {
 	 */
 	public void setHeureFin(String heure) {
 
+	}
+
+
+	/**
+	 * @see ISuiviCours#setJour(String)
+	 *  
+	 */
+	public void setJour(String jour) {
+
+	}
+
+
+	@Override
+	public IMatiere getMatiere() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public ISalle getSalle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public ISemestre getSemestre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public IGroupe getGroupe() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public IEnseignant getEnseignant() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setMatiere(IMatiere matiere) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setSalle(ISalle salle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setSemestre(ISemestre semestre) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setGroupe(IGroupe groupe) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setEnseignant(IEnseignant enseignant) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

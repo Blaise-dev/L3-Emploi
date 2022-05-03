@@ -2,9 +2,12 @@ package BusinessLayer;
 
 import java.util.Collection;
 
+import BusinessLayer.InterfacesBusiness.IAnnee;
 import BusinessLayer.InterfacesBusiness.ISemestre;
 
 public class Semestre implements ISemestre {
+
+	private int idSem;
 
 	private String codeSem;
 
@@ -48,6 +51,34 @@ public class Semestre implements ISemestre {
 	 */
 	public void setNomSem(String nomSem) {
 
+	}
+
+
+	@Override
+	public int getIdSem() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public IAnnee getAnnee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setIdSem(int idSem) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setAnnee(IAnnee annee) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -7,7 +7,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 
 	/**
-	 * @see BusinessLayer.IDeleteDAO#delSuivi(ISuiviCours)
+	 * @see BusinessLayer.DAOLayer.IDeleteDAO#delSuivi(ISuiviCours)
 	 */
 	public void delSuivi(ISuiviCours suivi) {
 
@@ -15,7 +15,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 
 	/**
-	 * @see BusinessLayer.IDeleteDAO#delEnseignant(BusinessLayer.IEnseignant)
+	 * @see BusinessLayer.DAOLayer.IDeleteDAO#delEnseignant(BusinessLayer.IEnseignant)
 	 */
 	public void delEnseignant(IEnseignant ens) {
 
@@ -23,7 +23,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 
 	/**
-	 * @see BusinessLayer.IDeleteDAO#delEtudiant(IEtudiant)
+	 * @see BusinessLayer.DAOLayer.IDeleteDAO#delEtudiant(IEtudiant)
 	 */
 	public void delEtudiant(IEtudiant etudiant) {
 

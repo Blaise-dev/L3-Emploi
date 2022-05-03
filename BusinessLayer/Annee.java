@@ -46,4 +46,18 @@ public class Annee implements IAnnee {
 
 	}
 
+
+	@Override
+	public int getIdAnnee() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void setIdAnnee(int idAnnee) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

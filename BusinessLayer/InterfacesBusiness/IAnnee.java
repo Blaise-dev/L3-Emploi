@@ -5,12 +5,22 @@ public interface IAnnee {
 	/**
 	 *  
 	 */
+	public abstract int getIdAnnee();
+
+	/**
+	 *  
+	 */
 	public abstract String getAnneeDebut();
 
 	/**
 	 *  
 	 */
 	public abstract String getAnneeFin();
+
+	/**
+	 *  
+	 */
+	public abstract void setIdAnnee(int idAnnee);
 
 	/**
 	 *  

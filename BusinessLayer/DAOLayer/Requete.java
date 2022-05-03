@@ -7,12 +7,12 @@ import java.sql.SQLException;
 
 public class Requete {
 
-	static ResultSet rs = null;
-	static String host = "localhost";
-	static String bd = "tp_emploi";
-	static String user = "root";
-	static String pass = "";
-	static Connection connection = null;
+	static protected ResultSet rs = null;
+	static protected String host = "localhost";
+	static protected String bd = "tp_emploi";
+	static protected String user = "root";
+	static protected String pass = "";
+	static protected Connection connection = null;
 	
 	/**
 	 * @see BusinessLayer.DAOLayer.Requete#executeQuery(String)
@@ -87,7 +87,7 @@ public class Requete {
 	/**
 	 * @see BusinessLayer.DAOLayer.Requete#executeUpdate(String)
 	 */
-	public static void executeUpdate(String req) {
+	public void executeUpdate(String req) {
 		connection = ConnectionBD.getConnection(host, bd, user, pass);
 
 		try

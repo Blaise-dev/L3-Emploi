@@ -3,12 +3,15 @@ package BusinessLayer;
 import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.IGroupe;
+import BusinessLayer.InterfacesBusiness.INiveau;
 
 public class Groupe implements IGroupe {
 
+	private int idGrp;
+
 	private String codeGrp;
 
-	private String libelleGrp;
+	private String nomGrp;
 
 	private int effectifGrp;
 
@@ -18,7 +21,16 @@ public class Groupe implements IGroupe {
 
 
 	/**
-	 * @see IGroupe#getCodeGrp()
+	 * @see BusinessLayer.IGroupe#getIdGrp()
+	 *  
+	 */
+	public String getIdGrp() {
+		return null;
+	}
+
+
+	/**
+	 * @see BusinessLayer.IGroupe#getCodeGrp()
 	 *  
 	 */
 	public String getCodeGrp() {
@@ -27,16 +39,16 @@ public class Groupe implements IGroupe {
 
 
 	/**
-	 * @see IGroupe#getLibelleGrp()
+	 * @see BusinessLayer.IGroupe#getNomGrp()
 	 *  
 	 */
-	public String getLibelleGrp() {
+	public String getNomGrp() {
 		return null;
 	}
 
 
 	/**
-	 * @see IGroupe#getEffectifGrp()
+	 * @see BusinessLayer.IGroupe#getEffectifGrp()
 	 *  
 	 */
 	public int getEffectifGrp() {
@@ -45,7 +57,16 @@ public class Groupe implements IGroupe {
 
 
 	/**
-	 * @see IGroupe#getCodeGrp()
+	 * @see BusinessLayer.IGroupe#setIdGrp(String)
+	 *  
+	 */
+	public void setIdGrp(String idGrp) {
+
+	}
+
+
+	/**
+	 * @see BusinessLayer.IGroupe#setCodeGrp(String)
 	 *  
 	 */
 	public void setCodeGrp(String codeGrp) {
@@ -54,20 +75,34 @@ public class Groupe implements IGroupe {
 
 
 	/**
-	 * @see IGroupe#setLibelleGrp(String)
+	 * @see BusinessLayer.IGroupe#setNomGrp(String)
 	 *  
 	 */
-	public void setLibelleGrp(String libelleGrp) {
+	public void setNomGrp(String nomGrp) {
 
 	}
 
 
 	/**
-	 * @see IGroupe#setEffectifGrp(int)
+	 * @see BusinessLayer.IGroupe#setEffectifGrp(int)
 	 *  
 	 */
 	public void setEffectifGrp(int effectifGrp) {
 
+	}
+
+
+	@Override
+	public INiveau getNiveau() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setNiveau(INiveau niveau) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

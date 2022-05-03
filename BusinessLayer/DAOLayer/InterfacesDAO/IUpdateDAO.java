@@ -7,7 +7,7 @@ public interface IUpdateDAO {
 	/**
 	 *  
 	 */
-	public abstract void updPass(IUtilisateur usr);
+	public abstract void updUser(IUtilisateur usr);
 
 	public abstract void updSalle(ISalle salle);
 
@@ -19,7 +19,7 @@ public interface IUpdateDAO {
 	/**
 	 *  
 	 */
-	public abstract void updGroupe(IGroupe groupe, INiveau niv);
+	public abstract void updGroupe(IGroupe groupe);
 
 	/**
 	 *  

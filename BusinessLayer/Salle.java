@@ -6,7 +6,7 @@ import BusinessLayer.InterfacesBusiness.ISalle;
 
 public class Salle implements ISalle {
 
-	private String libelleSalle;
+	private String nomSalle;
 
 	private String type;
 
@@ -16,16 +16,24 @@ public class Salle implements ISalle {
 
 
 	/**
-	 * @see ISalle#getLibelleSalle()
+	 * @see BusinessLayer.Salle#setLibelleSalle(String)
 	 *  
 	 */
-	public String getLibelleSalle() {
+	public String getCodeSalle() {
+		return null;
+	}
+
+	/**
+	 * @see BusinessLayer.Salle#getNomSalle()
+	 *  
+	 */
+	public String getNomSalle() {
 		return null;
 	}
 
 
 	/**
-	 * @see ISalle#getType()
+	 * @see BusinessLayer.Salle#getType()
 	 *  
 	 */
 	public String getType() {
@@ -34,7 +42,7 @@ public class Salle implements ISalle {
 
 
 	/**
-	 * @see ISalle#getCapacite()
+	 * @see BusinessLayer.Salle#getCapacite()
 	 *  
 	 */
 	public String getCapacite() {
@@ -43,16 +51,24 @@ public class Salle implements ISalle {
 
 
 	/**
-	 * @see ISalle#setLibelleSalle(String)
+	 * @see BusinessLayer.Salle#setCodeSalle(String)
 	 *  
 	 */
-	public void setLibelleSalle(String libelleSalle) {
+	public void setCodeSalle(String codeSalle) {
 
 	}
 
 
 	/**
-	 * @see ISalle#setType(String)
+	 * @see BusinessLayer.Salle#setNomSalle(String)
+	 *  
+	 */
+	public void setNomSalle(String nomSalle) {
+
+	}
+
+	/**
+	 * @see BusinessLayer.Salle#setType(String)
 	 *  
 	 */
 	public void setType(String type) {
@@ -61,7 +77,7 @@ public class Salle implements ISalle {
 
 
 	/**
-	 * @see ISalle#setCapacite(String)
+	 * @see BusinessLayer.Salle#setCapacite(String)
 	 *  
 	 */
 	public void setCapacite(String capacite) {

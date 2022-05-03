@@ -7,7 +7,7 @@ public class InsertDAO implements IInsertDAO {
 
 
 	/**
-	 * @see BusinessLayer.IInsertDAO#insertLoginPass(string, String)
+	 * @see BusinessLayer.DAOLayer.IInsertDAO#insertLoginPass(string, String)
 	 *  
 	 */
 	public void insertLoginPass(String logon, String pass) {
@@ -16,7 +16,7 @@ public class InsertDAO implements IInsertDAO {
 
 
 	/**
-	 * @see BusinessLayer.IInsertDAO#insertEtudiant(IEtudiant)
+	 * @see BusinessLayer.DAOLayer.IInsertDAO#insertEtudiant(IEtudiant)
 	 */
 	public void insertEtudiant(IEtudiant etudiant) {
 
@@ -24,7 +24,7 @@ public class InsertDAO implements IInsertDAO {
 
 
 	/**
-	 * @see BusinessLayer.IInsertDAO#insertEnseignant(BusinessLayer.IEnseignant)
+	 * @see BusinessLayer.DAOLayer.IInsertDAO#insertEnseignant(BusinessLayer.IEnseignant)
 	 */
 	public void insertEnseignant(IEnseignant ens) {
 
@@ -32,7 +32,7 @@ public class InsertDAO implements IInsertDAO {
 
 
 	/**
-	 * @see BusinessLayer.IInsertDAO#insertSuivi(ISuiviCours)
+	 * @see BusinessLayer.DAOLayer.IInsertDAO#insertSuivi(ISuiviCours)
 	 */
 	public void insertSuivi(ISuiviCours suivi) {
 

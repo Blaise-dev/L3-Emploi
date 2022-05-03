@@ -7,7 +7,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selPass(String)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selPass(String)
 	 */
 	public String selPass(String login) {
 		return null;
@@ -15,7 +15,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selSalle(ISalle)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selSalle(ISalle)
 	 */
 	public ISalle selSalle(ISalle salle) {
 		return null;
@@ -23,7 +23,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selFiliere(IFiliere)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selFiliere(IFiliere)
 	 */
 	public IFiliere selFiliere(IFiliere filiere) {
 		return null;
@@ -31,7 +31,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selGroupe(IGroupe)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selGroupe(IGroupe)
 	 */
 	public IGroupe selGroupe(IGroupe groupe) {
 		return null;
@@ -39,7 +39,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selNiveau(INiveau)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selNiveau(INiveau)
 	 */
 	public INiveau selNiveau(INiveau niveau) {
 		return null;
@@ -47,7 +47,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selSemestre(ISemestre)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selSemestre(ISemestre)
 	 */
 	public ISemestre selSemestre(ISemestre semestre) {
 		return null;
@@ -55,7 +55,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selAnnee(IAnnee)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selAnnee(IAnnee)
 	 */
 	public IAnnee selAnnee(IAnnee annee) {
 		return null;
@@ -63,7 +63,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selMatiere(IMatiere)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selMatiere(IMatiere)
 	 */
 	public IMatiere selMatiere(IMatiere matiere) {
 		return null;
@@ -71,7 +71,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selDepartement(IDepartement)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selDepartement(IDepartement)
 	 */
 	public IDepartement selDepartement(IDepartement dpt) {
 		return null;
@@ -79,7 +79,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selEnseignant(BusinessLayer.IEnseignant)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selEnseignant(BusinessLayer.IEnseignant)
 	 */
 	public IEnseignant selEnseignant(IEnseignant ens) {
 		return null;
@@ -87,7 +87,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selAdministrateur(IAdministrateur)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selAdministrateur(IAdministrateur)
 	 */
 	public IAdministrateur selAdministrateur(IAdministrateur admin) {
 		return null;
@@ -95,7 +95,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selEtudiant(IEtudiant)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selEtudiant(IEtudiant)
 	 */
 	public IEtudiant selEtudiant(IEtudiant etudiant) {
 		return null;
@@ -103,7 +103,7 @@ public class SelectDAO implements ISelectDAO {
 
 
 	/**
-	 * @see BusinessLayer.ISelectDAO#selSuivi(ISuiviCours)
+	 * @see BusinessLayer.DAOLayer.ISelectDAO#selSuivi(ISuiviCours)
 	 */
 	public ISuiviCours selSuivi(ISuiviCours suivi) {
 		return null;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 02 Mai 2022 à 21:11
+-- Généré le :  Mar 03 Mai 2022 à 08:04
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -172,6 +172,7 @@ CREATE TABLE IF NOT EXISTS `niveau` (
 CREATE TABLE IF NOT EXISTS `salle` (
   `codeSalle` varchar(10) NOT NULL,
   `nomSalle` varchar(40) DEFAULT NULL,
+  `typeSalle` varchar(100) NOT NULL,
   `capacite` int(11) DEFAULT NULL,
   PRIMARY KEY (`codeSalle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -213,7 +214,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`matricule`, `nomUsr`, `mdp`, `nom`, `prenom`, `email`, `dateNais`) VALUES
-('15P4574', 'Alex', NULL, 'Chris', 'Alexy', NULL, NULL);
+('15P4574', 'Alex', NULL, 'Chris', 'Alexy', NULL, NULL),
+('17D5748', 'Landry', 'land56', 'Aurel', 'Yann', 'landryyan12@yahoo.fr', '2000-02-12'),
+('19Q2348', 'Landry', 'land56', 'Aurel', 'Yann', 'landryyan12@yahoo.fr', '2000-02-12');
 
 --
 -- Contraintes pour les tables exportées
@@ -223,48 +226,48 @@ INSERT INTO `utilisateur` (`matricule`, `nomUsr`, `mdp`, `nom`, `prenom`, `email
 -- Contraintes pour la table `administrateur`
 --
 ALTER TABLE `administrateur`
-  ADD CONSTRAINT `FK_Administrateur_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Administrateur_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `enseignant`
 --
 ALTER TABLE `enseignant`
-  ADD CONSTRAINT `FK_Enseignant_1` FOREIGN KEY (`codeDepartement`) REFERENCES `departement` (`codeDepartement`) ON UPDATE CASCADE ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_Enseignant_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Enseignant_1` FOREIGN KEY (`codeDepartement`) REFERENCES `departement` (`codeDepartement`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_Enseignant_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `etudiant`
 --
 ALTER TABLE `etudiant`
-  ADD CONSTRAINT `FK_Etudiant_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Etudiant_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `fairecours`
 --
 ALTER TABLE `fairecours`
-  ADD CONSTRAINT `FK_FaireCours_4` FOREIGN KEY (`idSem`) REFERENCES `semestre` (`idSem`) ON UPDATE CASCADE ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_FaireCours_0` FOREIGN KEY (`codeSalle`) REFERENCES `salle` (`codeSalle`) ON UPDATE CASCADE ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_FaireCours_1` FOREIGN KEY (`matricule`) REFERENCES `enseignant` (`matricule`) ON UPDATE CASCADE ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_FaireCours_2` FOREIGN KEY (`codeMatiere`) REFERENCES `matiere` (`codeMatiere`) ON UPDATE CASCADE ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_FaireCours_3` FOREIGN KEY (`idGrp`) REFERENCES `groupe` (`idGrp`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_FaireCours_4` FOREIGN KEY (`idSem`) REFERENCES `semestre` (`idSem`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_0` FOREIGN KEY (`codeSalle`) REFERENCES `salle` (`codeSalle`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_1` FOREIGN KEY (`matricule`) REFERENCES `enseignant` (`matricule`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_2` FOREIGN KEY (`codeMatiere`) REFERENCES `matiere` (`codeMatiere`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_FaireCours_3` FOREIGN KEY (`idGrp`) REFERENCES `groupe` (`idGrp`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `groupe`
 --
 ALTER TABLE `groupe`
-  ADD CONSTRAINT `FK_Groupe_0` FOREIGN KEY (`idNiveau`) REFERENCES `niveau` (`idNiveau`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Groupe_0` FOREIGN KEY (`idNiveau`) REFERENCES `niveau` (`idNiveau`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `niveau`
 --
 ALTER TABLE `niveau`
-  ADD CONSTRAINT `FK_Niveau_0` FOREIGN KEY (`codeFiliere`) REFERENCES `filiere` (`codeFiliere`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Niveau_0` FOREIGN KEY (`codeFiliere`) REFERENCES `filiere` (`codeFiliere`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `semestre`
 --
 ALTER TABLE `semestre`
-  ADD CONSTRAINT `FK_Semestre_0` FOREIGN KEY (`idAnnee`) REFERENCES `annee` (`idAnnee`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Semestre_0` FOREIGN KEY (`idAnnee`) REFERENCES `annee` (`idAnnee`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,6 +1,6 @@
 package BusinessLayer.InterfacesBusiness;
 
-public interface IAdministrateur {
+public interface IAdministrateur extends IUtilisateur {
 
 	/**
 	 *  

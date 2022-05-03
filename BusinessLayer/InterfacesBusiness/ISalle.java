@@ -5,7 +5,12 @@ public interface ISalle {
 	/**
 	 *  
 	 */
-	public abstract String getLibelleSalle();
+	public abstract String getCodeSalle();
+
+	/**
+	 *  
+	 */
+	public abstract String getNomSalle();
 
 	/**
 	 *  
@@ -20,7 +25,12 @@ public interface ISalle {
 	/**
 	 *  
 	 */
-	public abstract void setLibelleSalle(String libelleSalle);
+	public abstract void setCodeSalle(String codeSalle);
+
+	/**
+	 *  
+	 */
+	public abstract void setNomSalle(String nomSalle);
 
 	/**
 	 *  

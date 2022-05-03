@@ -2,9 +2,12 @@ package BusinessLayer;
 
 import java.util.Collection;
 
+import BusinessLayer.InterfacesBusiness.IFiliere;
 import BusinessLayer.InterfacesBusiness.INiveau;
 
 public class Niveau implements INiveau {
+
+	private int idNiv;
 
 	private String codeNiv;
 
@@ -18,7 +21,16 @@ public class Niveau implements INiveau {
 
 
 	/**
-	 * @see INiveau#getCodeNiv()
+	 * @see BusinessLayer.INiveau#getIdNiv()
+	 *  
+	 */
+	public int getIdNiv() {
+		return 0;
+	}
+
+
+	/**
+	 * @see BusinessLayer.INiveau#getCodeNiv()
 	 *  
 	 */
 	public String getCodeNiv() {
@@ -27,7 +39,7 @@ public class Niveau implements INiveau {
 
 
 	/**
-	 * @see INiveau#getNomNiv()
+	 * @see BusinessLayer.INiveau#getNomNiv()
 	 *  
 	 */
 	public String getNomNiv() {
@@ -36,7 +48,16 @@ public class Niveau implements INiveau {
 
 
 	/**
-	 * @see INiveau#setCodeNiv(String)
+	 * @see BusinessLayer.INiveau#setIdNiv(String)
+	 *  
+	 */
+	public void setIdNiv(int idNiv) {
+
+	}
+
+
+	/**
+	 * @see BusinessLayer.INiveau#setCodeNiv(String)
 	 *  
 	 */
 	public void setCodeNiv(String codeNiv) {
@@ -45,11 +66,25 @@ public class Niveau implements INiveau {
 
 
 	/**
-	 * @see INiveau#setNomNiv(String)
+	 * @see BusinessLayer.INiveau#setNomNiv(String)
 	 *  
 	 */
 	public void setNomNiv(String nomNiv) {
 
+	}
+
+
+	@Override
+	public IFiliere getFiliere() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setFiliere(IFiliere filiere) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

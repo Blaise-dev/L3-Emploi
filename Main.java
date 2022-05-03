@@ -1,9 +1,10 @@
-import BusinessLayer.DAOLayer.Requete;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import BusinessLayer.Utilisateur;
+import BusinessLayer.DAOLayer.*;
+import BusinessLayer.DAOLayer.InterfacesDAO.*;
+import BusinessLayer.InterfacesBusiness.*;
 
 public class Main {
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Utilisateur");
