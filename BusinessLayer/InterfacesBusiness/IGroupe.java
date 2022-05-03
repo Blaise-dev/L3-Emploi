@@ -1,5 +1,7 @@
 package BusinessLayer.InterfacesBusiness;
 
+import java.util.Collection;
+
 public interface IGroupe {
 
 	/**
@@ -25,7 +27,17 @@ public interface IGroupe {
 	/**
 	 *  
 	 */
+	public abstract int getIdNiveau();
+
+	/**
+	 *  
+	 */
 	public abstract INiveau getNiveau();
+
+	/**
+	 *  
+	 */
+	public abstract Collection<IEtudiant> getEtudiant();
 
 	/**
 	 *  
@@ -50,6 +62,16 @@ public interface IGroupe {
 	/**
 	 *  
 	 */
+	public abstract void setIdNiveau(int idNiveau);
+
+	/**
+	 *  
+	 */
 	public abstract void setNiveau(INiveau niveau);
+
+	/**
+	 *  
+	 */
+	public abstract void setEtudiant(Collection<IEtudiant> etudiant);
 
 }

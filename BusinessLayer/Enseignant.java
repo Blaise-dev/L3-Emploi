@@ -60,4 +60,18 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 		
 	}
 
+
+	@Override
+	public String getCodeDepartement() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setCodeDepartement(String codeDepartement) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

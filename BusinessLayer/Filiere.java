@@ -10,8 +10,6 @@ public class Filiere implements IFiliere {
 
 	private String nomFil;
 
-	private Collection<Niveau> niveau;
-
 
 	/**
 	 * @see IFiliere#getLibelleFil()

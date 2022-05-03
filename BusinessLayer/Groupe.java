@@ -2,6 +2,7 @@ package BusinessLayer;
 
 import java.util.Collection;
 
+import BusinessLayer.InterfacesBusiness.IEtudiant;
 import BusinessLayer.InterfacesBusiness.IGroupe;
 import BusinessLayer.InterfacesBusiness.INiveau;
 
@@ -15,7 +16,11 @@ public class Groupe implements IGroupe {
 
 	private int effectifGrp;
 
+	private int idNiveau;
+
 	private Collection<SuiviCours> suiviCours;
+
+	private Collection<Etudiant> etudiant;
 
 	private Niveau niveau;
 
@@ -101,6 +106,34 @@ public class Groupe implements IGroupe {
 
 	@Override
 	public void setNiveau(INiveau niveau) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Collection<IEtudiant> getEtudiant() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setEtudiant(Collection<IEtudiant> etudiant) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int getIdNiveau() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void setIdNiveau(int idNiveau) {
 		// TODO Auto-generated method stub
 		
 	}

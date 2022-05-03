@@ -175,7 +175,12 @@ public class UpdateDAO implements IUpdateDAO {
 	 *  
 	 */
 	public void updEtudiant(IEtudiant etudiant) {
-
+		Requete req = new Requete();
+		req.executeUpdate(""
+				+ "UPDATE Etudiant "
+				+ "SET idGrp='"+etudiant.getIdGrp()+"',"
+						+ "WHERE matricule='"+etudiant.getMatricule()+"'"
+				+ "");
 	}
 
 

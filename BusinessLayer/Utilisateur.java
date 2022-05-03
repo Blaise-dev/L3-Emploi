@@ -38,7 +38,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getMatricule() {
-		return null;
+		return matricule;
 	}
 
 
@@ -56,7 +56,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getNom() {
-		return null;
+		return nom;
 	}
 
 
@@ -65,7 +65,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getPrenom() {
-		return null;
+		return prenom;
 	}
 
 
@@ -92,7 +92,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setMatricule(String matricule) {
-
+		this.matricule = matricule;
 	}
 
 
@@ -110,7 +110,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setNom(String nom) {
-
+		this.nom = nom;
 	}
 
 
@@ -119,7 +119,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setPrenom(String prenom) {
-
+		this.prenom = prenom;
 	}
 
 

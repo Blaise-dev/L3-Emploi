@@ -1,5 +1,7 @@
 package BusinessLayer.InterfacesBusiness;
 
+import java.util.Collection;
+
 public interface INiveau {
 
 	/**
@@ -16,6 +18,17 @@ public interface INiveau {
 	 *  
 	 */
 	public abstract String getNomNiv();
+
+	/**
+	 *  
+	 */
+	public abstract String getCodeFiliere();
+
+
+	/**
+	 *  
+	 */
+	public abstract Collection<IGroupe> getGroupe();
 
 	/**
 	 *  
@@ -40,6 +53,16 @@ public interface INiveau {
 	/**
 	 *  
 	 */
+	public abstract void setCodeFiliere(String codeFiliere);
+
+	/**
+	 *  
+	 */
 	public abstract void setFiliere(IFiliere filiere);
+
+	/**
+	 *  
+	 */
+	public abstract void setGroupe(Collection<IGroupe> groupe);
 
 }

@@ -3,6 +3,7 @@ package BusinessLayer;
 import java.util.Collection;
 
 import BusinessLayer.InterfacesBusiness.IFiliere;
+import BusinessLayer.InterfacesBusiness.IGroupe;
 import BusinessLayer.InterfacesBusiness.INiveau;
 
 public class Niveau implements INiveau {
@@ -13,9 +14,9 @@ public class Niveau implements INiveau {
 
 	private String nomNiv;
 
-	private Collection<Semestre> semestre;
+	private String codeFiliere;
 
-	private Groupe groupe;
+	private Collection<Groupe> groupe;
 
 	private Filiere filiere;
 
@@ -83,6 +84,34 @@ public class Niveau implements INiveau {
 
 	@Override
 	public void setFiliere(IFiliere filiere) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Collection<IGroupe> getGroupe() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setGroupe(Collection<IGroupe> groupe) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public String getCodeFiliere() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void setCodeFiliere(String codeFiliere) {
 		// TODO Auto-generated method stub
 		
 	}

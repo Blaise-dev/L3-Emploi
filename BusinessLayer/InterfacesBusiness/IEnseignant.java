@@ -14,6 +14,11 @@ public interface IEnseignant extends IUtilisateur {
 	/**
 	 *  
 	 */
+	public abstract String getCodeDepartement();
+
+	/**
+	 *  
+	 */
 	public IDepartement getDepartement();
 
 	/**
@@ -25,6 +30,11 @@ public interface IEnseignant extends IUtilisateur {
 	 *  
 	 */
 	public abstract void setGradeEns(String gradeEns);
+
+	/**
+	 *  
+	 */
+	public abstract void setCodeDepartement(String codeDepartement);
 
 	/**
 	 *  

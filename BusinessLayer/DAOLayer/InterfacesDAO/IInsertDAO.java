@@ -7,7 +7,7 @@ public interface IInsertDAO {
 	/**
 	 *  
 	 */
-	public abstract void insertLoginPass(String logon, String pass);
+	public abstract void insertUser(String logon, String pass);
 
 	public abstract void insertEtudiant(IEtudiant etudiant);
 

@@ -13,6 +13,8 @@ public class Semestre implements ISemestre {
 
 	private String nomSem;
 
+	private int idAnnee;
+
 	private Collection<SuiviCours> suiviCours;
 
 	private Annee annee;
@@ -77,6 +79,20 @@ public class Semestre implements ISemestre {
 
 	@Override
 	public void setAnnee(IAnnee annee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int getIdAnnee() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void setIdAnnee(int idAnnee) {
 		// TODO Auto-generated method stub
 		
 	}

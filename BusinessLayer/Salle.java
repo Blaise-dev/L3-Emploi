@@ -12,8 +12,6 @@ public class Salle implements ISalle {
 
 	private int capacite;
 
-	private Collection<SuiviCours> suiviCours;
-
 
 	/**
 	 * @see BusinessLayer.Salle#setLibelleSalle(String)

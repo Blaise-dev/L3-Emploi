@@ -10,7 +10,7 @@ public class InsertDAO implements IInsertDAO {
 	 * @see BusinessLayer.DAOLayer.IInsertDAO#insertLoginPass(string, String)
 	 *  
 	 */
-	public void insertLoginPass(String logon, String pass) {
+	public void insertUser(String logon, String pass) {
 
 	}
 

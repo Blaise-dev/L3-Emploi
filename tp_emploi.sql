@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 03 Mai 2022 à 08:04
+-- Généré le :  Mar 03 Mai 2022 à 18:09
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `tp_emploi`
 --
+CREATE DATABASE IF NOT EXISTS `tp_emploi` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `tp_emploi`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `administrateur`
 --
 
+DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
   `matricule` char(7) NOT NULL,
   PRIMARY KEY (`matricule`)
@@ -37,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `administrateur` (
 -- Structure de la table `annee`
 --
 
+DROP TABLE IF EXISTS `annee`;
 CREATE TABLE IF NOT EXISTS `annee` (
   `idAnnee` int(11) NOT NULL,
   `anneeDebut` varchar(10) DEFAULT NULL,
@@ -50,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `annee` (
 -- Structure de la table `departement`
 --
 
+DROP TABLE IF EXISTS `departement`;
 CREATE TABLE IF NOT EXISTS `departement` (
   `codeDepartement` varchar(10) NOT NULL,
   `nomDepartement` char(100) DEFAULT NULL,
@@ -62,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `departement` (
 -- Structure de la table `enseignant`
 --
 
+DROP TABLE IF EXISTS `enseignant`;
 CREATE TABLE IF NOT EXISTS `enseignant` (
   `matricule` char(7) NOT NULL,
   `gradeEns` varchar(20) DEFAULT NULL,
@@ -76,17 +82,13 @@ CREATE TABLE IF NOT EXISTS `enseignant` (
 -- Structure de la table `etudiant`
 --
 
+DROP TABLE IF EXISTS `etudiant`;
 CREATE TABLE IF NOT EXISTS `etudiant` (
   `matricule` char(7) NOT NULL,
-  PRIMARY KEY (`matricule`)
+  `idGrp` int(11) NOT NULL,
+  PRIMARY KEY (`matricule`),
+  KEY `FK_Etudiant_1` (`idGrp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `etudiant`
---
-
-INSERT INTO `etudiant` (`matricule`) VALUES
-('15P4574');
 
 -- --------------------------------------------------------
 
@@ -94,6 +96,7 @@ INSERT INTO `etudiant` (`matricule`) VALUES
 -- Structure de la table `fairecours`
 --
 
+DROP TABLE IF EXISTS `fairecours`;
 CREATE TABLE IF NOT EXISTS `fairecours` (
   `codeSalle` varchar(10) NOT NULL,
   `matricule` char(7) NOT NULL,
@@ -116,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `fairecours` (
 -- Structure de la table `filiere`
 --
 
+DROP TABLE IF EXISTS `filiere`;
 CREATE TABLE IF NOT EXISTS `filiere` (
   `codeFiliere` char(10) NOT NULL,
   `nomFiliere` char(10) DEFAULT NULL,
@@ -128,9 +132,12 @@ CREATE TABLE IF NOT EXISTS `filiere` (
 -- Structure de la table `groupe`
 --
 
+DROP TABLE IF EXISTS `groupe`;
 CREATE TABLE IF NOT EXISTS `groupe` (
   `idGrp` int(11) NOT NULL,
   `groupeClass` varchar(10) DEFAULT NULL,
+  `nomGroupe` varchar(100) NOT NULL,
+  `effectif` int(11) NOT NULL,
   `idNiveau` int(11) NOT NULL,
   PRIMARY KEY (`idGrp`),
   KEY `FK_Groupe_0` (`idNiveau`)
@@ -142,6 +149,7 @@ CREATE TABLE IF NOT EXISTS `groupe` (
 -- Structure de la table `matiere`
 --
 
+DROP TABLE IF EXISTS `matiere`;
 CREATE TABLE IF NOT EXISTS `matiere` (
   `codeMatiere` varchar(10) NOT NULL,
   `intituleMatiere` char(200) DEFAULT NULL,
@@ -154,6 +162,7 @@ CREATE TABLE IF NOT EXISTS `matiere` (
 -- Structure de la table `niveau`
 --
 
+DROP TABLE IF EXISTS `niveau`;
 CREATE TABLE IF NOT EXISTS `niveau` (
   `idNiveau` int(11) NOT NULL,
   `codeNiveau` char(10) DEFAULT NULL,
@@ -169,6 +178,7 @@ CREATE TABLE IF NOT EXISTS `niveau` (
 -- Structure de la table `salle`
 --
 
+DROP TABLE IF EXISTS `salle`;
 CREATE TABLE IF NOT EXISTS `salle` (
   `codeSalle` varchar(10) NOT NULL,
   `nomSalle` varchar(40) DEFAULT NULL,
@@ -183,6 +193,7 @@ CREATE TABLE IF NOT EXISTS `salle` (
 -- Structure de la table `semestre`
 --
 
+DROP TABLE IF EXISTS `semestre`;
 CREATE TABLE IF NOT EXISTS `semestre` (
   `idSem` int(11) NOT NULL,
   `codeSemestre` char(10) DEFAULT NULL,
@@ -198,9 +209,9 @@ CREATE TABLE IF NOT EXISTS `semestre` (
 -- Structure de la table `utilisateur`
 --
 
+DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `matricule` char(7) NOT NULL,
-  `nomUsr` varchar(100) DEFAULT NULL,
   `mdp` varchar(100) DEFAULT NULL,
   `nom` varchar(100) DEFAULT NULL,
   `prenom` varchar(100) DEFAULT NULL,
@@ -213,10 +224,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Contenu de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`matricule`, `nomUsr`, `mdp`, `nom`, `prenom`, `email`, `dateNais`) VALUES
-('15P4574', 'Alex', NULL, 'Chris', 'Alexy', NULL, NULL),
-('17D5748', 'Landry', 'land56', 'Aurel', 'Yann', 'landryyan12@yahoo.fr', '2000-02-12'),
-('19Q2348', 'Landry', 'land56', 'Aurel', 'Yann', 'landryyan12@yahoo.fr', '2000-02-12');
+INSERT INTO `utilisateur` (`matricule`, `mdp`, `nom`, `prenom`, `email`, `dateNais`) VALUES
+('15P4574', NULL, 'Chris', 'Alexy', NULL, NULL),
+('17D5748', 'land56', 'Aurel', 'Yann', 'landryyan12@yahoo.fr', '2000-02-12'),
+('19Q2348', 'land56', 'Aurel', 'Yann', 'landryyan12@yahoo.fr', '2000-02-12');
 
 --
 -- Contraintes pour les tables exportées
@@ -239,6 +250,7 @@ ALTER TABLE `enseignant`
 -- Contraintes pour la table `etudiant`
 --
 ALTER TABLE `etudiant`
+  ADD CONSTRAINT `FK_Etudiant_1` FOREIGN KEY (`idGrp`) REFERENCES `groupe` (`idGrp`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_Etudiant_0` FOREIGN KEY (`matricule`) REFERENCES `utilisateur` (`matricule`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

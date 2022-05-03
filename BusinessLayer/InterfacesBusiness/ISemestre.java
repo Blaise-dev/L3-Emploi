@@ -11,6 +11,8 @@ public interface ISemestre {
 	 */
 	public abstract String getNomSem();
 
+	public abstract int getIdAnnee();
+
 	/**
 	 *  
 	 */
@@ -24,6 +26,8 @@ public interface ISemestre {
 	 *  
 	 */
 	public abstract void setNomSem(String nomSem);
+
+	public abstract void setIdAnnee(int idAnnee);
 
 	/**
 	 *  

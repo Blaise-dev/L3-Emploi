@@ -8,10 +8,10 @@ import java.sql.SQLException;
 public class Requete {
 
 	static protected ResultSet rs = null;
-	static protected String host = "localhost";
-	static protected String bd = "tp_emploi";
-	static protected String user = "root";
-	static protected String pass = "";
+	static protected final String host = "localhost";
+	static protected final String bd = "tp_emploi";
+	static protected final String user = "root";
+	static protected final String pass = "";
 	static protected Connection connection = null;
 	
 	/**
