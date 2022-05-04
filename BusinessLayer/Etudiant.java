@@ -17,36 +17,33 @@ public class Etudiant extends Utilisateur implements IEtudiant {
 
 	@Override
 	public int getIdGrp() {
-		// TODO Auto-generated method stub
-		return 0;
+		return idGrp;
 	}
 
 	@Override
 	public void setIdGrp(int idGrp) {
-		// TODO Auto-generated method stub
+		this.idGrp = idGrp;
 		
 	}
 
 	@Override
 	public IGroupe getGroupe() {
-		// TODO Auto-generated method stub
-		return null;
+		return groupe;
 	}
 
 	@Override
 	public void setGroupe(IGroupe groupe) {
-		// TODO Auto-generated method stub
+		this.groupe = groupe;
 	}
 
 	@Override
 	public List<ISuiviCours> getSuiviCours() {
-		// TODO Auto-generated method stub
-		return null;
+		return suiviCours;
 	}
 
 	@Override
 	public void setSuiviCours(IEtudiant etudiant) {
-		// TODO Auto-generated method stub
+		this.etudiant = etudiant;
 		
 	}
 

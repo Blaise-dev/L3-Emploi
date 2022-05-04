@@ -19,7 +19,7 @@ public class Departement implements IDepartement {
 	 * @see IDepartement#getCodeDepart()
 	 */
 	public String getCodeDepart() {
-		return null;
+		return codeDepart;
 	}
 
 
@@ -28,7 +28,7 @@ public class Departement implements IDepartement {
 	 *  
 	 */
 	public String getNomDepart() {
-		return null;
+		return nomDepart;
 	}
 
 
@@ -36,6 +36,7 @@ public class Departement implements IDepartement {
 	 * @see IDepartement#setCodeDepart(String)
 	 */
 	public void setCodeDepart(String codeDepart) {
+		this.codeDepart = codeDepart;
 
 	}
 
@@ -45,6 +46,7 @@ public class Departement implements IDepartement {
 	 *  
 	 */
 	public void setNomDepart(String nomDepart) {
+		this.nomDepart = nomDepart;
 
 	}
 

@@ -18,7 +18,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public String getCodeSalle() {
-		return null;
+		return codeSalle;
 	}
 
 	/**
@@ -26,7 +26,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public String getNomSalle() {
-		return null;
+		return nomSalle;
 	}
 
 
@@ -35,7 +35,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public String getType() {
-		return null;
+		return type;
 	}
 
 
@@ -44,7 +44,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public String getCapacite() {
-		return null;
+		return capacite;
 	}
 
 
@@ -53,6 +53,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public void setCodeSalle(String codeSalle) {
+		this.codeSalle = codeSalle;
 
 	}
 
@@ -62,6 +63,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public void setNomSalle(String nomSalle) {
+		this.nomSalle = nomSalle;
 
 	}
 
@@ -70,6 +72,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public void setType(String type) {
+		this.type = type;
 
 	}
 
@@ -79,6 +82,7 @@ public class Salle implements ISalle {
 	 *  
 	 */
 	public void setCapacite(String capacite) {
+		this.capacite = capacite;
 
 	}
 

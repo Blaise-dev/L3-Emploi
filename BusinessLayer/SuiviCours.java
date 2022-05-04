@@ -33,7 +33,7 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public String getHeureDebut() {
-		return null;
+		return heureDebut;
 	}
 
 
@@ -42,7 +42,7 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public String getHeureFin() {
-		return null;
+		return heureFin;
 	}
 
 
@@ -51,7 +51,7 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public String getJour() {
-		return null;
+		return jour;
 	}
 
 
@@ -69,6 +69,7 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public void setHeureFin(String heure) {
+		this.heureFin = heureFin;
 
 	}
 
@@ -78,76 +79,73 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public void setJour(String jour) {
+		this.jour = jour;
 
 	}
 
 
 	@Override
 	public IMatiere getMatiere() {
-		// TODO Auto-generated method stub
-		return null;
+		return matiere;
 	}
 
 
 	@Override
 	public ISalle getSalle() {
-		// TODO Auto-generated method stub
-		return null;
+		return salle;
 	}
 
 
 	@Override
 	public ISemestre getSemestre() {
-		// TODO Auto-generated method stub
-		return null;
+		return semestre;
 	}
 
 
 	@Override
 	public IGroupe getGroupe() {
-		// TODO Auto-generated method stub
-		return null;
+		return groupe;
 	}
 
 
 	@Override
 	public IEnseignant getEnseignant() {
 		// TODO Auto-generated method stub
-		return null;
+		return enseignant;
 	}
 
 
 	@Override
 	public void setMatiere(IMatiere matiere) {
-		// TODO Auto-generated method stub
+		this.matiere = matiere;
 		
 	}
 
 
 	@Override
 	public void setSalle(ISalle salle) {
-		// TODO Auto-generated method stub
+		this.salle = salle;
 		
 	}
 
 
 	@Override
 	public void setSemestre(ISemestre semestre) {
-		// TODO Auto-generated method stub
+		this.semestre = semestre;
 		
 	}
 
 
 	@Override
 	public void setGroupe(IGroupe groupe) {
-		// TODO Auto-generated method stub
+		this.groupe =groupe;
 		
 	}
 
 
 	@Override
 	public void setEnseignant(IEnseignant enseignant) {
-		// TODO Auto-generated method stub
+		this.enseignant = enseignant;
 		
 	}
 

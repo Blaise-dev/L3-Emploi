@@ -30,7 +30,7 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public String getIdGrp() {
-		return null;
+		return idGrp;
 	}
 
 
@@ -39,7 +39,7 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public String getCodeGrp() {
-		return null;
+		return codeGrp;
 	}
 
 
@@ -48,7 +48,7 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public String getNomGrp() {
-		return null;
+		return nomGrp;
 	}
 
 
@@ -57,7 +57,7 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public int getEffectifGrp() {
-		return 0;
+		return effectifGrp;
 	}
 
 
@@ -66,6 +66,7 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public void setIdGrp(String idGrp) {
+		this.idGrp = idGrp;
 
 	}
 
@@ -75,7 +76,7 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public void setCodeGrp(String codeGrp) {
-
+		this.codeGrp = codeGrp;
 	}
 
 
@@ -84,6 +85,7 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public void setNomGrp(String nomGrp) {
+		this.nomGrp = nomGrp;
 
 	}
 
@@ -93,34 +95,33 @@ public class Groupe implements IGroupe {
 	 *  
 	 */
 	public void setEffectifGrp(int effectifGrp) {
-
+		this.effectifGrp = effectifGrp;
 	}
 
 
 	@Override
 	public INiveau getNiveau() {
 		// TODO Auto-generated method stub
-		return null;
+		return niveau;
 	}
 
 
 	@Override
 	public void setNiveau(INiveau niveau) {
-		// TODO Auto-generated method stub
+		this.niveau =niveau;
 		
 	}
 
 
 	@Override
 	public Collection<IEtudiant> getEtudiant() {
-		// TODO Auto-generated method stub
-		return null;
+		return etudiant;
 	}
 
 
 	@Override
 	public void setEtudiant(Collection<IEtudiant> etudiant) {
-		// TODO Auto-generated method stub
+		 this.etudiant = etudiant;
 		
 	}
 
@@ -134,7 +135,7 @@ public class Groupe implements IGroupe {
 
 	@Override
 	public void setIdNiveau(int idNiveau) {
-		// TODO Auto-generated method stub
+		this.idNiveau = idNiveau;
 		
 	}
 

@@ -26,7 +26,7 @@ public class Niveau implements INiveau {
 	 *  
 	 */
 	public int getIdNiv() {
-		return 0;
+		return idNiv;
 	}
 
 
@@ -35,7 +35,7 @@ public class Niveau implements INiveau {
 	 *  
 	 */
 	public String getCodeNiv() {
-		return null;
+		return codeNiv;
 	}
 
 
@@ -44,7 +44,7 @@ public class Niveau implements INiveau {
 	 *  
 	 */
 	public String getNomNiv() {
-		return null;
+		return nomNiv;
 	}
 
 
@@ -53,6 +53,7 @@ public class Niveau implements INiveau {
 	 *  
 	 */
 	public void setIdNiv(int idNiv) {
+		this.idNiv = idNiv;
 
 	}
 
@@ -62,7 +63,7 @@ public class Niveau implements INiveau {
 	 *  
 	 */
 	public void setCodeNiv(String codeNiv) {
-
+		this.codeNiv = codeNiv;
 	}
 
 
@@ -71,6 +72,7 @@ public class Niveau implements INiveau {
 	 *  
 	 */
 	public void setNomNiv(String nomNiv) {
+		this.nomNiv = nomNiv;
 
 	}
 
@@ -78,41 +80,39 @@ public class Niveau implements INiveau {
 	@Override
 	public IFiliere getFiliere() {
 		// TODO Auto-generated method stub
-		return null;
+		return filiere;
 	}
 
 
 	@Override
 	public void setFiliere(IFiliere filiere) {
-		// TODO Auto-generated method stub
+		this.filiere = filiere;
 		
 	}
 
 
 	@Override
 	public Collection<IGroupe> getGroupe() {
-		// TODO Auto-generated method stub
-		return null;
+		return groupe;
 	}
 
 
 	@Override
 	public void setGroupe(Collection<IGroupe> groupe) {
-		// TODO Auto-generated method stub
+		this.groupe = groupe;
 		
 	}
 
 
 	@Override
 	public String getCodeFiliere() {
-		// TODO Auto-generated method stub
-		return null;
+		return codeFiliere;
 	}
 
 
 	@Override
 	public void setCodeFiliere(String codeFiliere) {
-		// TODO Auto-generated method stub
+		this.codeFiliere = codeFiliere;
 		
 	}
 

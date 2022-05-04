@@ -38,7 +38,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getMatricule() {
-		return null;
+		return matricule;
 	}
 
 
@@ -47,7 +47,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getMdp() {
-		return null;
+		return mdp;
 	}
 
 
@@ -56,7 +56,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getNom() {
-		return null;
+		return nom;
 	}
 
 
@@ -65,7 +65,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getPrenom() {
-		return null;
+		return prenom;
 	}
 
 
@@ -74,7 +74,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getEmail() {
-		return null;
+		return email;
 	}
 
 
@@ -83,7 +83,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public String getDateNais() {
-		return null;
+		return dateNais;
 	}
 
 
@@ -92,6 +92,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setMatricule(String matricule) {
+		this.matricule = matricule;
 
 	}
 
@@ -101,6 +102,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setMdp(String mdp) {
+		this.mdp = mdp;
 
 	}
 
@@ -110,6 +112,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setNom(String nom) {
+		this.nom = nom;
 
 	}
 
@@ -119,6 +122,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 
 	}
 
@@ -128,6 +132,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setEmail(String email) {
+		this.email = email;
 
 	}
 
@@ -137,6 +142,7 @@ public class Utilisateur implements IUtilisateur {
 	 *  
 	 */
 	public void setDateNais(String dateNais) {
+		this.dateNais = dateNais;
 
 	}
 

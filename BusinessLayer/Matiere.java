@@ -20,7 +20,7 @@ public class Matiere implements IMatiere {
 	 *  
 	 */
 	public String getCodeMat() {
-		return null;
+		return codeMat;
 	}
 
 
@@ -29,7 +29,7 @@ public class Matiere implements IMatiere {
 	 *  
 	 */
 	public String getIntituleMat() {
-		return null;
+		return intituleMat;
 	}
 
 
@@ -38,6 +38,7 @@ public class Matiere implements IMatiere {
 	 *  
 	 */
 	public void setCodeMat(String codeMat) {
+		this.codeMat = codeMat;
 
 	}
 
@@ -47,6 +48,7 @@ public class Matiere implements IMatiere {
 	 *  
 	 */
 	public void setIntituleMat(String intituleMat) {
+		this.intituleMat = intituleMat;
 
 	}
 

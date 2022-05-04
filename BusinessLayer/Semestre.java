@@ -35,7 +35,7 @@ public class Semestre implements ISemestre {
 	 *  
 	 */
 	public String getNomSem() {
-		return null;
+		return nomSem;
 	}
 
 
@@ -43,6 +43,7 @@ public class Semestre implements ISemestre {
 	 * @see ISemestre#setCodeSem(String)
 	 */
 	public void setCodeSem(String codeSem) {
+		this.codeSem = codeSem;
 
 	}
 
@@ -52,6 +53,7 @@ public class Semestre implements ISemestre {
 	 *  
 	 */
 	public void setNomSem(String nomSem) {
+		this.nomSem = nomSem;
 
 	}
 
@@ -59,41 +61,40 @@ public class Semestre implements ISemestre {
 	@Override
 	public int getIdSem() {
 		// TODO Auto-generated method stub
-		return 0;
+		return idSem;
 	}
 
 
 	@Override
 	public IAnnee getAnnee() {
 		// TODO Auto-generated method stub
-		return null;
+		return annee;
 	}
 
 
 	@Override
 	public void setIdSem(int idSem) {
-		// TODO Auto-generated method stub
+		this.idSem = idSem;
 		
 	}
 
 
 	@Override
 	public void setAnnee(IAnnee annee) {
-		// TODO Auto-generated method stub
+		this.annee = annee;
 		
 	}
 
 
 	@Override
 	public int getIdAnnee() {
-		// TODO Auto-generated method stub
-		return 0;
+		return idAnnee;
 	}
 
 
 	@Override
 	public void setIdAnnee(int idAnnee) {
-		// TODO Auto-generated method stub
+		this.idAnnee = idAnnee;
 		
 	}
 

@@ -20,7 +20,7 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 	 *  
 	 */
 	public String getGradeEns() {
-		return null;
+		return gradeEns;
 	}
 
 
@@ -29,34 +29,33 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 	 *  
 	 */
 	public void setGradeEns(String gradeEns) {
+		this.gradeEns = gradeEns;
 
 	}
 
 
 	@Override
 	public IDepartement getDepartement() {
-		// TODO Auto-generated method stub
-		return null;
+		return departement;
 	}
 
 
 	@Override
 	public void setDepartement(IDepartement dpt) {
-		// TODO Auto-generated method stub
+		this.departement = dpt;
 		
 	}
 
 
 	@Override
 	public List<ISuiviCours> getSuiviCours() {
-		// TODO Auto-generated method stub
-		return null;
+		return suiviCours;
 	}
 
 
 	@Override
 	public void setSuiviCours(List<ISuiviCours> suiviCours) {
-		// TODO Auto-generated method stub
+		this.suiviCours = suiviCours;
 		
 	}
 
@@ -64,13 +63,13 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 	@Override
 	public String getCodeDepartement() {
 		// TODO Auto-generated method stub
-		return null;
+		return codeDepartement;
 	}
 
 
 	@Override
 	public void setCodeDepartement(String codeDepartement) {
-		// TODO Auto-generated method stub
+		this.codeDepartement = codeDepartement;
 		
 	}
 

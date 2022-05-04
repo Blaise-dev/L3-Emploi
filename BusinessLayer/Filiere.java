@@ -16,7 +16,7 @@ public class Filiere implements IFiliere {
 	 *  
 	 */
 	public String getCodeFil() {
-		return null;
+		return codeFil;
 	}
 
 
@@ -25,7 +25,7 @@ public class Filiere implements IFiliere {
 	 *  
 	 */
 	public String getNomFil() {
-		return null;
+		return nomFil;
 	}
 
 
@@ -34,6 +34,7 @@ public class Filiere implements IFiliere {
 	 *  
 	 */
 	public void setCodeFil(String codeFil) {
+		this.codeFil = codeFil;
 
 	}
 
@@ -43,6 +44,7 @@ public class Filiere implements IFiliere {
 	 *  
 	 */
 	public void setNomFil(String nomFil) {
+		this.nomFil = nomFil;
 
 	}
 

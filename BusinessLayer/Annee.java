@@ -16,7 +16,7 @@ public class Annee implements IAnnee {
 	 *  
 	 */
 	public String getAnneeDebut() {
-		return null;
+		return anneeDebut;
 	}
 
 
@@ -25,7 +25,7 @@ public class Annee implements IAnnee {
 	 *  
 	 */
 	public String getAnneeFin() {
-		return null;
+		return anneeFin;
 	}
 
 
@@ -34,6 +34,7 @@ public class Annee implements IAnnee {
 	 *  
 	 */
 	public void setAnneeDebut(String annee) {
+		this.anneeDebut = annee;
 
 	}
 
@@ -43,20 +44,20 @@ public class Annee implements IAnnee {
 	 *  
 	 */
 	public void setAnneeFin(String annee) {
+		this.anneeFin = annee;
 
 	}
 
 
 	@Override
 	public int getIdAnnee() {
-		// TODO Auto-generated method stub
-		return 0;
+		return idAnnee;
 	}
 
 
 	@Override
 	public void setIdAnnee(int idAnnee) {
-		// TODO Auto-generated method stub
+		this.idAnnee = idAnnee;
 		
 	}
 
