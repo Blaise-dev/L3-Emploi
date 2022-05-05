@@ -3,6 +3,8 @@ package BusinessLayer;
 import BusinessLayer.InterfacesBusiness.IAnnee;
 
 public class Annee implements IAnnee {
+	
+	private int idAnnee;
 
 	private String anneeDebut;
 
