@@ -9,7 +9,7 @@ public interface IInsertDAO {
 
 	public abstract void insertSalle(ISalle salle);
 
-	public abstract void insertFliere(IFiliere filiere);
+	public abstract void insertFiliere(IFiliere filiere);
 
 	public abstract void insertGroupe(IGroupe grp);
 

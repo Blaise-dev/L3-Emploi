@@ -14,7 +14,7 @@ public class InsertDAO implements IInsertDAO {
 
 		Requete insertRequest = new Requete();
 
-		insertRequest.executeQuery("INSERT INTO Utilisateur VALUES ('" +
+		insertRequest.executeUpdate("INSERT INTO Utilisateur VALUES ('" +
 				user.getMatricule() + "', '" +
 				user.getMdp() + "','" +
 				user.getNom() + "', '" +
@@ -30,7 +30,7 @@ public class InsertDAO implements IInsertDAO {
 	public void insertSuivi(ISuiviCours suivi) {
 
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO fairecours VALUES('" +
+		insRequest.executeUpdate("INSERT INTO fairecours VALUES('" +
 				suivi.getSalle().getCodeSalle() + "', '" +
 				suivi.getEnseignant().getMatricule() + "', '" +
 				suivi.getMatiere().getCodeMat() + "', '" +
@@ -48,7 +48,7 @@ public class InsertDAO implements IInsertDAO {
 	public void insertEtudiant(IEtudiant etudiant) {
 
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO etudiant VALUES('" +
+		insRequest.executeUpdate("INSERT INTO etudiant VALUES('" +
 				etudiant.getMatricule() + "', '" +
 				etudiant.getGroupe().getIdGrp() + "')");
 
@@ -60,7 +60,7 @@ public class InsertDAO implements IInsertDAO {
 	public void insertEnseignant(IEnseignant ens) {
 
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO enseignant VALUE('" +
+		insRequest.executeUpdate("INSERT INTO enseignant VALUE('" +
 				ens.getMatricule() + "', '" +
 				ens.getGradeEns() + "', '" +
 				ens.getDepartement().getCodeDepart()+"')");
@@ -72,7 +72,7 @@ public class InsertDAO implements IInsertDAO {
 		
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO salle VALUES('" +
+		insRequest.executeUpdate("INSERT INTO salle VALUES('" +
 				salle.getCodeSalle() + "', '" +
 				salle.getNomSalle() + "', '" +
 				salle.getType() + "', " +
@@ -81,22 +81,23 @@ public class InsertDAO implements IInsertDAO {
 	}
 
 	@Override
-	public void insertFliere(IFiliere filiere) {
+	public void insertFiliere(IFiliere filiere) {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO filiere VALUES('" +
+		insRequest.executeUpdate("INSERT INTO filiere VALUES('" +
 				filiere.getCodeFil() + "', '" +
 				filiere.getNomFil() + "')");
-		
+
 	}
+	
 
 	@Override
 	public void insertGroupe(IGroupe grp) {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO groupe VALUES(" +
+		insRequest.executeUpdate("INSERT INTO groupe VALUES(" +
 				grp.getCodeGrp() + ", '" +
 				grp.getNomGrp() + "', " +
 				grp.getEffectifGrp() + ", " +
@@ -109,7 +110,7 @@ public class InsertDAO implements IInsertDAO {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO niveau VALUES(" +
+		insRequest.executeUpdate("INSERT INTO niveau VALUES(" +
 				nivveau.getIdNiv() + ", '" +
 				nivveau.getCodeNiv() + "', '" +
 				nivveau.getNomNiv() + "', '" +
@@ -122,9 +123,9 @@ public class InsertDAO implements IInsertDAO {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO semestre VALUES(" +
-				semestre.getIdSem() + ",'"
-				+ semestre.getCodeSem() + "', '" +
+		insRequest.executeUpdate("INSERT INTO semestre VALUES(" +
+				semestre.getIdSem() + ",'" +
+				semestre.getCodeSem() + "', '" +
 				semestre.getNomSem() + "'," +
 				semestre.getAnnee().getIdAnnee()+")");
 		
@@ -135,7 +136,7 @@ public class InsertDAO implements IInsertDAO {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO annee VALUES(" +
+		insRequest.executeUpdate("INSERT INTO annee VALUES(" +
 				annee.getIdAnnee() + ", '" +
 				annee.getAnneeDebut() + "', '" +
 				annee.getAnneeFin()+"')");
@@ -147,7 +148,7 @@ public class InsertDAO implements IInsertDAO {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO matiere VALUES('" +
+		insRequest.executeUpdate("INSERT INTO matiere VALUES('" +
 				matiere.getCodeMat() + "', '" +
 				matiere.getIntituleMat()+"')");
 		
@@ -158,7 +159,7 @@ public class InsertDAO implements IInsertDAO {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO departement VALUES('" +
+		insRequest.executeUpdate("INSERT INTO departement VALUES('" +
 				dpt.getCodeDepart() + "', '" +
 				dpt.getNomDepart()+"')");
 		
@@ -169,7 +170,7 @@ public class InsertDAO implements IInsertDAO {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
-		insRequest.executeQuery("INSERT INTO administrateur VALUES('"+admin.getMatricule()+"')");
+		insRequest.executeUpdate("INSERT INTO administrateur VALUES('"+admin.getMatricule()+"')");
 		
 	}
 
