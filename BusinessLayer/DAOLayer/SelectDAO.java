@@ -7,6 +7,21 @@ import BusinessLayer.InterfacesBusiness.*;
 
 public class SelectDAO implements ISelectDAO {
 
+	public int exist(String table, String colonne, String valeurColonne){
+
+		Requete request = new Requete();
+		int nbr = 0;
+
+		request.executeQuery(
+				"SELECT COUNT(*) nbr FROM " + table + " WHERE " + colonne + " = " + valeurColonne + "");
+		while (request.next()) {
+
+			nbr = Integer.parseInt(request.getString("nbr"));
+			
+		}
+		return nbr;
+	}
+
 	/**
 	 * @see BusinessLayer.DAOLayer.ISelectDAO#selPass(String)
 	 */
