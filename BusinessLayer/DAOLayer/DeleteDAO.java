@@ -132,7 +132,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM departement WHERE codeDepartement = '"+dpt.getCodeDepart()+"'");
+		delRequest.executeUpdate("DELETE * FROM departement WHERE codeDepartement = '" + dpt.getCodeDepart() + "'");
 		
 	}
 
@@ -142,7 +142,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM administrateur WHERE matricule = '"+admin.getMatricule()+"'");
+		delRequest.executeUpdate("DELETE * FROM administrateur WHERE matricule = '" + admin.getMatricule() + "'");
 		
 	}
 

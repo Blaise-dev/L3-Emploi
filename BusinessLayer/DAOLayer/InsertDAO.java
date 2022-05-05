@@ -1,5 +1,6 @@
 package BusinessLayer.DAOLayer;
 
+import BusinessLayer.Niveau;
 import BusinessLayer.DAOLayer.InterfacesDAO.*;
 import BusinessLayer.InterfacesBusiness.*;
 
@@ -110,6 +111,7 @@ public class InsertDAO implements IInsertDAO {
 
 		// TODO Auto-generated method stub
 		Requete insRequest = new Requete();
+		insertFiliere(nivveau.getFiliere());
 		insRequest.executeUpdate("INSERT INTO niveau VALUES(" +
 				nivveau.getIdNiv() + ", '" +
 				nivveau.getCodeNiv() + "', '" +
