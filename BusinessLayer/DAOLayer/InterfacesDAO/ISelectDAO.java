@@ -1,37 +1,40 @@
 package BusinessLayer.DAOLayer.InterfacesDAO;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import BusinessLayer.InterfacesBusiness.*;
 
 public interface ISelectDAO {
 
-	public abstract void selUser(IUtilisateur usr);
+	public void selUser(IUtilisateur usr);
 
-	public abstract void selSalle(ISalle salle);
+	public void selSalle(ISalle salle);
 
-	public abstract void selFiliere(IFiliere filiere);
+	public void selFiliere(IFiliere filiere);
 
-	public abstract void selGroupe(IGroupe groupe);
+	public void selGroupe(IGroupe groupe);
 
-	public abstract void selNiveau(INiveau niveau);
+	public void selNiveau(INiveau niveau);
 
-	public abstract void selSemestre(ISemestre semestre);
+	public void selSemestre(ISemestre semestre);
 
-	public abstract void selAnnee(IAnnee annee);
+	public void selAnnee(IAnnee annee);
 
-	public abstract void selMatiere(IMatiere matiere);
+	public void selMatiere(IMatiere matiere);
 
-	public abstract void selDepartement(IDepartement dpt);
+	public void selDepartement(IDepartement dpt);
 
-	public abstract void selEnseignant(IEnseignant ens);
+	public void selEnseignant(IEnseignant ens);
 
-	public abstract void selAdministrateur(IAdministrateur admin);
+	public void selAdministrateur(IAdministrateur admin);
 
-	public abstract void selEtudiant(IEtudiant etudiant);
+	public void selEtudiant(IEtudiant etudiant);
 
-	public List<?> selSuiviEtudiant(IEtudiant etudiant);
+	public ArrayList<HashMap<String, String>> selSuiviEtudiant(IEtudiant etudiant);
 
-	public List<?> selSuiviEnseignant(IEnseignant enseignant);
+	public ArrayList<HashMap<String, String>> selSuiviEnseignant(IEnseignant enseignant);
+
+	public boolean exist(String table, String colonne, String valeurColonne);
 
 }

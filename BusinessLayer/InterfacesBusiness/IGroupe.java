@@ -1,13 +1,13 @@
 package BusinessLayer.InterfacesBusiness;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 public interface IGroupe {
 
 	/**
 	 *  
 	 */
-	public abstract String getIdGrp();
+	public abstract int getIdGrp();
 
 	/**
 	 *  
@@ -37,12 +37,12 @@ public interface IGroupe {
 	/**
 	 *  
 	 */
-	public abstract Collection<IEtudiant> getEtudiant();
+	public abstract ArrayList<IEtudiant> getEtudiant();
 
 	/**
 	 *  
 	 */
-	public abstract void setIdGrp(String idGrp);
+	public abstract void setIdGrp(int idGrp);
 
 	/**
 	 *  
@@ -72,6 +72,6 @@ public interface IGroupe {
 	/**
 	 *  
 	 */
-	public abstract void setEtudiant(Collection<IEtudiant> etudiant);
+	public abstract void setEtudiant(ArrayList<IEtudiant> etudiant);
 
 }

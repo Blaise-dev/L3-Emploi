@@ -1,10 +1,10 @@
 package BusinessLayer;
 
-import java.util.Collection;
-
 import BusinessLayer.InterfacesBusiness.ISalle;
 
 public class Salle implements ISalle {
+
+	private String codeSalle;
 
 	private String nomSalle;
 
@@ -43,7 +43,7 @@ public class Salle implements ISalle {
 	 * @see BusinessLayer.Salle#getCapacite()
 	 *  
 	 */
-	public String getCapacite() {
+	public int getCapacite() {
 		return capacite;
 	}
 
@@ -81,7 +81,7 @@ public class Salle implements ISalle {
 	 * @see BusinessLayer.Salle#setCapacite(String)
 	 *  
 	 */
-	public void setCapacite(String capacite) {
+	public void setCapacite(int capacite) {
 		this.capacite = capacite;
 
 	}

@@ -1,6 +1,6 @@
 package BusinessLayer;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 import BusinessLayer.InterfacesBusiness.IDepartement;
 
@@ -10,9 +10,9 @@ public class Departement implements IDepartement {
 
 	private String nomDepart;
 
-	private Collection<Enseignant> enseignant;
+	private ArrayList<Enseignant> enseignant;
 
-	private Collection<Matiere> matiere;
+	private ArrayList<Matiere> matiere;
 
 
 	/**
@@ -48,6 +48,26 @@ public class Departement implements IDepartement {
 	public void setNomDepart(String nomDepart) {
 		this.nomDepart = nomDepart;
 
+	}
+
+
+	public ArrayList<Enseignant> getEnseignant() {
+		return enseignant;
+	}
+
+
+	public void setEnseignant(ArrayList<Enseignant> enseignant) {
+		this.enseignant = enseignant;
+	}
+
+
+	public ArrayList<Matiere> getMatiere() {
+		return matiere;
+	}
+
+
+	public void setMatiere(ArrayList<Matiere> matiere) {
+		this.matiere = matiere;
 	}
 
 }

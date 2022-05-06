@@ -1,7 +1,5 @@
 package BusinessLayer;
 
-import java.util.Collection;
-
 import BusinessLayer.InterfacesBusiness.IFiliere;
 
 public class Filiere implements IFiliere {

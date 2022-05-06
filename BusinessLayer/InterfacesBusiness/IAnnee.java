@@ -1,5 +1,7 @@
 package BusinessLayer.InterfacesBusiness;
 
+import BusinessLayer.Semestre;
+
 public interface IAnnee {
 
 	/**
@@ -31,5 +33,9 @@ public interface IAnnee {
 	 *  
 	 */
 	public abstract void setAnneeFin(String annee);
+
+	public Semestre getSemestre();
+
+	public void setSemestre(Semestre semestre);
 
 }

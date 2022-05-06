@@ -2,9 +2,12 @@ package BusinessLayer.InterfacesBusiness;
 
 public interface IUtilisateur {
 
-	public abstract boolean connecter(String login, String pass);
+	public static IUtilisateur connecter(String login, String pass) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	public abstract void deconnecter(String login, String pass);
+	public abstract void deconnecter();
 
 	/**
 	 *  

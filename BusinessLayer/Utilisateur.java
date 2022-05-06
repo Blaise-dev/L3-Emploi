@@ -20,15 +20,16 @@ public class Utilisateur implements IUtilisateur {
 	/**
 	 * @see IUtilisateur#connecter(String, String)
 	 */
-	public boolean connecter(String login, String pass) {
-		return true;
+	public IUtilisateur connecter(String login, String pass) {
+		IUtilisateur usr = null;
+		return usr;
 	}
 
 
 	/**
 	 * @see IUtilisateur#deconnecter(String, String)
 	 */
-	public void deconnecter(String login, String pass) {
+	public void deconnecter() {
 
 	}
 
