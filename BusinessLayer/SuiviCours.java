@@ -1,7 +1,5 @@
 package BusinessLayer;
 
-import java.util.Collection;
-
 import BusinessLayer.InterfacesBusiness.IEnseignant;
 import BusinessLayer.InterfacesBusiness.IGroupe;
 import BusinessLayer.InterfacesBusiness.IMatiere;
@@ -17,15 +15,15 @@ public class SuiviCours implements ISuiviCours {
 
 	private String jour;
 
-	private Matiere matiere;
+	private IMatiere matiere;
 
-	private Enseignant enseignant;
+	private IEnseignant enseignant;
 
-	private Salle salle;
+	private ISalle salle;
 
-	private Groupe groupe;
+	private IGroupe groupe;
 
-	private Semestre semestre;
+	private ISemestre semestre;
 
 
 	/**
@@ -60,7 +58,7 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public void setHeureDebut(String heure) {
-
+		this.heureFin = heure;
 	}
 
 
@@ -69,7 +67,7 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public void setHeureFin(String heure) {
-		this.heureFin = heureFin;
+		this.heureFin = heure;
 
 	}
 

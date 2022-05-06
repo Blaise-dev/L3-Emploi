@@ -1,7 +1,5 @@
 package BusinessLayer;
 
-import java.util.Collection;
-
 import BusinessLayer.InterfacesBusiness.IAnnee;
 import BusinessLayer.InterfacesBusiness.ISemestre;
 
@@ -15,18 +13,14 @@ public class Semestre implements ISemestre {
 
 	private int idAnnee;
 
-	private Collection<SuiviCours> suiviCours;
-
-	private Annee annee;
-
-	private Collection<Niveau> niveau;
+	private IAnnee annee;
 
 
 	/**
 	 * @see ISemestre#getCodeSem()
 	 */
 	public String getCodeSem() {
-		return null;
+		return codeSem;
 	}
 
 

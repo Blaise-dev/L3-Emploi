@@ -7,42 +7,42 @@ public class DeleteDAO implements IDeleteDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IDeleteDAO#delSuivi(ISuiviCours)
+	 * @see projet.BusinessLayer.DAOLayer.IDeleteDAO#delSuivi(ISuiviCours)
 	 */
 	public void delSuivi(ISuiviCours suivi) {
 
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM fairecours WHERE codeSalle = '" +
-				suivi.getSalle().getCodeSalle() + "', '" +
-				suivi.getEnseignant().getMatricule() + "', '" +
-				suivi.getMatiere().getCodeMat() + "', '" +
-				suivi.getGroupe().getIdGrp() + "', '" +
-				suivi.getSemestre().getIdSem() + "', '" +
-				suivi.getJour() + "', '" +
-				suivi.getHeureDebut() + "', '" +
+		delRequest.executeUpdate("DELETE FROM fairecours WHERE codeSalle = '" +
+				suivi.getSalle().getCodeSalle() + "' AND matricule = '" +
+				suivi.getEnseignant().getMatricule() + "' AND codeMat = '" +
+				suivi.getMatiere().getCodeMat() + "' AND idGrp = " +
+				suivi.getGroupe().getIdGrp() + " AND idSem = " +
+				suivi.getSemestre().getIdSem() + " AND jour = '" +
+				suivi.getJour() + "' AND heureDebut = '" +
+				suivi.getHeureDebut() + "' AND heureFin = '" +
 				suivi.getHeureFin()+"'");
 
 	}
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IDeleteDAO#delEnseignant(BusinessLayer.IEnseignant)
+	 * @see projet.BusinessLayer.DAOLayer.IDeleteDAO#delEnseignant(projet.BusinessLayer.IEnseignant)
 	 */
 	public void delEnseignant(IEnseignant ens) {
 
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM enseignant WHERE matricule = '"+ens.getMatricule()+"'");
+		delRequest.executeUpdate("DELETE FROM enseignant WHERE matricule = '"+ens.getMatricule()+"'");
 
 	}
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IDeleteDAO#delEtudiant(IEtudiant)
+	 * @see projet.BusinessLayer.DAOLayer.IDeleteDAO#delEtudiant(IEtudiant)
 	 */
 	public void delEtudiant(IEtudiant etudiant) {
 
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM etudian WHERE matricule = '"+etudiant.getMatricule()+"'");
+		delRequest.executeUpdate("DELETE FROM etudiant WHERE matricule = '"+etudiant.getMatricule()+"'");
 
 	}
 
@@ -52,7 +52,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM utilisateur WHERE matricule = '" + usr.getMatricule() + "'");
+		delRequest.executeUpdate("DELETE FROM utilisateur WHERE matricule = '" + usr.getMatricule() + "'");
 
 	}
 
@@ -62,7 +62,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM salle WHERE codeSalle = '"+salle.getCodeSalle()+"' ");
+		delRequest.executeUpdate("DELETE FROM salle WHERE codeSalle = '"+salle.getCodeSalle()+"' ");
 		
 	}
 
@@ -72,7 +72,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM filiere WHERE codeFiliere = '"+filiere.getCodeFil()+"'");
+		delRequest.executeUpdate("DELETE FROM filiere WHERE codeFiliere = '"+filiere.getCodeFil()+"'");
 		
 	}
 
@@ -82,17 +82,17 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM groupe WHERE idGrp = '"+grp.getCodeGrp()+"'");
+		delRequest.executeUpdate("DELETE FROM groupe WHERE idGrp = '"+grp.getCodeGrp()+"'");
 		
 	}
 
 
 	@Override
-	public void delNiveau(INiveau nivveau) {
+	public void delNiveau(INiveau niveau) {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM niveau WHERE idNiveau = " + nivveau.getIdNiv());
+		delRequest.executeUpdate("DELETE FROM niveau WHERE idNiveau = " + niveau.getIdNiv());
 		
 	}
 
@@ -102,7 +102,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * semestre WHERE idSem = " + semestre.getIdSem());
+		delRequest.executeUpdate("DELETE FROM semestre WHERE idSem = " + semestre.getIdSem());
 		
 	}
 
@@ -112,7 +112,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM annee WHERE idAnnee = " +annee.getIdAnnee());
+		delRequest.executeUpdate("DELETE FROM annee WHERE idAnnee = " +annee.getIdAnnee());
 		
 	}
 
@@ -122,7 +122,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM matiere WHERE codeMatiere = '"+ matiere.getCodeMat() +"'");
+		delRequest.executeUpdate("DELETE FROM matiere WHERE codeMatiere = '"+ matiere.getCodeMat() +"'");
 		
 	}
 
@@ -132,7 +132,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM departement WHERE codeDepartement = '" + dpt.getCodeDepart() + "'");
+		delRequest.executeUpdate("DELETE FROM departement WHERE codeDepartement = '" + dpt.getCodeDepart() + "'");
 		
 	}
 
@@ -142,7 +142,7 @@ public class DeleteDAO implements IDeleteDAO {
 
 		// TODO Auto-generated method stub
 		Requete delRequest = new Requete();
-		delRequest.executeUpdate("DELETE * FROM administrateur WHERE matricule = '" + admin.getMatricule() + "'");
+		delRequest.executeUpdate("DELETE FROM administrateur WHERE matricule = '" + admin.getMatricule() + "'");
 		
 	}
 

@@ -42,6 +42,6 @@ public interface IEnseignant extends IUtilisateur {
 	/**
 	 *  
 	 */
-	public void setSuiviCours(List<ISuiviCours> suiviCours);
+	public void setSuiviCours();
 
 }

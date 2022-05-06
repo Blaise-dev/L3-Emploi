@@ -7,7 +7,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.IUpdateDAO#updPass(IUtilisateur)
+	 * @see projet.BusinessLayer.IUpdateDAO#updPass(IUtilisateur)
 	 *  
 	 */
 	public void updUser(IUtilisateur usr) {
@@ -26,7 +26,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updSalle(ISalle)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updSalle(ISalle)
 	 */
 	public void updSalle(ISalle salle) {
 		Requete req = new Requete();
@@ -41,7 +41,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updFiliere(IFiliere)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updFiliere(IFiliere)
 	 *  
 	 */
 	public void updFiliere(IFiliere filiere) {
@@ -55,7 +55,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updGroupe(IGroupe, INiveau)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updGroupe(IGroupe, INiveau)
 	 *  
 	 */
 	public void updGroupe(IGroupe groupe) {
@@ -72,7 +72,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updNiveau(INiveau)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updNiveau(INiveau)
 	 *  
 	 */
 	public void updNiveau(INiveau niveau) {
@@ -88,7 +88,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updSemestre(ISemestre)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updSemestre(ISemestre)
 	 *  
 	 */
 	public void updSemestre(ISemestre semestre) {
@@ -104,7 +104,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updAnnee(IAnnee)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updAnnee(IAnnee)
 	 *  
 	 */
 	public void updAnnee(IAnnee annee) {
@@ -119,7 +119,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updMatiere(IMatiere)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updMatiere(IMatiere)
 	 *  
 	 */
 	public void updMatiere(IMatiere matiere) {
@@ -133,7 +133,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updDepartement(IDepartement)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updDepartement(IDepartement)
 	 *  
 	 */
 	public void updDepartement(IDepartement dpt) {
@@ -147,7 +147,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updEnseignant(BusinessLayer.IEnseignant)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updEnseignant(projet.BusinessLayer.IEnseignant)
 	 *  
 	 */
 	public void updEnseignant(IEnseignant ens) {
@@ -162,7 +162,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updAdministrateur(IAdministrateur)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updAdministrateur(IAdministrateur)
 	 *  
 	 */
 	public void updAdministrateur(IAdministrateur admin) {
@@ -171,7 +171,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updEtudiant(IEtudiant)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updEtudiant(IEtudiant)
 	 *  
 	 */
 	public void updEtudiant(IEtudiant etudiant) {
@@ -185,7 +185,7 @@ public class UpdateDAO implements IUpdateDAO {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.IUpdateDAO#updSuivi(ISuiviCours)
+	 * @see projet.BusinessLayer.DAOLayer.IUpdateDAO#updSuivi(ISuiviCours)
 	 *  
 	 */
 	public void updSuivi(ISuiviCours suiviCours) {

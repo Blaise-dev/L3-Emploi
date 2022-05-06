@@ -3,7 +3,7 @@ package BusinessLayer;
 import BusinessLayer.InterfacesBusiness.IAnnee;
 
 public class Annee implements IAnnee {
-	
+
 	private int idAnnee;
 
 	private String anneeDebut;
@@ -61,6 +61,16 @@ public class Annee implements IAnnee {
 	public void setIdAnnee(int idAnnee) {
 		this.idAnnee = idAnnee;
 		
+	}
+
+
+	public Semestre getSemestre() {
+		return semestre;
+	}
+
+
+	public void setSemestre(Semestre semestre) {
+		this.semestre = semestre;
 	}
 
 }

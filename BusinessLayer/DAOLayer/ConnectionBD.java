@@ -8,7 +8,7 @@ public class ConnectionBD {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.ConnectionBD#getConnection(String, String, String, String)
+	 * @see projet.BusinessLayer.DAOLayer.ConnectionBD#getConnection(String, String, String, String)
 	 */
 	public static Connection getConnection(String host, String bd, String username, String pass) {
 		String url = "jdbc:mysql://"+host+":3306/"+bd;

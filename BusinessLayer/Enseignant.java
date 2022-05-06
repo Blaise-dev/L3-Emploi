@@ -10,9 +10,11 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 
 	private String gradeEns;
 
-	private Departement departement;
+	private String codeDepartement;
 
-	private List<SuiviCours> suiviCours;
+	private IDepartement departement;
+
+	private List<ISuiviCours> suiviCours;
 
 
 	/**
@@ -54,8 +56,8 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 
 
 	@Override
-	public void setSuiviCours(List<ISuiviCours> suiviCours) {
-		this.suiviCours = suiviCours;
+	public void setSuiviCours() {
+		
 		
 	}
 

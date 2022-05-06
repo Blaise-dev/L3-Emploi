@@ -20,7 +20,7 @@ public interface ISalle {
 	/**
 	 *  
 	 */
-	public abstract String getCapacite();
+	public abstract int getCapacite();
 
 	/**
 	 *  
@@ -40,6 +40,6 @@ public interface ISalle {
 	/**
 	 *  
 	 */
-	public abstract void setCapacite(String capacite);
+	public abstract void setCapacite(int capacite);
 
 }

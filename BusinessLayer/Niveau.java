@@ -16,9 +16,9 @@ public class Niveau implements INiveau {
 
 	private String codeFiliere;
 
-	private Collection<Groupe> groupe;
+	private Collection<IGroupe> groupe;
 
-	private Filiere filiere;
+	private IFiliere filiere;
 
 
 	/**

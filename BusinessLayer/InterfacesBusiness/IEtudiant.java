@@ -2,8 +2,6 @@ package BusinessLayer.InterfacesBusiness;
 
 import java.util.List;
 
-import BusinessLayer.SuiviCours;
-
 public interface IEtudiant extends IUtilisateur {
 
 	/**
@@ -19,7 +17,7 @@ public interface IEtudiant extends IUtilisateur {
 	/**
 	 *  
 	 */
-	public abstract List<SuiviCours> getSuiviCours();
+	public abstract List<ISuiviCours> getSuiviCours();
 
 	/**
 	 *  
@@ -34,6 +32,6 @@ public interface IEtudiant extends IUtilisateur {
 	/**
 	 *  
 	 */
-	public abstract void setSuiviCours(IEtudiant etudiant);
+	public abstract void setSuiviCours();
 
 }

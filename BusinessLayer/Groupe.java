@@ -1,10 +1,11 @@
 package BusinessLayer;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 import BusinessLayer.InterfacesBusiness.IEtudiant;
 import BusinessLayer.InterfacesBusiness.IGroupe;
 import BusinessLayer.InterfacesBusiness.INiveau;
+import BusinessLayer.InterfacesBusiness.ISuiviCours;
 
 public class Groupe implements IGroupe {
 
@@ -18,18 +19,18 @@ public class Groupe implements IGroupe {
 
 	private int idNiveau;
 
-	private Collection<SuiviCours> suiviCours;
+	private ArrayList<ISuiviCours> suiviCours;
 
-	private Collection<Etudiant> etudiant;
+	private ArrayList<IEtudiant> etudiant;
 
-	private Niveau niveau;
+	private INiveau niveau;
 
 
 	/**
 	 * @see BusinessLayer.IGroupe#getIdGrp()
 	 *  
 	 */
-	public String getIdGrp() {
+	public int getIdGrp() {
 		return idGrp;
 	}
 
@@ -65,7 +66,7 @@ public class Groupe implements IGroupe {
 	 * @see BusinessLayer.IGroupe#setIdGrp(String)
 	 *  
 	 */
-	public void setIdGrp(String idGrp) {
+	public void setIdGrp(int idGrp) {
 		this.idGrp = idGrp;
 
 	}
@@ -108,19 +109,19 @@ public class Groupe implements IGroupe {
 
 	@Override
 	public void setNiveau(INiveau niveau) {
-		this.niveau =niveau;
+		this.niveau = niveau;
 		
 	}
 
 
 	@Override
-	public Collection<IEtudiant> getEtudiant() {
+	public ArrayList<IEtudiant> getEtudiant() {
 		return etudiant;
 	}
 
 
 	@Override
-	public void setEtudiant(Collection<IEtudiant> etudiant) {
+	public void setEtudiant(ArrayList<IEtudiant> etudiant) {
 		 this.etudiant = etudiant;
 		
 	}
@@ -129,7 +130,7 @@ public class Groupe implements IGroupe {
 	@Override
 	public int getIdNiveau() {
 		// TODO Auto-generated method stub
-		return 0;
+		return idNiveau;
 	}
 
 
@@ -137,6 +138,16 @@ public class Groupe implements IGroupe {
 	public void setIdNiveau(int idNiveau) {
 		this.idNiveau = idNiveau;
 		
+	}
+
+
+	public ArrayList<ISuiviCours> getSuiviCours() {
+		return suiviCours;
+	}
+
+
+	public void setSuiviCours(ArrayList<ISuiviCours> suiviCours) {
+		this.suiviCours = suiviCours;
 	}
 
 }

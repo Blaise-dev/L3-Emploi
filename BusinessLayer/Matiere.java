@@ -1,7 +1,6 @@
 package BusinessLayer;
 
-import java.util.Collection;
-
+import BusinessLayer.InterfacesBusiness.IDepartement;
 import BusinessLayer.InterfacesBusiness.IMatiere;
 
 public class Matiere implements IMatiere {
@@ -10,9 +9,9 @@ public class Matiere implements IMatiere {
 
 	private String intituleMat;
 
-	private Collection<SuiviCours> suiviCours;
+	private String codeDepartement;
 
-	private Departement departement;
+	private IDepartement departement;
 
 
 	/**
@@ -50,6 +49,33 @@ public class Matiere implements IMatiere {
 	public void setIntituleMat(String intituleMat) {
 		this.intituleMat = intituleMat;
 
+	}
+
+
+	@Override
+	public IDepartement getDepartement() {
+		// TODO Auto-generated method stub
+		return departement;
+	}
+
+
+	@Override
+	public void setDepartement(IDepartement dpt) {
+		this.departement = dpt;
+	}
+
+
+	@Override
+	public String getCodeDepartement() {
+		// TODO Auto-generated method stub
+		return codeDepartement;
+	}
+
+
+	@Override
+	public void setCodeDepartement(String codeDepartement) {
+		// TODO Auto-generated method stub
+		this.codeDepartement = codeDepartement;
 	}
 
 }

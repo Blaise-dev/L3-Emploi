@@ -15,7 +15,7 @@ public class Requete {
 	static protected Connection connection = null;
 	
 	/**
-	 * @see BusinessLayer.DAOLayer.Requete#executeQuery(String)
+	 * @see projet.BusinessLayer.DAOLayer.Requete#executeQuery(String)
 	 */
 	public static void executeQuery(String req) {
 		connection = ConnectionBD.getConnection(host, bd, user, pass);
@@ -39,7 +39,7 @@ public class Requete {
 
 	
 	/**
-	 * @see BusinessLayer.DAOLayer.Requete#next()
+	 * @see projet.BusinessLayer.DAOLayer.Requete#next()
 	 */
 	public static boolean next() {
 
@@ -63,7 +63,7 @@ public class Requete {
 
 	
 	/**
-	 * @see BusinessLayer.DAOLayer.Requete#getString(String)
+	 * @see projet.BusinessLayer.DAOLayer.Requete#getString(String)
 	 */
 	public static String getString(String colonne) {
 
@@ -85,7 +85,7 @@ public class Requete {
 
 
 	/**
-	 * @see BusinessLayer.DAOLayer.Requete#executeUpdate(String)
+	 * @see projet.BusinessLayer.DAOLayer.Requete#executeUpdate(String)
 	 */
 	public void executeUpdate(String req) {
 		connection = ConnectionBD.getConnection(host, bd, user, pass);
