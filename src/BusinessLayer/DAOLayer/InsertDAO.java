@@ -8,7 +8,7 @@ public class InsertDAO implements IInsertDAO {
 	public void insertUser(IUtilisateur user) {
 
 		ISelectDAO selection = new SelectDAO();
-		if(!selection.exists("Utilisateur", "matricule", user.getMatricule())) {
+		if(!selection.exist("Utilisateur", "matricule", user.getMatricule())) {
 			Requete insertRequest = new Requete();
 	
 			insertRequest.executeUpdate("INSERT INTO Utilisateur VALUES ('" +
