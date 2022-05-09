@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/GitProject/L3-Emploi/src/Etudiants.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/Enseignants.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/BusinessLayer/DAOLayer/InterfacesDAO/IDeleteDAO.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/Home.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/Main.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/BusinessLayer/DAOLayer/InsertDAO.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/BusinessLayer/DAOLayer/UpdateDAO.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/BusinessLayer/DAOLayer/SelectDAO.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/BusinessLayer/DAOLayer/DeleteDAO.java</file>
+            <file>file:/D:/GitProject/L3-Emploi/src/BusinessLayer/DAOLayer/Requete.java</file>
+        </group>
     </open-files>
 </project-private>
