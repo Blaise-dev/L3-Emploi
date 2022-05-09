@@ -1,5 +1,9 @@
 package BusinessLayer;
 
+import BusinessLayer.DAOLayer.InterfacesDAO.ISelectDAO;
+import BusinessLayer.DAOLayer.SelectDAO;
+import BusinessLayer.InterfacesBusiness.IEnseignant;
+import BusinessLayer.InterfacesBusiness.IEtudiant;
 import BusinessLayer.InterfacesBusiness.IUtilisateur;
 
 public class Utilisateur implements IUtilisateur {
@@ -21,7 +25,29 @@ public class Utilisateur implements IUtilisateur {
 	 * @see IUtilisateur#connecter(String, String)
 	 */
 	public IUtilisateur connecter(String login, String pass) {
-		IUtilisateur usr = null;
+		IUtilisateur usr = new Utilisateur();
+		IEtudiant etd = new Etudiant();
+		IEnseignant ens = new Enseignant();
+		ISelectDAO select = new SelectDAO();
+		etd.setMatricule(login);
+		ens.setMatricule(login);
+		usr = null;
+		etd.setMdp(null);
+		ens.setGradeEns(null);
+		select.selEtudiant(etd);
+		select.selEnseignant(ens);
+		if(etd.getMdp() != null) {
+			if(etd.getMdp() == pass)
+				usr = etd;
+			else
+				etd = null;
+		}
+		if(ens.getMdp() != null) {
+			if(ens.getMdp() == pass)
+				usr = ens;
+			else
+				ens = null;
+		}
 		return usr;
 	}
 
