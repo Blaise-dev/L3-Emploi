@@ -35,6 +35,6 @@ public interface ISelectDAO {
 
 	public ArrayList<HashMap<String, String>> selSuiviEnseignant(IEnseignant enseignant);
 
-    public boolean exist(String table, String colonne, String valeurColonne);
+	public boolean exist(String table, String colonne, String valeurColonne);
 
 }
