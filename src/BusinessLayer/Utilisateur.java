@@ -56,7 +56,7 @@ public class Utilisateur implements IUtilisateur {
 	 * @see IUtilisateur#deconnecter(String, String)
 	 */
 	public void deconnecter() {
-
+		
 	}
 
 
