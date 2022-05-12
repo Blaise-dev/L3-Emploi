@@ -5,6 +5,7 @@ import BusinessLayer.InterfacesBusiness.*;
 
 public class InsertDAO implements IInsertDAO {
 
+        @Override
 	public void insertUser(IUtilisateur user) {
 
 		ISelectDAO selection = new SelectDAO();
