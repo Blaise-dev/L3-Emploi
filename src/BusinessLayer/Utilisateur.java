@@ -24,7 +24,7 @@ public class Utilisateur implements IUtilisateur {
 	/**
 	 * @see IUtilisateur#connecter(String, String)
 	 */
-	public IUtilisateur connecter(String login, String pass) {
+	public static IUtilisateur connecter(String login, String pass) {
 		IUtilisateur usr = new Utilisateur();
 		IEtudiant etd = new Etudiant();
 		IEnseignant ens = new Enseignant();
@@ -37,16 +37,17 @@ public class Utilisateur implements IUtilisateur {
 		select.selEtudiant(etd);
 		select.selEnseignant(ens);
 		if(etd.getMdp() != null) {
-			if(etd.getMdp() == pass)
-				usr = etd;
-			else
-				etd = null;
+                    if(etd.getMdp().equals(pass)) {
+			usr = etd;
+                    }
+                    else
+			etd = null;
 		}
 		if(ens.getMdp() != null) {
-			if(ens.getMdp() == pass)
-				usr = ens;
-			else
-				ens = null;
+                    if(ens.getMdp().equals(pass))
+			usr = ens;
+                    else
+			ens = null;
 		}
 		return usr;
 	}
@@ -56,7 +57,7 @@ public class Utilisateur implements IUtilisateur {
 	 * @see IUtilisateur#deconnecter(String, String)
 	 */
 	public void deconnecter() {
-		
+
 	}
 
 
