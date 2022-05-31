@@ -17,6 +17,7 @@ import BusinessLayer.InterfacesBusiness.INiveau;
 import BusinessLayer.InterfacesBusiness.ISalle;
 import BusinessLayer.InterfacesBusiness.ISemestre;
 import BusinessLayer.InterfacesBusiness.ISuiviCours;
+import BusinessLayer.InterfacesBusiness.IUtilisateur;
 
 public class Etudiant extends Utilisateur implements IEtudiant {
 
@@ -53,8 +54,8 @@ public class Etudiant extends Utilisateur implements IEtudiant {
 	}
 
 	@Override
-	// On se sert de la méthode selSuiviEtudiant de l'interface ISelectDAO pour récupérer les suivis
-	// d'un étudiant dans la BD. La méthode va retourner une liste de listes de chaines de caractères.
+	// On se sert de la mï¿½thode selSuiviEtudiant de l'interface ISelectDAO pour rï¿½cupï¿½rer les suivis
+	// d'un ï¿½tudiant dans la BD. La mï¿½thode va retourner une liste de listes de chaines de caractï¿½res.
 	// Il faudra la transformer en une liste de SuiviCours.
 	public void setSuiviCours() {
 		ISelectDAO sel = new SelectDAO();
@@ -112,9 +113,66 @@ public class Etudiant extends Utilisateur implements IEtudiant {
 
 			suivi.setHeureDebut(cours.get("heureDebut"));
 			suivi.setHeureFin(cours.get("heureFin"));
-			suivi.setJour(cours.get("jour"));
+			suivi.setJour(Integer.parseInt(cours.get("jour")));
 			suiviCours.add(suivi);
 		}
+	}
+
+	/**
+	 * @see Etudiant#fillEtd(IUtilisateur)
+	 */
+	public HashMap<String, List<ISuiviCours>> getTimeTable() {
+            HashMap<String, List<ISuiviCours>> timeTable = new HashMap<String, List<ISuiviCours>>();
+            String key = "";
+            final int NOMBRE_JOURS = 7;
+            int i = 0;
+                for(ISuiviCours suivi: this.getSuiviCours()) {
+                    key = suivi.getHeureDebut().replace(":", "h")+"-"+suivi.getHeureFin().replace(":", "h");
+                    if(!timeTable.containsKey(key)) {
+                        timeTable.put(key, new ArrayList<>());
+                    }
+                    timeTable.get(key).add(suivi);
+                }
+
+		for(String cle : timeTable.keySet()) {
+                    while(timeTable.get(cle).size() < NOMBRE_JOURS) {
+                            if(i >= timeTable.get(cle).size() || timeTable.get(cle).get(i).getJour() != i+1) {
+                                timeTable.get(cle).add(i, null);
+                            }
+                            i++;
+                    }
+                }
+                return timeTable;
+	}
+
+	/**
+	 * @see Etudiant#fillEtd(IUtilisateur)
+	 */
+	public void fillEtd(IUtilisateur usr) {
+                this.setMatricule(usr.getMatricule());
+		ISelectDAO select = new SelectDAO();
+                select.selEtudiant(this);
+                this.setSuiviCours();
+
+                this.setGroupe(new Groupe());
+		this.getGroupe().setIdGrp(this.getIdGrp());
+		select.selGroupe(this.getGroupe());
+
+                this.getGroupe().setNiveau(new Niveau());
+		this.getGroupe().getNiveau().setIdNiv(this.getGroupe().getIdNiveau());
+		select.selNiveau(this.getGroupe().getNiveau());
+
+                this.getGroupe().getNiveau().setFiliere(new Filiere());
+		this.getGroupe().getNiveau().getFiliere().setCodeFil(this.getGroupe().getNiveau().getCodeFiliere());
+		select.selFiliere(this.getGroupe().getNiveau().getFiliere());
+	}
+
+	/**
+	 * @see Etudiant#fillEtd(IUtilisateur)
+	 */
+	public ArrayList<IEtudiant> getComrades() {
+		ISelectDAO select = new SelectDAO();
+                return select.selComrades(this);
 	}
 
 }

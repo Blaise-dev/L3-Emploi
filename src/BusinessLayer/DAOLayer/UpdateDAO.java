@@ -19,8 +19,8 @@ public class UpdateDAO implements IUpdateDAO {
 					+ "prenom='"+usr.getPrenom()+"',"
 					+ "email='"+usr.getEmail()+"',"
 					+ "dateNais='"+usr.getDateNais()+"',"
-					+ ""
-						+ "WHERE matricule='"+usr.getMatricule()+"'"
+					+ "type='"+usr.getType()+"'"
+						+ " WHERE matricule='"+usr.getMatricule()+"'"
 				+ "");
 	}
 
@@ -34,8 +34,8 @@ public class UpdateDAO implements IUpdateDAO {
 				+ "UPDATE Salle "
 				+ "SET nomSalle='"+salle.getNomSalle()+"',"
 					+ "typeSalle='"+salle.getType()+"',"
-					+ "capacite='"+salle.getCapacite()+"',"
-						+ "WHERE codeSalle='"+salle.getCodeSalle()+"'"
+					+ "capacite='"+salle.getCapacite()+"'"
+						+ " WHERE codeSalle='"+salle.getCodeSalle()+"'"
 				+ "");
 	}
 
@@ -48,8 +48,8 @@ public class UpdateDAO implements IUpdateDAO {
 		Requete req = new Requete();
 		req.executeUpdate(""
 				+ "UPDATE Filiere "
-				+ "SET nomFiliere='"+filiere.getNomFil()+"',"
-						+ "WHERE codeFiliere='"+filiere.getCodeFil()+"'"
+				+ "SET nomFiliere='"+filiere.getNomFil()+"'"
+						+ " WHERE codeFiliere='"+filiere.getCodeFil()+"'"
 				+ "");
 	}
 
@@ -65,8 +65,8 @@ public class UpdateDAO implements IUpdateDAO {
 				+ "SET groupeClass='"+groupe.getCodeGrp()+"',"
 						+ "nomGroupe='"+groupe.getNomGrp()+"',"
 						+ "effectif='"+groupe.getEffectifGrp()+"',"
-						+ "idNiveau='"+groupe.getNiveau().getIdNiv()+"',"
-						+ "WHERE idGrp='"+groupe.getIdGrp()+"'"
+						+ "idNiveau='"+groupe.getNiveau().getIdNiv()+"'"
+						+ " WHERE idGrp='"+groupe.getIdGrp()+"'"
 				+ "");
 	}
 
@@ -81,8 +81,8 @@ public class UpdateDAO implements IUpdateDAO {
 				+ "UPDATE Niveau "
 				+ "SET codeNiveau='"+niveau.getCodeNiv()+"',"
 						+ "nomNiveau='"+niveau.getNomNiv()+"',"
-						+ "codeFiliere='"+niveau.getFiliere().getCodeFil()+"',"
-						+ "WHERE idNiveau='"+niveau.getIdNiv()+"'"
+						+ "codeFiliere='"+niveau.getFiliere().getCodeFil()+"'"
+						+ " WHERE idNiveau='"+niveau.getIdNiv()+"'"
 				+ "");
 	}
 
@@ -97,8 +97,8 @@ public class UpdateDAO implements IUpdateDAO {
 				+ "UPDATE Semestre "
 				+ "SET codeSemestre='"+semestre.getCodeSem()+"',"
 						+ "nomSemestre='"+semestre.getNomSem()+"',"
-						+ "idAnnee='"+semestre.getAnnee().getIdAnnee()+"',"
-						+ "WHERE idSemestre='"+semestre.getIdSem()+"'"
+						+ "idAnnee='"+semestre.getAnnee().getIdAnnee()+"'"
+						+ " WHERE idSemestre='"+semestre.getIdSem()+"'"
 				+ "");
 	}
 
@@ -112,8 +112,8 @@ public class UpdateDAO implements IUpdateDAO {
 		req.executeUpdate(""
 				+ "UPDATE Annee "
 				+ "SET anneeDebut='"+annee.getAnneeDebut()+"',"
-					+ "anneeFin='"+annee.getAnneeFin()+"',"
-						+ "WHERE idAnnee='"+annee.getIdAnnee()+"'"
+					+ "anneeFin='"+annee.getAnneeFin()+"'"
+						+ " WHERE idAnnee='"+annee.getIdAnnee()+"'"
 				+ "");
 	}
 
@@ -126,8 +126,8 @@ public class UpdateDAO implements IUpdateDAO {
 		Requete req = new Requete();
 		req.executeUpdate(""
 				+ "UPDATE Matiere "
-				+ "SET intituleMatiere='"+matiere.getIntituleMat()+"',"
-						+ "WHERE codeMatiere='"+matiere.getCodeMat()+"'"
+				+ "SET intituleMatiere='"+matiere.getIntituleMat()+"'"
+						+ " WHERE codeMatiere='"+matiere.getCodeMat()+"'"
 				+ "");
 	}
 
@@ -140,8 +140,8 @@ public class UpdateDAO implements IUpdateDAO {
 		Requete req = new Requete();
 		req.executeUpdate(""
 				+ "UPDATE Departement "
-				+ "SET nomDepartement='"+dpt.getNomDepart()+"',"
-						+ "WHERE codeDepartement='"+dpt.getCodeDepart()+"'"
+				+ "SET nomDepartement='"+dpt.getNomDepart()+"'"
+						+ " WHERE codeDepartement='"+dpt.getCodeDepart()+"'"
 				+ "");
 	}
 
@@ -155,8 +155,8 @@ public class UpdateDAO implements IUpdateDAO {
 		req.executeUpdate(""
 				+ "UPDATE Enseignant "
 				+ "SET gradeEns='"+ens.getGradeEns()+"',"
-						+ "codeDepartement='"+ens.getDepartement().getCodeDepart()+"',"
-						+ "WHERE matricule='"+ens.getMatricule()+"'"
+						+ "codeDepartement='"+ens.getDepartement().getCodeDepart()+"'"
+						+ " WHERE matricule='"+ens.getMatricule()+"'"
 				+ "");
 	}
 
@@ -178,8 +178,8 @@ public class UpdateDAO implements IUpdateDAO {
 		Requete req = new Requete();
 		req.executeUpdate(""
 				+ "UPDATE Etudiant "
-				+ "SET idGrp='"+etudiant.getIdGrp()+"',"
-						+ "WHERE matricule='"+etudiant.getMatricule()+"'"
+				+ "SET idGrp='"+etudiant.getIdGrp()+"'"
+						+ " WHERE matricule='"+etudiant.getMatricule()+"'"
 				+ "");
 	}
 
@@ -194,8 +194,8 @@ public class UpdateDAO implements IUpdateDAO {
 				+ "UPDATE FaireCours "
 				+ "SET jour='"+suiviCours.getJour()+"',"
 						+ "heureDebut='"+suiviCours.getHeureDebut()+"',"
-						+ "heureFin='"+suiviCours.getHeureFin()+"',"
-						+ "WHERE codeSalle='"+suiviCours.getSalle().getCodeSalle()+"' "
+						+ "heureFin='"+suiviCours.getHeureFin()+"'"
+						+ " WHERE codeSalle='"+suiviCours.getSalle().getCodeSalle()+"' "
 						+ "AND matricule='"+suiviCours.getEnseignant().getMatricule()+"' "
 						+ "AND codeMatiere='"+suiviCours.getMatiere().getCodeMat()+"' "
 						+ "AND idGrp='"+suiviCours.getGroupe().getIdGrp()+"' "

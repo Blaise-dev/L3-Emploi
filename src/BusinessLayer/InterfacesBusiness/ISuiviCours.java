@@ -15,7 +15,7 @@ public interface ISuiviCours {
 	/**
 	 *  
 	 */
-	public abstract String getJour();
+	public abstract int getJour();
 
 	/**
 	 *  
@@ -52,7 +52,7 @@ public interface ISuiviCours {
 	/**
 	 *  
 	 */
-	public abstract void setJour(String jour);
+	public abstract void setJour(int jour);
 
 	/**
 	 *  

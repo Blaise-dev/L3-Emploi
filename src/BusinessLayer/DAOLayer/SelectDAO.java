@@ -1,6 +1,7 @@
 package BusinessLayer.DAOLayer;
 
 import BusinessLayer.DAOLayer.InterfacesDAO.*;
+import BusinessLayer.Etudiant;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,6 +37,7 @@ public class SelectDAO implements ISelectDAO {
 			usr.setMdp(request.getString("mdp"));
 			usr.setEmail(request.getString("email"));
 			usr.setDateNais(request.getString("dateNais"));
+			usr.setType(request.getString("type"));
 		}
 	}
 
@@ -99,7 +101,7 @@ public class SelectDAO implements ISelectDAO {
 	 */
 	public void selSemestre(ISemestre semestre) {
 		Requete request = new Requete();
-		request.executeQuery("SELECT * FROM Niveau WHERE idNiveau='"+semestre.getIdSem()+"'");
+		request.executeQuery("SELECT * FROM Semestre WHERE idSem='"+semestre.getIdSem()+"'");
 		while(request.next()) {
 			semestre.setCodeSem(request.getString("codeSemestre"));
 			semestre.setNomSem(request.getString("nomSem"));
@@ -178,7 +180,27 @@ public class SelectDAO implements ISelectDAO {
 		while(request.next()) {
 			etudiant.setIdGrp(Integer.parseInt(request.getString("idGrp")));
 		}
-		
+	}
+
+
+	/**
+	 * @see projet.BusinessLayer.DAOLayer.ISelectDAO#selEtudiant(IEtudiant)
+	 */
+	public ArrayList<IEtudiant> selComrades(IEtudiant etudiant) {
+		ArrayList<IEtudiant> comrades = new ArrayList<>();
+		Etudiant etd;
+		Requete request = new Requete();
+		request.executeQuery("SELECT * FROM Etudiant WHERE idGrp='"+etudiant.getIdGrp()+"'");
+		while(request.next()) {
+                        etd = new Etudiant();
+			etd.setMatricule(request.getString("matricule"));
+			etd.setIdGrp(Integer.parseInt(request.getString("idGrp")));
+                        comrades.add(etd);
+		}
+                for(IEtudiant student: comrades)
+                    student.fillEtd(student);
+
+                return comrades;
 	}
 
 
@@ -189,7 +211,7 @@ public class SelectDAO implements ISelectDAO {
 		ArrayList<HashMap<String, String>> suivis = new ArrayList<HashMap<String, String>>();
 		HashMap<String, String> suivi = new HashMap<String, String>();
 		Requete request = new Requete();
-		request.executeQuery("SELECT * FROM FaireCours WHERE idGrp='"+etudiant.getIdGrp()+"'");
+		request.executeQuery("SELECT * FROM FaireCours WHERE idGrp='"+etudiant.getIdGrp()+"' ORDER BY jour ASC");
 		while(request.next()) {
 			suivi.put("codeMatiere", request.getString("codeMatiere"));
 			suivi.put("matricule", request.getString("matricule"));

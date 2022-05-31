@@ -32,4 +32,8 @@ public interface IAdministrateur extends IUtilisateur {
 	 */
 	public abstract void modifierSuivi(String matriculeEns, String codeSalle, String codeGrp, String codeMat, String codeSem, String nouvMatriculeEns, String nouvCodeSalle, String nouvCodeGrp, String nouvCodeMat, String nouvCodeSem);
 
+	/**
+	 *  
+	 */
+        public abstract void fillAdm(IUtilisateur usr);
 }

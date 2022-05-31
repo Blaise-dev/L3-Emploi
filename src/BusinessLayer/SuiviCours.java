@@ -13,7 +13,7 @@ public class SuiviCours implements ISuiviCours {
 
 	private String heureFin;
 
-	private String jour;
+	private int jour;
 
 	private IMatiere matiere;
 
@@ -48,7 +48,7 @@ public class SuiviCours implements ISuiviCours {
 	 * @see ISuiviCours#getJour()
 	 *  
 	 */
-	public String getJour() {
+	public int getJour() {
 		return jour;
 	}
 
@@ -58,7 +58,7 @@ public class SuiviCours implements ISuiviCours {
 	 *  
 	 */
 	public void setHeureDebut(String heure) {
-		this.heureFin = heure;
+		this.heureDebut = heure;
 	}
 
 
@@ -76,7 +76,7 @@ public class SuiviCours implements ISuiviCours {
 	 * @see ISuiviCours#setJour(String)
 	 *  
 	 */
-	public void setJour(String jour) {
+	public void setJour(int jour) {
 		this.jour = jour;
 
 	}

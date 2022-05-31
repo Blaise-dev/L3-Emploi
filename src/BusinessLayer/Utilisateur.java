@@ -20,36 +20,47 @@ public class Utilisateur implements IUtilisateur {
 
 	private String dateNais;
 
+	private String type;
+
 
 	/**
 	 * @see IUtilisateur#connecter(String, String)
 	 */
-	public static IUtilisateur connecter(String login, String pass) {
-		IUtilisateur usr = new Utilisateur();
-		IEtudiant etd = new Etudiant();
-		IEnseignant ens = new Enseignant();
+	public boolean connecter(String login, String pass) {
 		ISelectDAO select = new SelectDAO();
-		etd.setMatricule(login);
-		ens.setMatricule(login);
-		usr = null;
-		etd.setMdp(null);
-		ens.setGradeEns(null);
-		select.selEtudiant(etd);
-		select.selEnseignant(ens);
-		if(etd.getMdp() != null) {
-                    if(etd.getMdp().equals(pass)) {
-			usr = etd;
+                boolean success = false;
+                this.setMatricule(login);
+		select.selUser(this);
+                if(this.getMdp() != null) {
+                    if(this.getMdp().equals(pass)) {
+                        success = true;
                     }
-                    else
-			etd = null;
-		}
-		if(ens.getMdp() != null) {
-                    if(ens.getMdp().equals(pass))
-			usr = ens;
-                    else
-			ens = null;
-		}
-		return usr;
+                }
+		return success;
+	}
+
+
+	/**
+	 * @see Utilisateur#isStudent()
+	 */
+	public boolean isStudent() {
+            return this.type.equals("etudiant");
+	}
+
+
+	/**
+	 * @see Utilisateur#isTeacher()
+	 */
+	public boolean isTeacher() {
+            return this.type.equals("ens");
+	}
+
+
+	/**
+	 * @see Utilisateur#isAdmin()
+	 */
+	public boolean isAdmin() {
+            return this.type.equals("admin");
 	}
 
 
@@ -116,6 +127,15 @@ public class Utilisateur implements IUtilisateur {
 
 
 	/**
+	 * @see IUtilisateur#getType()
+	 *  
+	 */
+	public String getType() {
+		return type;
+	}
+
+
+	/**
 	 * @see IUtilisateur#setMatricule(String)
 	 *  
 	 */
@@ -171,6 +191,16 @@ public class Utilisateur implements IUtilisateur {
 	 */
 	public void setDateNais(String dateNais) {
 		this.dateNais = dateNais;
+
+	}
+
+
+	/**
+	 * @see IUtilisateur#setType(String)
+	 *  
+	 */
+	public void setType(String type) {
+		this.type = type;
 
 	}
 

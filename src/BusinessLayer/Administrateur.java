@@ -1,6 +1,9 @@
 package BusinessLayer;
 
+import BusinessLayer.DAOLayer.InterfacesDAO.ISelectDAO;
+import BusinessLayer.DAOLayer.SelectDAO;
 import BusinessLayer.InterfacesBusiness.IAdministrateur;
+import BusinessLayer.InterfacesBusiness.IUtilisateur;
 
 public class Administrateur extends Utilisateur implements IAdministrateur {
 
@@ -58,4 +61,12 @@ public class Administrateur extends Utilisateur implements IAdministrateur {
 
 	}
 
+	/**
+	 * @see Etudiant#fillEtd(IUtilisateur)
+	 */
+	public void fillAdm(IUtilisateur usr) {
+                this.setMatricule(usr.getMatricule());
+		ISelectDAO select = new SelectDAO();
+                select.selAdministrateur(this);
+	}
 }

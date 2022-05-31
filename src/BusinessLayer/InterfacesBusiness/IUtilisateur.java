@@ -2,10 +2,7 @@ package BusinessLayer.InterfacesBusiness;
 
 public interface IUtilisateur {
 
-	public static IUtilisateur connecter(String login, String pass) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public boolean connecter(String login, String pass);
 
 	public abstract void deconnecter();
 
@@ -42,6 +39,12 @@ public interface IUtilisateur {
 	/**
 	 *  
 	 */
+
+        public abstract String getType();
+
+	/**
+	 *  
+	 */
 	public abstract void setMatricule(String matricule);
 
 	/**
@@ -68,5 +71,13 @@ public interface IUtilisateur {
 	 *  
 	 */
 	public abstract void setDateNais(String dateNais);
+
+        public abstract void setType(String type);
+
+        public boolean isStudent();
+
+        public boolean isTeacher();
+
+        public boolean isAdmin();
 
 }

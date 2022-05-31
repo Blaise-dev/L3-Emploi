@@ -17,12 +17,12 @@ public interface IEnseignant extends IUtilisateur {
 	/**
 	 *  
 	 */
-	public IDepartement getDepartement();
+	public abstract IDepartement getDepartement();
 
 	/**
 	 *  
 	 */
-	public List<ISuiviCours> getSuiviCours();
+	public abstract List<ISuiviCours> getSuiviCours();
 
 	/**
 	 *  
@@ -37,11 +37,16 @@ public interface IEnseignant extends IUtilisateur {
 	/**
 	 *  
 	 */
-	public void setDepartement(IDepartement dpt);
+	public abstract void setDepartement(IDepartement dpt);
 
 	/**
 	 *  
 	 */
-	public void setSuiviCours();
+	public abstract void setSuiviCours();
 
+
+	/**
+	 *
+	 */
+	public abstract void fillEns(IUtilisateur usr);
 }

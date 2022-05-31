@@ -1,10 +1,13 @@
 package BusinessLayer;
 
+import BusinessLayer.DAOLayer.InterfacesDAO.ISelectDAO;
+import BusinessLayer.DAOLayer.SelectDAO;
 import java.util.List;
 
 import BusinessLayer.InterfacesBusiness.IDepartement;
 import BusinessLayer.InterfacesBusiness.IEnseignant;
 import BusinessLayer.InterfacesBusiness.ISuiviCours;
+import BusinessLayer.InterfacesBusiness.IUtilisateur;
 
 public class Enseignant extends Utilisateur implements IEnseignant {
 
@@ -75,4 +78,13 @@ public class Enseignant extends Utilisateur implements IEnseignant {
 		
 	}
 
+
+	/**
+	 * @see Enseignant#fillEns(IUtilisateur)
+	 */
+	public void fillEns(IUtilisateur usr) {
+                this.setMatricule(usr.getMatricule());
+		ISelectDAO select = new SelectDAO();
+                select.selEnseignant(this);
+	}
 }

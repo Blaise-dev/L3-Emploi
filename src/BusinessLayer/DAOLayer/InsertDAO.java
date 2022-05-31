@@ -17,7 +17,8 @@ public class InsertDAO implements IInsertDAO {
 					user.getNom() + "', '" +
 					user.getPrenom() + "', '" +
 					user.getEmail() + "', '" +
-					user.getDateNais() + "')");
+					user.getDateNais() + "', '" +
+					user.getType() + "')");
 		}
 
 	}

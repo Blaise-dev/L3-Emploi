@@ -1,5 +1,6 @@
 package BusinessLayer.DAOLayer.InterfacesDAO;
 
+import BusinessLayer.InterfacesBusiness.IEtudiant;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -30,6 +31,8 @@ public interface ISelectDAO {
 	public void selAdministrateur(IAdministrateur admin);
 
 	public void selEtudiant(IEtudiant etudiant);
+
+        public ArrayList<IEtudiant> selComrades(IEtudiant etudiant);
 
 	public ArrayList<HashMap<String, String>> selSuiviEtudiant(IEtudiant etudiant);
 
