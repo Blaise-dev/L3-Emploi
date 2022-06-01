@@ -1,12 +1,24 @@
 package BusinessLayer;
 
-import BusinessLayer.DAOLayer.InterfacesDAO.ISelectDAO;
 import BusinessLayer.DAOLayer.SelectDAO;
+import BusinessLayer.DAOLayer.InterfacesDAO.ISelectDAO;
+import BusinessLayer.DAOLayer.InterfacesDAO.IUpdateDAO;
+import BusinessLayer.DAOLayer.UpdateDAO;
+import BusinessLayer.DAOLayer.InterfacesDAO.IInsertDAO;
+import BusinessLayer.DAOLayer.InsertDAO;
 import BusinessLayer.InterfacesBusiness.IAdministrateur;
+import BusinessLayer.InterfacesBusiness.IEnseignant;
 import BusinessLayer.InterfacesBusiness.IUtilisateur;
 
 public class Administrateur extends Utilisateur implements IAdministrateur {
 
+
+
+	public void ajouterEnseignant(String matricule, String nom, String prenom, String dateNais, String motDePass,
+			String grade, String email) {
+		
+
+	}
 
 	/**
 	 * @see IAdministrateur#supprimerEtudiant(String)

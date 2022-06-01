@@ -1,5 +1,6 @@
 package BusinessLayer.DAOLayer.InterfacesDAO;
 
+import BusinessLayer.Administrateur;
 import BusinessLayer.InterfacesBusiness.*;
 
 public interface IUpdateDAO {
@@ -49,7 +50,7 @@ public interface IUpdateDAO {
 	/**
 	 *  
 	 */
-	public abstract void updEnseignant(IEnseignant ens);
+	public abstract void updEnseignant(Administrateur administrateur);
 
 	/**
 	 *  
