@@ -1,24 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
+-- version 4.1.14
+-- http://www.phpmyadmin.net
 --
--- Hôte : 127.0.0.1
--- Généré le : mer. 01 juin 2022 à 08:34
--- Version du serveur :  10.4.11-MariaDB
--- Version de PHP : 7.4.6
+-- Client :  127.0.0.1
+-- Généré le :  Jeu 02 Juin 2022 à 09:44
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Base de données : `tp_emploi`
+-- Base de données :  `tp_emploi`
 --
 
 -- --------------------------------------------------------
@@ -27,12 +26,13 @@ SET time_zone = "+00:00";
 -- Structure de la table `administrateur`
 --
 
-CREATE TABLE `administrateur` (
-  `matricule` char(7) NOT NULL
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `matricule` char(7) NOT NULL,
+  PRIMARY KEY (`matricule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `administrateur`
+-- Contenu de la table `administrateur`
 --
 
 INSERT INTO `administrateur` (`matricule`) VALUES
@@ -44,14 +44,15 @@ INSERT INTO `administrateur` (`matricule`) VALUES
 -- Structure de la table `annee`
 --
 
-CREATE TABLE `annee` (
-  `idAnnee` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `annee` (
+  `idAnnee` int(11) NOT NULL AUTO_INCREMENT,
   `anneeDebut` varchar(10) DEFAULT NULL,
-  `anneeFin` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `anneeFin` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`idAnnee`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Déchargement des données de la table `annee`
+-- Contenu de la table `annee`
 --
 
 INSERT INTO `annee` (`idAnnee`, `anneeDebut`, `anneeFin`) VALUES
@@ -63,13 +64,14 @@ INSERT INTO `annee` (`idAnnee`, `anneeDebut`, `anneeFin`) VALUES
 -- Structure de la table `departement`
 --
 
-CREATE TABLE `departement` (
+CREATE TABLE IF NOT EXISTS `departement` (
   `codeDepartement` varchar(10) NOT NULL,
-  `nomDepartement` varchar(100) DEFAULT NULL
+  `nomDepartement` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`codeDepartement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `departement`
+-- Contenu de la table `departement`
 --
 
 INSERT INTO `departement` (`codeDepartement`, `nomDepartement`) VALUES
@@ -85,14 +87,16 @@ INSERT INTO `departement` (`codeDepartement`, `nomDepartement`) VALUES
 -- Structure de la table `enseignant`
 --
 
-CREATE TABLE `enseignant` (
+CREATE TABLE IF NOT EXISTS `enseignant` (
   `matricule` char(7) NOT NULL,
   `gradeEns` varchar(20) DEFAULT NULL,
-  `codeDepartement` varchar(10) DEFAULT NULL
+  `codeDepartement` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`matricule`),
+  KEY `FK_Enseignant_1` (`codeDepartement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `enseignant`
+-- Contenu de la table `enseignant`
 --
 
 INSERT INTO `enseignant` (`matricule`, `gradeEns`, `codeDepartement`) VALUES
@@ -108,13 +112,15 @@ INSERT INTO `enseignant` (`matricule`, `gradeEns`, `codeDepartement`) VALUES
 -- Structure de la table `etudiant`
 --
 
-CREATE TABLE `etudiant` (
+CREATE TABLE IF NOT EXISTS `etudiant` (
   `matricule` char(7) NOT NULL,
-  `idGrp` int(11) NOT NULL
+  `idGrp` int(11) NOT NULL,
+  PRIMARY KEY (`matricule`),
+  KEY `FK_Etudiant_1` (`idGrp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `etudiant`
+-- Contenu de la table `etudiant`
 --
 
 INSERT INTO `etudiant` (`matricule`, `idGrp`) VALUES
@@ -130,7 +136,7 @@ INSERT INTO `etudiant` (`matricule`, `idGrp`) VALUES
 -- Structure de la table `fairecours`
 --
 
-CREATE TABLE `fairecours` (
+CREATE TABLE IF NOT EXISTS `fairecours` (
   `codeSalle` varchar(10) NOT NULL,
   `matricule` char(7) NOT NULL,
   `codeMatiere` varchar(10) NOT NULL,
@@ -138,15 +144,21 @@ CREATE TABLE `fairecours` (
   `idSem` int(11) NOT NULL,
   `jour` int(11) DEFAULT NULL,
   `heureDebut` varchar(10) NOT NULL,
-  `heureFin` varchar(10) NOT NULL
+  `heureFin` varchar(10) NOT NULL,
+  PRIMARY KEY (`codeSalle`,`matricule`,`codeMatiere`,`idGrp`,`idSem`),
+  KEY `FK_FaireCours_1` (`matricule`),
+  KEY `FK_FaireCours_2` (`codeMatiere`),
+  KEY `FK_FaireCours_3` (`idGrp`),
+  KEY `FK_FaireCours_4` (`idSem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `fairecours`
+-- Contenu de la table `fairecours`
 --
 
 INSERT INTO `fairecours` (`codeSalle`, `matricule`, `codeMatiere`, `idGrp`, `idSem`, `jour`, `heureDebut`, `heureFin`) VALUES
-('S006', '10D6647', 'INF3176', 5, 1, 1, '07:00', '09:55');
+('A250', '14D5587', 'INF3036', 5, 2, 5, '13:05', '15:55'),
+('S006', '10D6647', 'INF3176', 5, 2, 5, '07:00', '09:55');
 
 -- --------------------------------------------------------
 
@@ -154,13 +166,14 @@ INSERT INTO `fairecours` (`codeSalle`, `matricule`, `codeMatiere`, `idGrp`, `idS
 -- Structure de la table `filiere`
 --
 
-CREATE TABLE `filiere` (
+CREATE TABLE IF NOT EXISTS `filiere` (
   `codeFiliere` varchar(30) NOT NULL,
-  `nomFiliere` varchar(100) DEFAULT NULL
+  `nomFiliere` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`codeFiliere`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `filiere`
+-- Contenu de la table `filiere`
 --
 
 INSERT INTO `filiere` (`codeFiliere`, `nomFiliere`) VALUES
@@ -180,16 +193,18 @@ INSERT INTO `filiere` (`codeFiliere`, `nomFiliere`) VALUES
 -- Structure de la table `groupe`
 --
 
-CREATE TABLE `groupe` (
-  `idGrp` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `groupe` (
+  `idGrp` int(11) NOT NULL AUTO_INCREMENT,
   `groupeClass` varchar(10) DEFAULT NULL,
   `nomGroupe` varchar(100) NOT NULL,
   `effectif` int(11) NOT NULL,
-  `idNiveau` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idNiveau` int(11) NOT NULL,
+  PRIMARY KEY (`idGrp`),
+  KEY `FK_Groupe_0` (`idNiveau`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Déchargement des données de la table `groupe`
+-- Contenu de la table `groupe`
 --
 
 INSERT INTO `groupe` (`idGrp`, `groupeClass`, `nomGroupe`, `effectif`, `idNiveau`) VALUES
@@ -205,22 +220,24 @@ INSERT INTO `groupe` (`idGrp`, `groupeClass`, `nomGroupe`, `effectif`, `idNiveau
 -- Structure de la table `matiere`
 --
 
-CREATE TABLE `matiere` (
+CREATE TABLE IF NOT EXISTS `matiere` (
   `codeMatiere` varchar(10) NOT NULL,
   `intituleMatiere` varchar(200) DEFAULT NULL,
-  `codeDepartement` varchar(100) NOT NULL
+  `codeDepartement` varchar(100) NOT NULL,
+  PRIMARY KEY (`codeMatiere`),
+  KEY `FK_Matiere_0` (`codeDepartement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `matiere`
+-- Contenu de la table `matiere`
 --
 
 INSERT INTO `matiere` (`codeMatiere`, `intituleMatiere`, `codeDepartement`) VALUES
-('CHM4057', 'Notion d\'acide', 'CHM'),
+('CHM4057', 'Notion d''acide', 'CHM'),
 ('ENG2013', 'English', 'BIOS'),
 ('FRA2013', 'Francais', 'BIOS'),
 ('INF3036', 'Base de Donnees', 'INF'),
-('INF3046', 'Reseau et Systeme d\'Exploitation', 'INF'),
+('INF3046', 'Reseau et Systeme d''Exploitation', 'INF'),
 ('INF3176', 'Techniques de Programmation Avancée', 'INF'),
 ('INF3266', 'Theorie de Code 2', 'INF'),
 ('INF3276', 'Theorie des nombres', 'INF');
@@ -231,15 +248,17 @@ INSERT INTO `matiere` (`codeMatiere`, `intituleMatiere`, `codeDepartement`) VALU
 -- Structure de la table `niveau`
 --
 
-CREATE TABLE `niveau` (
-  `idNiveau` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `niveau` (
+  `idNiveau` int(11) NOT NULL AUTO_INCREMENT,
   `codeNiveau` varchar(10) DEFAULT NULL,
   `nomNiveau` varchar(20) DEFAULT NULL,
-  `codeFiliere` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `codeFiliere` varchar(30) NOT NULL,
+  PRIMARY KEY (`idNiveau`),
+  KEY `FK_Niveau_0` (`codeFiliere`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Déchargement des données de la table `niveau`
+-- Contenu de la table `niveau`
 --
 
 INSERT INTO `niveau` (`idNiveau`, `codeNiveau`, `nomNiveau`, `codeFiliere`) VALUES
@@ -255,15 +274,16 @@ INSERT INTO `niveau` (`idNiveau`, `codeNiveau`, `nomNiveau`, `codeFiliere`) VALU
 -- Structure de la table `salle`
 --
 
-CREATE TABLE `salle` (
+CREATE TABLE IF NOT EXISTS `salle` (
   `codeSalle` varchar(10) NOT NULL,
   `nomSalle` varchar(40) DEFAULT NULL,
   `typeSalle` varchar(100) NOT NULL,
-  `capacite` int(11) DEFAULT NULL
+  `capacite` int(11) DEFAULT NULL,
+  PRIMARY KEY (`codeSalle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `salle`
+-- Contenu de la table `salle`
 --
 
 INSERT INTO `salle` (`codeSalle`, `nomSalle`, `typeSalle`, `capacite`) VALUES
@@ -285,19 +305,22 @@ INSERT INTO `salle` (`codeSalle`, `nomSalle`, `typeSalle`, `capacite`) VALUES
 -- Structure de la table `semestre`
 --
 
-CREATE TABLE `semestre` (
-  `idSem` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `semestre` (
+  `idSem` int(11) NOT NULL AUTO_INCREMENT,
   `codeSemestre` varchar(10) DEFAULT NULL,
   `nomSem` varchar(20) DEFAULT NULL,
-  `idAnnee` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idAnnee` int(11) NOT NULL,
+  PRIMARY KEY (`idSem`),
+  KEY `FK_Semestre_0` (`idAnnee`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Déchargement des données de la table `semestre`
+-- Contenu de la table `semestre`
 --
 
 INSERT INTO `semestre` (`idSem`, `codeSemestre`, `nomSem`, `idAnnee`) VALUES
-(1, 'S2', 'SEMESTRE 2', 1);
+(1, 'S1', 'SEMESTRE 1', 1),
+(2, 'S2', 'SEMESTRE 2', 1);
 
 -- --------------------------------------------------------
 
@@ -305,18 +328,19 @@ INSERT INTO `semestre` (`idSem`, `codeSemestre`, `nomSem`, `idAnnee`) VALUES
 -- Structure de la table `utilisateur`
 --
 
-CREATE TABLE `utilisateur` (
+CREATE TABLE IF NOT EXISTS `utilisateur` (
   `matricule` char(7) NOT NULL,
   `mdp` varchar(100) DEFAULT NULL,
   `nom` varchar(100) DEFAULT NULL,
   `prenom` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `dateNais` date DEFAULT NULL,
-  `type` varchar(20) NOT NULL
+  `type` varchar(20) NOT NULL,
+  PRIMARY KEY (`matricule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `utilisateur`
+-- Contenu de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`matricule`, `mdp`, `nom`, `prenom`, `email`, `dateNais`, `type`) VALUES
@@ -328,132 +352,12 @@ INSERT INTO `utilisateur` (`matricule`, `mdp`, `nom`, `prenom`, `email`, `dateNa
 ('17T8457', 'Williamsenior', 'William', 'Ngannou', 'ngannouwilliam@gmail.com', '2000-01-24', 'ens'),
 ('18T2510', 'cabrel235', 'Djossinkou', 'Boris Cabrel', 'djossinkoucabrel@gmail.com', '2001-01-03', 'etudiant'),
 ('19M2070', 'kouagnangfr16', 'Kouagnang Djidieu', 'Franck Daniel', 'kouagnangfranck25@gmail.com', '2000-09-21', 'etudiant'),
-('19M2219', 'ivanna237', 'Nana Nana', 'Guylaine Ivanna', 'yvannanana041@gmail.com', '1999-05-19', 'etudiante'),
+('19M2219', 'ivanna237', 'Nana Nana', 'Guylaine Ivanna', 'yvannanana041@gmail.com', '1999-05-19', 'etudiant'),
 ('19W4571', 'landry78', 'Landry', 'Ename', 'landryename88@gmail.com', '2002-05-01', 'etudiant'),
 ('20W4715', 'aurel1en', 'Aurelienng', 'Gassam', 'gassamaurelien6@gmail.com', '1995-01-20', 'ens');
 
 --
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `administrateur`
---
-ALTER TABLE `administrateur`
-  ADD PRIMARY KEY (`matricule`);
-
---
--- Index pour la table `annee`
---
-ALTER TABLE `annee`
-  ADD PRIMARY KEY (`idAnnee`);
-
---
--- Index pour la table `departement`
---
-ALTER TABLE `departement`
-  ADD PRIMARY KEY (`codeDepartement`);
-
---
--- Index pour la table `enseignant`
---
-ALTER TABLE `enseignant`
-  ADD PRIMARY KEY (`matricule`),
-  ADD KEY `FK_Enseignant_1` (`codeDepartement`);
-
---
--- Index pour la table `etudiant`
---
-ALTER TABLE `etudiant`
-  ADD PRIMARY KEY (`matricule`),
-  ADD KEY `FK_Etudiant_1` (`idGrp`);
-
---
--- Index pour la table `fairecours`
---
-ALTER TABLE `fairecours`
-  ADD PRIMARY KEY (`codeSalle`,`matricule`,`codeMatiere`,`idGrp`,`idSem`),
-  ADD KEY `FK_FaireCours_1` (`matricule`),
-  ADD KEY `FK_FaireCours_2` (`codeMatiere`),
-  ADD KEY `FK_FaireCours_3` (`idGrp`),
-  ADD KEY `FK_FaireCours_4` (`idSem`);
-
---
--- Index pour la table `filiere`
---
-ALTER TABLE `filiere`
-  ADD PRIMARY KEY (`codeFiliere`);
-
---
--- Index pour la table `groupe`
---
-ALTER TABLE `groupe`
-  ADD PRIMARY KEY (`idGrp`),
-  ADD KEY `FK_Groupe_0` (`idNiveau`);
-
---
--- Index pour la table `matiere`
---
-ALTER TABLE `matiere`
-  ADD PRIMARY KEY (`codeMatiere`),
-  ADD KEY `FK_Matiere_0` (`codeDepartement`);
-
---
--- Index pour la table `niveau`
---
-ALTER TABLE `niveau`
-  ADD PRIMARY KEY (`idNiveau`),
-  ADD KEY `FK_Niveau_0` (`codeFiliere`);
-
---
--- Index pour la table `salle`
---
-ALTER TABLE `salle`
-  ADD PRIMARY KEY (`codeSalle`);
-
---
--- Index pour la table `semestre`
---
-ALTER TABLE `semestre`
-  ADD PRIMARY KEY (`idSem`),
-  ADD KEY `FK_Semestre_0` (`idAnnee`);
-
---
--- Index pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`matricule`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `annee`
---
-ALTER TABLE `annee`
-  MODIFY `idAnnee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT pour la table `groupe`
---
-ALTER TABLE `groupe`
-  MODIFY `idGrp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT pour la table `niveau`
---
-ALTER TABLE `niveau`
-  MODIFY `idNiveau` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT pour la table `semestre`
---
-ALTER TABLE `semestre`
-  MODIFY `idSem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Contraintes pour les tables déchargées
+-- Contraintes pour les tables exportées
 --
 
 --
@@ -509,7 +413,6 @@ ALTER TABLE `niveau`
 --
 ALTER TABLE `semestre`
   ADD CONSTRAINT `FK_Semestre_0` FOREIGN KEY (`idAnnee`) REFERENCES `annee` (`idAnnee`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
