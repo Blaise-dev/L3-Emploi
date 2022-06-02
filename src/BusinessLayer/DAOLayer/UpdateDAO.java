@@ -1,5 +1,6 @@
 package BusinessLayer.DAOLayer;
 
+import BusinessLayer.Administrateur;
 import BusinessLayer.DAOLayer.InterfacesDAO.*;
 import BusinessLayer.InterfacesBusiness.*;
 
@@ -201,6 +202,12 @@ public class UpdateDAO implements IUpdateDAO {
 						+ "AND idGrp='"+suiviCours.getGroupe().getIdGrp()+"' "
 						+ "AND idSem='"+suiviCours.getSemestre().getIdSem()+"' "
 				+ "");
+	}
+
+
+	public void updEnseignant(Administrateur administrateur) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -8,11 +8,11 @@ public class InsertDAO implements IInsertDAO {
 	public void insertUser(IUtilisateur user) {
 
 		ISelectDAO selection = new SelectDAO();
-		if(!selection.exist("Utilisateur", "matricule", user.getMatricule())) {
+		if(!selection.exist("Utilisateur", "matricule", user.getMatricule().toUpperCase())) {
 			Requete insertRequest = new Requete();
 	
 			insertRequest.executeUpdate("INSERT INTO Utilisateur VALUES ('" +
-					user.getMatricule() + "', '" +
+					user.getMatricule().toUpperCase() + "', '" +
 					user.getMdp() + "','" +
 					user.getNom() + "', '" +
 					user.getPrenom() + "', '" +
@@ -51,9 +51,9 @@ public class InsertDAO implements IInsertDAO {
 	 */
 	public void insertEtudiant(IEtudiant etudiant) {
 		ISelectDAO selection = new SelectDAO();
-		if(!selection.exist("Utilisateur", "matricule", etudiant.getMatricule()))
+		if(!selection.exist("Utilisateur", "matricule", etudiant.getMatricule().toUpperCase()))
 			insertUser(etudiant);
-		if(!selection.exist("Etudiant", "matricule", etudiant.getMatricule())) {
+		if(!selection.exist("Etudiant", "matricule", etudiant.getMatricule().toUpperCase())) {
 			Requete insRequest = new Requete();
 			insRequest.executeUpdate("INSERT INTO etudiant VALUES('" +
 					etudiant.getMatricule() + "', '" +

@@ -3835,7 +3835,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jPanel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseClicked
         AnimationClass animeBtnConnection = new AnimationClass();
-        String login = jTextField1.getText();
+        String login = jTextField1.getText().toUpperCase();
         String password = jPasswordField1.getText();
         usr = new Utilisateur();
         if(usr.connecter(login,password)) {
@@ -3993,10 +3993,10 @@ public class Home extends javax.swing.JFrame {
                 LocalDateTime inclusiveFromDate = LocalDateTime.of(0, actualMonth, actualDate, actualHour, actualMin, actualSec);
                 LocalDateTime exclusiveToDate = LocalDateTime.of(0, actualMonth, actualDate, heure, min, 0);
                 exclusiveToDate = exclusiveToDate.plusDays(nbr_days);
-                long differenceInDays = ChronoUnit.DAYS.between(inclusiveFromDate, exclusiveToDate);
-                long differenceInHours = ChronoUnit.HOURS.between(inclusiveFromDate, exclusiveToDate);
-                long differenceInMinutes = ChronoUnit.MINUTES.between(inclusiveFromDate, exclusiveToDate);
-                long differenceInSeconds = ChronoUnit.SECONDS.between(inclusiveFromDate, exclusiveToDate);
+                float differenceInDays = ChronoUnit.DAYS.between(inclusiveFromDate, exclusiveToDate);
+                float differenceInHours = ChronoUnit.HOURS.between(inclusiveFromDate, exclusiveToDate);
+                float differenceInMinutes = ChronoUnit.MINUTES.between(inclusiveFromDate, exclusiveToDate);
+                float differenceInSeconds = ChronoUnit.SECONDS.between(inclusiveFromDate, exclusiveToDate);
                 if(differenceInDays >= 1)
                     duree = differenceInDays + " jour(s)";
                 else if(differenceInMinutes >= 60)
