@@ -182,7 +182,7 @@ public class Home extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         jTextField5 = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
@@ -295,7 +295,7 @@ public class Home extends javax.swing.JFrame {
         jLabel136 = new javax.swing.JLabel();
         jLabel140 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         jPanel58 = new javax.swing.JPanel();
         jLabel144 = new javax.swing.JLabel();
         jPanel71 = new javax.swing.JPanel();
@@ -1240,8 +1240,9 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel39Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel39Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -3993,10 +3994,10 @@ public class Home extends javax.swing.JFrame {
                 LocalDateTime inclusiveFromDate = LocalDateTime.of(0, actualMonth, actualDate, actualHour, actualMin, actualSec);
                 LocalDateTime exclusiveToDate = LocalDateTime.of(0, actualMonth, actualDate, heure, min, 0);
                 exclusiveToDate = exclusiveToDate.plusDays(nbr_days);
-                float differenceInDays = ChronoUnit.DAYS.between(inclusiveFromDate, exclusiveToDate);
-                float differenceInHours = ChronoUnit.HOURS.between(inclusiveFromDate, exclusiveToDate);
-                float differenceInMinutes = ChronoUnit.MINUTES.between(inclusiveFromDate, exclusiveToDate);
-                float differenceInSeconds = ChronoUnit.SECONDS.between(inclusiveFromDate, exclusiveToDate);
+                long differenceInDays = ChronoUnit.DAYS.between(inclusiveFromDate, exclusiveToDate);
+                long differenceInHours = ChronoUnit.HOURS.between(inclusiveFromDate, exclusiveToDate);
+                long differenceInMinutes = ChronoUnit.MINUTES.between(inclusiveFromDate, exclusiveToDate);
+                long differenceInSeconds = ChronoUnit.SECONDS.between(inclusiveFromDate, exclusiveToDate);
                 if(differenceInDays >= 1)
                     duree = differenceInDays + " jour(s)";
                 else if(differenceInMinutes >= 60)
