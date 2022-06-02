@@ -182,7 +182,7 @@ public class Home extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         jTextField5 = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
@@ -295,7 +295,7 @@ public class Home extends javax.swing.JFrame {
         jLabel136 = new javax.swing.JLabel();
         jLabel140 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<String>();
         jPanel58 = new javax.swing.JPanel();
         jLabel144 = new javax.swing.JLabel();
         jPanel71 = new javax.swing.JPanel();
@@ -1249,12 +1249,12 @@ public class Home extends javax.swing.JFrame {
         );
 
         jPanel22.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 690, 52));
-        jPanel22.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 875, -1));
+        jPanel22.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 875, -1));
 
         jLabel43.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(153, 153, 153));
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel22.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 420, 20));
+        jPanel22.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 420, 20));
 
         jPanel2.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
 
@@ -3961,42 +3961,116 @@ public class Home extends javax.swing.JFrame {
             HashMap<String, List<ISuiviCours>> timeTable = etd.getTimeTable();
             ArrayList<ISuiviCours> suivis = new ArrayList<>();
             ISuiviCours prochainCours = null;
-            int count = 0;
             Map sortedTimeTable = new TreeMap(timeTable);
 
             Set set = sortedTimeTable.entrySet();
             Iterator iterator = set.iterator();
+            int actualMonth = 0;
+            int actualDate = 0;
+            int actualDay = 0;
+            int actualHour = 0;
+            int actualMin = 0;
+            int actualSec = 0;
+            int heure = 0;
+            int min = 0;
+            int day = 0;
+
+            int nbr_days = 0;
+            boolean haveBegan = false;
+
+            LocalDateTime inclusiveFromDate = null;
+            LocalDateTime exclusiveToDate = null;
+            exclusiveToDate = null;
+            long differenceInDays = 0;
+            long differenceInHours = 0;
+            long differenceInMinutes = 0;
+            long differenceInSeconds = 0;
+
+            long minDifferenceSeconds = Long.MAX_VALUE;
+
+            actualDay = (new Date()).getDay();
+            actualMonth = (new Date()).getMonth()+1;
+            actualDate = (new Date()).getDate();
+            actualHour = (new Date()).getHours();
+            actualMin = (new Date()).getMinutes();
+            actualSec = (new Date()).getSeconds();
             while(iterator.hasNext()) {
                 Map.Entry me = (Map.Entry)iterator.next();
+
                 for(ISuiviCours suivi : (ArrayList<ISuiviCours>)me.getValue()) {
-                    if(suivi != null && count == 0) {
-                        count++;
-                        prochainCours = suivi;
-                    }
-                    if(suivi != null && suivi.getJour()%7 == (new Date()).getDay()) {
-                        suivis.add(suivi);
+                    if(suivi != null) {
+                        heure = Integer.parseInt(suivi.getHeureDebut().split(":")[0]);
+                        min = Integer.parseInt(suivi.getHeureDebut().split(":")[1]);
+                        day = suivi.getJour()%7;
+
+                        if(actualDay == day) {    // Si le jour actuel correspond au jour du cours.
+                            if(actualHour <= heure && actualMin < min)
+                                nbr_days = 0;
+                            else if(actualHour >= heure && actualMin >= min && actualHour <= Integer.parseInt(suivi.getHeureFin().split(":")[0]) && actualMin < Integer.parseInt(suivi.getHeureFin().split(":")[1])) {
+                                nbr_days = 0;
+                                haveBegan = true;
+                            }
+                            else
+                                nbr_days = 7;
+                        }
+                        else if(actualDay < day) {
+                            nbr_days = Math.abs(day-actualDay);
+                        }
+                        else {
+                            nbr_days = 7-Math.abs(day-actualDay);
+                        }
+                        inclusiveFromDate = LocalDateTime.of(0, actualMonth, actualDate, actualHour, actualMin, actualSec);
+                        exclusiveToDate = LocalDateTime.of(0, actualMonth, actualDate, heure, min, 0);
+                        exclusiveToDate = exclusiveToDate.plusDays(nbr_days);
+                        differenceInSeconds = ChronoUnit.SECONDS.between(inclusiveFromDate, exclusiveToDate);
+                        if(differenceInSeconds < minDifferenceSeconds) {
+                            minDifferenceSeconds = differenceInSeconds;
+                            prochainCours = suivi;
+                        }
+                        if(haveBegan)
+                            break;
+                        if(suivi.getJour()%7 == (new Date()).getDay()) {
+                            suivis.add(suivi);
+                        }
                     }
                 }
+                if(haveBegan)
+                    break;
             }
 
             if(prochainCours != null) {
-                int heure = Integer.parseInt(prochainCours.getHeureDebut().split(":")[0]);
-                int min = Integer.parseInt(prochainCours.getHeureDebut().split(":")[1]);
-                int actualMonth = (new Date()).getMonth()+1;
-                int actualDate = (new Date()).getDate();
-                int actualDay = (new Date()).getDay();
-                int actualHour = (new Date()).getHours();
-                int actualMin = (new Date()).getMinutes();
-                int actualSec = (new Date()).getSeconds();
+                heure = Integer.parseInt(prochainCours.getHeureDebut().split(":")[0]);
+                min = Integer.parseInt(prochainCours.getHeureDebut().split(":")[1]);
+                day = prochainCours.getJour()%7;
+                actualMonth = (new Date()).getMonth()+1;
+                actualDate = (new Date()).getDate();
+                actualDay = (new Date()).getDay();
+                actualHour = (new Date()).getHours();
+                actualMin = (new Date()).getMinutes();
+                actualSec = (new Date()).getSeconds();
                 String duree;
-                int nbr_days = 7-Math.abs(prochainCours.getJour()%7-actualDay);
-                LocalDateTime inclusiveFromDate = LocalDateTime.of(0, actualMonth, actualDate, actualHour, actualMin, actualSec);
-                LocalDateTime exclusiveToDate = LocalDateTime.of(0, actualMonth, actualDate, heure, min, 0);
+                haveBegan = false;
+                if(actualDay == day) {    // Si le jour actuel correspond au jour du cours.
+                    if(actualHour <= heure && actualMin < min)
+                        nbr_days = 0;
+                    else if(actualHour >= heure && actualMin >= min && actualHour <= Integer.parseInt(prochainCours.getHeureFin().split(":")[0]) && actualMin < Integer.parseInt(prochainCours.getHeureFin().split(":")[1])) {
+                        nbr_days = 0;
+                        haveBegan = true;
+                    }
+                    else
+                        nbr_days = 7;
+                }
+                else if(actualDay < day)
+                    nbr_days = Math.abs(day-actualDay);
+                else
+                    nbr_days = 7-Math.abs(day-actualDay);
+                inclusiveFromDate = LocalDateTime.of(0, actualMonth, actualDate, actualHour, actualMin, actualSec);
+                exclusiveToDate = LocalDateTime.of(0, actualMonth, actualDate, heure, min, 0);
                 exclusiveToDate = exclusiveToDate.plusDays(nbr_days);
-                float differenceInDays = ChronoUnit.DAYS.between(inclusiveFromDate, exclusiveToDate);
-                float differenceInHours = ChronoUnit.HOURS.between(inclusiveFromDate, exclusiveToDate);
-                float differenceInMinutes = ChronoUnit.MINUTES.between(inclusiveFromDate, exclusiveToDate);
-                float differenceInSeconds = ChronoUnit.SECONDS.between(inclusiveFromDate, exclusiveToDate);
+                differenceInDays = ChronoUnit.DAYS.between(inclusiveFromDate, exclusiveToDate);
+                differenceInHours = ChronoUnit.HOURS.between(inclusiveFromDate, exclusiveToDate);
+                differenceInMinutes = ChronoUnit.MINUTES.between(inclusiveFromDate, exclusiveToDate);
+                differenceInSeconds = ChronoUnit.SECONDS.between(inclusiveFromDate, exclusiveToDate);
                 if(differenceInDays >= 1)
                     duree = differenceInDays + " jour(s)";
                 else if(differenceInMinutes >= 60)
@@ -4005,7 +4079,10 @@ public class Home extends javax.swing.JFrame {
                     duree = differenceInMinutes + " minutes(s)";
                 else
                     duree = differenceInSeconds + " seconde(s)";
-                jLabel32.setText("Votre prochain cours c'est dans " + duree + ".");
+                if(haveBegan)
+                    jLabel32.setText("Le cours de " + prochainCours.getMatiere().getCodeMat() + " est en cours.");
+                else
+                    jLabel32.setText("Votre prochain cours c'est dans " + duree + ".");
                 jLabel41.setText(prochainCours.getMatiere().getCodeMat());
                 jLabel39.setText(prochainCours.getMatiere().getIntituleMat());
                 jLabel42.setText(prochainCours.getHeureDebut());
@@ -4075,6 +4152,7 @@ public class Home extends javax.swing.JFrame {
                 jPanel25.add(panelCours);
             }
 
+            jLabel43.setText("");
             if(suivis.size() == 0) {
                 jLabel43.setText("Vous n'avez pas de cours programmé pour aujourd'hui !!");
             }
@@ -4084,7 +4162,7 @@ public class Home extends javax.swing.JFrame {
 
             scrollPane.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
             scrollPane.setVerticalScrollBarPolicy(javax.swing.JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-            jPanel22.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 780, 100));
+            jPanel22.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 780, 100));
 
         }
         showHome();

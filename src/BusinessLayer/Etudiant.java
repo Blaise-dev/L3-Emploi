@@ -125,7 +125,7 @@ public class Etudiant extends Utilisateur implements IEtudiant {
             HashMap<String, List<ISuiviCours>> timeTable = new HashMap<String, List<ISuiviCours>>();
             String key = "";
             final int NOMBRE_JOURS = 7;
-            int i = 0;
+            int i;
                 for(ISuiviCours suivi: this.getSuiviCours()) {
                     key = suivi.getHeureDebut().replace(":", "h")+"-"+suivi.getHeureFin().replace(":", "h");
                     if(!timeTable.containsKey(key)) {
@@ -135,6 +135,7 @@ public class Etudiant extends Utilisateur implements IEtudiant {
                 }
 
 		for(String cle : timeTable.keySet()) {
+                    i = 0;
                     while(timeTable.get(cle).size() < NOMBRE_JOURS) {
                             if(i >= timeTable.get(cle).size() || timeTable.get(cle).get(i).getJour() != i+1) {
                                 timeTable.get(cle).add(i, null);

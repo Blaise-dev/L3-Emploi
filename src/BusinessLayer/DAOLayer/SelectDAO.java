@@ -18,9 +18,7 @@ public class SelectDAO implements ISelectDAO {
 		request.executeQuery(
 				"SELECT COUNT(*) nbr FROM " + table + " WHERE " + colonne + " = '" + valeurColonne + "'");
 		while (request.next()) {
-
-			nbr = Integer.parseInt(request.getString("nbr"));
-			
+                    nbr = Integer.parseInt(request.getString("nbr"));
 		}
 		return nbr != 0;
 	}
@@ -32,12 +30,12 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Utilisateur WHERE matricule='"+usr.getMatricule()+"'");
 		while(request.next()) {
-			usr.setNom(request.getString("nom"));
-			usr.setPrenom(request.getString("prenom"));
-			usr.setMdp(request.getString("mdp"));
-			usr.setEmail(request.getString("email"));
-			usr.setDateNais(request.getString("dateNais"));
-			usr.setType(request.getString("type"));
+                    usr.setNom(request.getString("nom"));
+                    usr.setPrenom(request.getString("prenom"));
+                    usr.setMdp(request.getString("mdp"));
+                    usr.setEmail(request.getString("email"));
+                    usr.setDateNais(request.getString("dateNais"));
+                    usr.setType(request.getString("type"));
 		}
 	}
 
@@ -49,9 +47,9 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Salle WHERE codeSalle='"+salle.getCodeSalle()+"'");
 		while(request.next()) {
-			salle.setNomSalle(request.getString("nomSalle"));
-			salle.setType(request.getString("typeSalle"));
-			salle.setCapacite(Integer.parseInt(request.getString("capacite")));
+                    salle.setNomSalle(request.getString("nomSalle"));
+                    salle.setType(request.getString("typeSalle"));
+                    salle.setCapacite(Integer.parseInt(request.getString("capacite")));
 		}
 	}
 
@@ -63,7 +61,7 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Filiere WHERE codeFiliere='"+filiere.getCodeFil()+"'");
 		while(request.next()) {
-			filiere.setNomFil(request.getString("nomFiliere"));
+                    filiere.setNomFil(request.getString("nomFiliere"));
 		}
 	}
 
@@ -75,9 +73,9 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Groupe WHERE idGrp='"+groupe.getIdGrp()+"'");
 		while(request.next()) {
-			groupe.setNomGrp(request.getString("groupeClass"));
-			groupe.setEffectifGrp(Integer.parseInt(request.getString("effectif")));
-			groupe.setIdNiveau(Integer.parseInt(request.getString("idNiveau")));
+                    groupe.setNomGrp(request.getString("groupeClass"));
+                    groupe.setEffectifGrp(Integer.parseInt(request.getString("effectif")));
+                    groupe.setIdNiveau(Integer.parseInt(request.getString("idNiveau")));
 		}
 	}
 
@@ -89,9 +87,9 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Niveau WHERE idNiveau='"+niveau.getIdNiv()+"'");
 		while(request.next()) {
-			niveau.setCodeNiv(request.getString("codeNiveau"));
-			niveau.setNomNiv(request.getString("nomNiveau"));
-			niveau.setCodeFiliere(request.getString("codeFiliere"));
+                    niveau.setCodeNiv(request.getString("codeNiveau"));
+                    niveau.setNomNiv(request.getString("nomNiveau"));
+                    niveau.setCodeFiliere(request.getString("codeFiliere"));
 		}
 	}
 
@@ -103,9 +101,9 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Semestre WHERE idSem='"+semestre.getIdSem()+"'");
 		while(request.next()) {
-			semestre.setCodeSem(request.getString("codeSemestre"));
-			semestre.setNomSem(request.getString("nomSem"));
-			semestre.setIdAnnee(Integer.parseInt(request.getString("idAnnee")));
+                    semestre.setCodeSem(request.getString("codeSemestre"));
+                    semestre.setNomSem(request.getString("nomSem"));
+                    semestre.setIdAnnee(Integer.parseInt(request.getString("idAnnee")));
 		}
 	}
 
@@ -117,8 +115,8 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Annee WHERE idAnnee='"+annee.getIdAnnee()+"'");
 		while(request.next()) {
-			annee.setAnneeDebut(request.getString("anneeDebut"));
-			annee.setAnneeFin(request.getString("anneeFin"));
+                    annee.setAnneeDebut(request.getString("anneeDebut"));
+                    annee.setAnneeFin(request.getString("anneeFin"));
 		}
 	}
 
@@ -130,8 +128,8 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Matiere WHERE codeMatiere='"+matiere.getCodeMat()+"'");
 		while(request.next()) {
-			matiere.setIntituleMat(request.getString("intituleMatiere"));
-			matiere.setCodeDepartement(request.getString("codeDepartement"));
+                    matiere.setIntituleMat(request.getString("intituleMatiere"));
+                    matiere.setCodeDepartement(request.getString("codeDepartement"));
 		}
 	}
 
@@ -143,7 +141,7 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Departement WHERE codeDepartement='"+dpt.getCodeDepart()+"'");
 		while(request.next()) {
-			dpt.setNomDepart(request.getString("nomDepartement"));
+                    dpt.setNomDepart(request.getString("nomDepartement"));
 		}
 	}
 
@@ -156,8 +154,8 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Enseignant WHERE matricule='"+ens.getMatricule()+"'");
 		while(request.next()) {
-			ens.setGradeEns(request.getString("gradeEns"));
-			ens.setCodeDepartement(request.getString("codeDepartement"));
+                    ens.setGradeEns(request.getString("gradeEns"));
+                    ens.setCodeDepartement(request.getString("codeDepartement"));
 		}
 	}
 
@@ -178,7 +176,7 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT idGrp FROM Etudiant WHERE matricule='"+etudiant.getMatricule()+"'");
 		while(request.next()) {
-			etudiant.setIdGrp(Integer.parseInt(request.getString("idGrp")));
+                    etudiant.setIdGrp(Integer.parseInt(request.getString("idGrp")));
 		}
 	}
 
@@ -192,10 +190,10 @@ public class SelectDAO implements ISelectDAO {
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM Etudiant WHERE idGrp='"+etudiant.getIdGrp()+"'");
 		while(request.next()) {
-                        etd = new Etudiant();
-			etd.setMatricule(request.getString("matricule"));
-			etd.setIdGrp(Integer.parseInt(request.getString("idGrp")));
-                        comrades.add(etd);
+                    etd = new Etudiant();
+                    etd.setMatricule(request.getString("matricule"));
+                    etd.setIdGrp(Integer.parseInt(request.getString("idGrp")));
+                    comrades.add(etd);
 		}
                 for(IEtudiant student: comrades)
                     student.fillEtd(student);
@@ -209,21 +207,22 @@ public class SelectDAO implements ISelectDAO {
 	 */
 	public ArrayList<HashMap<String, String>> selSuiviEtudiant(IEtudiant etudiant) {
 		ArrayList<HashMap<String, String>> suivis = new ArrayList<HashMap<String, String>>();
-		HashMap<String, String> suivi = new HashMap<String, String>();
+		HashMap<String, String> suivi = null;
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM FaireCours WHERE idGrp='"+etudiant.getIdGrp()+"' ORDER BY jour ASC");
 		while(request.next()) {
-			suivi.put("codeMatiere", request.getString("codeMatiere"));
-			suivi.put("matricule", request.getString("matricule"));
-			suivi.put("codeSalle", request.getString("codeSalle"));
-			suivi.put("idSem", request.getString("idSem"));
-			suivi.put("idGrp", request.getString("idGrp"));
-			suivi.put("heureDebut", request.getString("heureDebut"));
-			suivi.put("heureFin", request.getString("heureFin"));
-			suivi.put("jour", request.getString("jour"));
+                    suivi = new HashMap<String, String>();
+                    suivi.put("codeMatiere", request.getString("codeMatiere"));
+                    suivi.put("matricule", request.getString("matricule"));
+                    suivi.put("codeSalle", request.getString("codeSalle"));
+                    suivi.put("idSem", request.getString("idSem"));
+                    suivi.put("idGrp", request.getString("idGrp"));
+                    suivi.put("heureDebut", request.getString("heureDebut"));
+                    suivi.put("heureFin", request.getString("heureFin"));
+                    suivi.put("jour", request.getString("jour"));
 
 			// On ajoute le suivi dans le ArrayList.
-			suivis.add(suivi);
+                    suivis.add(suivi);
 		}
 		return suivis;
 	}
@@ -234,21 +233,22 @@ public class SelectDAO implements ISelectDAO {
 	 */
 	public ArrayList<HashMap<String, String>> selSuiviEnseignant(IEnseignant enseignant) {
 		ArrayList<HashMap<String, String>> suivis = new ArrayList<HashMap<String, String>>();
-		HashMap<String, String> suivi = new HashMap<String, String>();
+		HashMap<String, String> suivi = null;
 		Requete request = new Requete();
 		request.executeQuery("SELECT * FROM FaireCours WHERE matricule='"+enseignant.getMatricule()+"'");
 		while(request.next()) {
-			suivi.put("matiere", request.getString("codeMatiere"));
-			suivi.put("matricule", request.getString("matricule"));
-			suivi.put("codeSalle", request.getString("codeSalle"));
-			suivi.put("idSem", request.getString("idSem"));
-			suivi.put("idGrp", request.getString("idGrp"));
-			suivi.put("heureDebut", request.getString("heureDebut"));
-			suivi.put("heureFin", request.getString("heureFin"));
-			suivi.put("jour", request.getString("jour"));
+                    suivi = new HashMap<String, String>();
+                    suivi.put("matiere", request.getString("codeMatiere"));
+                    suivi.put("matricule", request.getString("matricule"));
+                    suivi.put("codeSalle", request.getString("codeSalle"));
+                    suivi.put("idSem", request.getString("idSem"));
+                    suivi.put("idGrp", request.getString("idGrp"));
+                    suivi.put("heureDebut", request.getString("heureDebut"));
+                    suivi.put("heureFin", request.getString("heureFin"));
+                    suivi.put("jour", request.getString("jour"));
 
 			// On ajoute le suivi dans le ArrayList.
-			suivis.add(suivi);
+                    suivis.add(suivi);
 		}
 		return suivis;
 	}

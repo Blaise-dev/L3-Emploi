@@ -106,7 +106,7 @@
             <Container class="javax.swing.JPanel" name="jPanel3">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -166,7 +166,7 @@
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -221,7 +221,7 @@
             <Container class="javax.swing.JPanel" name="jPanel7">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -279,7 +279,7 @@
             <Container class="javax.swing.JPanel" name="jPanel8">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -361,7 +361,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -428,7 +428,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -495,7 +495,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -565,7 +565,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -708,7 +708,7 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -986,7 +986,7 @@
                   <Image iconType="3" name="/pictures/icons8_shutdown_30px.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -996,7 +996,7 @@
             <Container class="javax.swing.JPanel" name="jPanel15">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -1056,7 +1056,7 @@
               <Image iconType="3" name="/pictures/icons8_minus_30px.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Curseur par d&#xe9;faut"/>
             </Property>
           </Properties>
           <Events>
@@ -1074,7 +1074,7 @@
               <Image iconType="3" name="/pictures/icons8_Close_30px.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Curseur par d&#xe9;faut"/>
             </Property>
           </Properties>
           <Events>
@@ -1249,7 +1249,7 @@
             <Container class="javax.swing.JPanel" name="jPanel16">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -1585,7 +1585,7 @@
             <Container class="javax.swing.JPanel" name="jPanel25">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="430" width="875" height="-1"/>
+                  <AbsoluteConstraints x="0" y="380" width="875" height="-1"/>
                 </Constraint>
               </Constraints>
 
@@ -1603,7 +1603,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="180" y="390" width="420" height="20"/>
+                  <AbsoluteConstraints x="180" y="400" width="420" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -2247,7 +2247,7 @@
             <Container class="javax.swing.JPanel" name="jPanel41">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2302,7 +2302,7 @@
             <Container class="javax.swing.JPanel" name="jPanel43">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2360,7 +2360,7 @@
             <Container class="javax.swing.JPanel" name="jPanel44">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2453,7 +2453,7 @@
             <Container class="javax.swing.JPanel" name="jPanel45">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2513,7 +2513,7 @@
             <Container class="javax.swing.JPanel" name="jPanel47">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2571,7 +2571,7 @@
             <Container class="javax.swing.JPanel" name="jPanel48">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2667,7 +2667,7 @@
             <Container class="javax.swing.JPanel" name="jPanel49">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2727,7 +2727,7 @@
             <Container class="javax.swing.JPanel" name="jPanel50">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2785,7 +2785,7 @@
             <Container class="javax.swing.JPanel" name="jPanel51">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2881,7 +2881,7 @@
             <Container class="javax.swing.JPanel" name="jPanel53">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2941,7 +2941,7 @@
             <Container class="javax.swing.JPanel" name="jPanel54">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -2999,7 +2999,7 @@
             <Container class="javax.swing.JPanel" name="jPanel55">
               <Properties>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Curseur par d&#xe9;faut"/>
                 </Property>
               </Properties>
               <Events>
@@ -3972,7 +3972,7 @@
                           <Color blue="ff" green="99" red="33" type="rgb"/>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Curseur par d&#xe9;faut"/>
                         </Property>
                       </Properties>
 
@@ -4924,7 +4924,7 @@
                           <Color blue="ff" green="99" red="33" type="rgb"/>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Curseur par d&#xe9;faut"/>
                         </Property>
                       </Properties>
 
@@ -5833,7 +5833,7 @@
                           <Image iconType="3" name="/pictures/icons8_trash_20px.png"/>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Curseur par d&#xe9;faut"/>
                         </Property>
                       </Properties>
                       <Constraints>
