@@ -182,7 +182,7 @@ public class Home extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jTextField5 = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
@@ -295,7 +295,7 @@ public class Home extends javax.swing.JFrame {
         jLabel136 = new javax.swing.JLabel();
         jLabel140 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<String>();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jPanel58 = new javax.swing.JPanel();
         jLabel144 = new javax.swing.JLabel();
         jPanel71 = new javax.swing.JPanel();
