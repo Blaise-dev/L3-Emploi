@@ -1,4 +1,3 @@
-
 import javafx.scene.paint.Color;
 import javax.swing.JPanel;
 import AppPackage.AnimationClass;
@@ -40,6 +39,8 @@ import javax.swing.ScrollPaneConstants;
  */
 public class Home extends javax.swing.JFrame {
 
+    int xMouse;
+    int yMouse;
     IUtilisateur usr;
     IEtudiant etd = new Etudiant();
     IEnseignant ens = new Enseignant();
@@ -54,7 +55,6 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         hideApp();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -427,6 +427,7 @@ public class Home extends javax.swing.JFrame {
         jLabel191 = new javax.swing.JLabel();
         jPanel84 = new javax.swing.JPanel();
         jLabel192 = new javax.swing.JLabel();
+        FrameDrag = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -437,7 +438,18 @@ public class Home extends javax.swing.JFrame {
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("Emplois de temps"), this, org.jdesktop.beansbinding.BeanProperty.create("title"));
         bindingGroup.addBinding(binding);
 
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
+
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel2KeyPressed(evt);
+            }
+        });
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -640,11 +652,16 @@ public class Home extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(51, 153, 255));
         jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel9.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel9MouseDragged(evt);
+            }
+        });
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(0, 153, 204));
         jPanel10.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel10MouseClicked(evt);
@@ -682,7 +699,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel13.setBackground(new java.awt.Color(0, 153, 204));
         jPanel13.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel13MouseClicked(evt);
@@ -720,7 +737,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(0, 153, 204));
         jPanel14.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel14MouseClicked(evt);
@@ -760,7 +777,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel19.setBackground(new java.awt.Color(0, 153, 204));
         jPanel19.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel19.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel19MouseClicked(evt);
@@ -818,7 +835,7 @@ public class Home extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel11.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel11MouseClicked(evt);
@@ -919,7 +936,7 @@ public class Home extends javax.swing.JFrame {
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 520, 520));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/icons8_shutdown_30px.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -3671,6 +3688,18 @@ public class Home extends javax.swing.JFrame {
 
         jPanel2.add(jPanel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
+        FrameDrag.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                FrameDragMouseDragged(evt);
+            }
+        });
+        FrameDrag.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                FrameDragMousePressed(evt);
+            }
+        });
+        jPanel2.add(FrameDrag, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -4432,6 +4461,33 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel55MouseExited
 
+    private void jPanel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2KeyPressed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyPressed
+
+    private void jPanel9MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseDragged
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jPanel9MouseDragged
+
+    private void FrameDragMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FrameDragMouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_FrameDragMouseDragged
+
+    private void FrameDragMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FrameDragMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_FrameDragMousePressed
+
     public void setJPanelNavBar(JPanel panel) {
         panel.setBackground(new java.awt.Color(0,173,204));
     }
@@ -4768,6 +4824,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FrameDrag;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
