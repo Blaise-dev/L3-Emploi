@@ -819,7 +819,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel9.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 200, -1));
 
-        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -5, 200, 890));
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 200, 830));
 
         jPanel4.setBackground(new java.awt.Color(102, 153, 255));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -1208,7 +1208,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel38.setText("Voici votre programme de la journée");
-        jPanel22.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 466, 28));
+        jPanel22.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 466, 28));
 
         jLabel39.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(102, 153, 255));
@@ -3113,6 +3113,12 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel157, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        jTextField52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField52ActionPerformed(evt);
+            }
+        });
+
         jLabel158.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel158.setText("Heure début");
 
@@ -4532,6 +4538,10 @@ public class Home extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jPanel16MouseClicked
+
+    private void jTextField52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField52ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField52ActionPerformed
 
     public void setJPanelNavBar(JPanel panel) {
         panel.setBackground(new java.awt.Color(0,173,204));
