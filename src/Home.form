@@ -353,7 +353,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="-5" width="200" height="890"/>
+              <AbsoluteConstraints x="0" y="55" width="200" height="830"/>
             </Constraint>
           </Constraints>
 
@@ -1439,7 +1439,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="320" y="310" width="466" height="28"/>
+                  <AbsoluteConstraints x="220" y="310" width="466" height="28"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -4840,6 +4840,9 @@
                       </Layout>
                       <SubComponents>
                         <Component class="javax.swing.JTextField" name="jTextField52">
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField52ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel158">
                           <Properties>
