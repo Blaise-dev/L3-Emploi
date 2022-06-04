@@ -11,6 +11,12 @@ import BusinessLayer.InterfacesBusiness.ISuiviCours;
 import BusinessLayer.InterfacesBusiness.IUtilisateur;
 import BusinessLayer.Utilisateur;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -1050,6 +1056,9 @@ public class Home extends javax.swing.JFrame {
 
         jPanel16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel16MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanel16MouseEntered(evt);
             }
@@ -4487,6 +4496,42 @@ public class Home extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_FrameDragMousePressed
+
+    private void jPanel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseClicked
+        // TODO add your handling code here:
+        PrinterJob job = PrinterJob.getPrinterJob();
+        job.setJobName("Print Data");
+        
+        job.setPrintable(new Printable(){
+            
+            public int print(Graphics pg, PageFormat pf, int pageNum){
+                
+                pf.setOrientation(PageFormat.LANDSCAPE);
+                if(pageNum > 0){
+                    return Printable.NO_SUCH_PAGE;
+                }
+                
+                Graphics2D g2 = (Graphics2D)pg;
+                g2.translate(pf.getImageableX(), pf.getImageableY());
+                g2.scale(0.7, 1.0);
+                
+                jPanel17.print(g2);
+                
+                return Printable.PAGE_EXISTS;
+            }
+            
+        });
+        
+        boolean ok = job.printDialog();
+        if(ok){
+            try {
+                job.print();
+            }
+            catch(PrinterException ex){
+                ex.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_jPanel16MouseClicked
 
     public void setJPanelNavBar(JPanel panel) {
         panel.setBackground(new java.awt.Color(0,173,204));
