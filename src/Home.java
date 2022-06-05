@@ -4130,7 +4130,7 @@ public class Home extends javax.swing.JFrame {
                 else if(differenceInMinutes >= 60)
                     duree = differenceInHours + " heure(s)";
                 else if(differenceInSeconds >= 60)
-                    duree = differenceInMinutes + " minutes(s)";
+                    duree = differenceInMinutes + " minute(s)";
                 else
                     duree = differenceInSeconds + " seconde(s)";
                 if(haveBegan)
