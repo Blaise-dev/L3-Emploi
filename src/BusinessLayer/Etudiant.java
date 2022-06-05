@@ -18,6 +18,10 @@ import BusinessLayer.InterfacesBusiness.ISalle;
 import BusinessLayer.InterfacesBusiness.ISemestre;
 import BusinessLayer.InterfacesBusiness.ISuiviCours;
 import BusinessLayer.InterfacesBusiness.IUtilisateur;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class Etudiant extends Utilisateur implements IEtudiant {
 
@@ -126,24 +130,31 @@ public class Etudiant extends Utilisateur implements IEtudiant {
             String key = "";
             final int NOMBRE_JOURS = 7;
             int i;
-                for(ISuiviCours suivi: this.getSuiviCours()) {
-                    key = suivi.getHeureDebut().replace(":", "h")+"-"+suivi.getHeureFin().replace(":", "h");
-                    if(!timeTable.containsKey(key)) {
-                        timeTable.put(key, new ArrayList<>());
-                    }
-                    timeTable.get(key).add(suivi);
+            for(ISuiviCours suivi: this.getSuiviCours()) {
+                key = suivi.getHeureDebut().replace(":", "h")+"-"+suivi.getHeureFin().replace(":", "h");
+                if(!timeTable.containsKey(key)) {
+                    timeTable.put(key, new ArrayList<>());
                 }
+                timeTable.get(key).add(suivi);
+            }
 
-		for(String cle : timeTable.keySet()) {
-                    i = 0;
-                    while(timeTable.get(cle).size() < NOMBRE_JOURS) {
-                            if(i >= timeTable.get(cle).size() || timeTable.get(cle).get(i).getJour() != i+1) {
-                                timeTable.get(cle).add(i, null);
-                            }
-                            i++;
+            for(String cle : timeTable.keySet()) {
+                i = 0;
+                while(timeTable.get(cle).size() < NOMBRE_JOURS) {
+                    if(i >= timeTable.get(cle).size() || timeTable.get(cle).get(i).getJour() != i+1) {
+                        timeTable.get(cle).add(i, null);
                     }
+                    i++;
                 }
-                return timeTable;
+            }
+            Map sortedTimeTable = new TreeMap(timeTable);
+            Set set = sortedTimeTable.entrySet();
+            Iterator iterator = set.iterator();
+            while(iterator.hasNext()) {
+                Map.Entry me = (Map.Entry)iterator.next();
+                timeTable.put(""+me.getKey(), (List<ISuiviCours>)me.getValue());
+            }
+            return timeTable;
 	}
 
 	/**
