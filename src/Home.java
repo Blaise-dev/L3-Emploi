@@ -4136,7 +4136,7 @@ public class Home extends javax.swing.JFrame {
                 if(haveBegan)
                     jLabel32.setText("Le cours de " + prochainCours.getMatiere().getCodeMat() + " est en cours...");
                 else
-                    jLabel32.setText("Votre prochain cours c'est dans " + duree + ".");
+                    jLabel32.setText("Votre prochain cours est dans " + duree + ".");
                 jLabel41.setText(prochainCours.getMatiere().getCodeMat());
                 jLabel39.setText(prochainCours.getMatiere().getIntituleMat());
                 jLabel42.setText(prochainCours.getHeureDebut());
