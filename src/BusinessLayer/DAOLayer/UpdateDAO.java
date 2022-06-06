@@ -204,10 +204,4 @@ public class UpdateDAO implements IUpdateDAO {
 				+ "");
 	}
 
-
-	public void updEnseignant(Administrateur administrateur) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

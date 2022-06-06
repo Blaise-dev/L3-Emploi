@@ -1,41 +1,63 @@
 package BusinessLayer;
 
+import BusinessLayer.DAOLayer.DeleteDAO;
 import BusinessLayer.DAOLayer.SelectDAO;
 import BusinessLayer.DAOLayer.InterfacesDAO.ISelectDAO;
 import BusinessLayer.DAOLayer.InterfacesDAO.IUpdateDAO;
 import BusinessLayer.DAOLayer.UpdateDAO;
 import BusinessLayer.DAOLayer.InterfacesDAO.IInsertDAO;
 import BusinessLayer.DAOLayer.InsertDAO;
+import BusinessLayer.DAOLayer.InterfacesDAO.IDeleteDAO;
 import BusinessLayer.InterfacesBusiness.IAdministrateur;
 import BusinessLayer.InterfacesBusiness.IEnseignant;
+import BusinessLayer.InterfacesBusiness.IEtudiant;
+import BusinessLayer.InterfacesBusiness.ISuiviCours;
 import BusinessLayer.InterfacesBusiness.IUtilisateur;
 
 public class Administrateur extends Utilisateur implements IAdministrateur {
 
 
+	/**
+	 * @see IAdministrateur#ajouterEtudiant(IEtudiant)
+	 *  
+	 */
 
-	public void ajouterEnseignant(String matricule, String nom, String prenom, String dateNais, String motDePass,
-			String grade, String email) {
-		
-            
 
+	public void ajouterEtudiant(IEtudiant etudiant) {
+            IInsertDAO insertion = new InsertDAO();
+            insertion.insertEtudiant(etudiant);
 	}
+
 
 	/**
 	 * @see IAdministrateur#supprimerEtudiant(String)
 	 *  
 	 */
 	public void supprimerEtudiant(String matricule) {
-
+            IEtudiant etd = new Etudiant();
+            etd.setMatricule(matricule);
+            IDeleteDAO delete = new DeleteDAO();
+            delete.delEtudiant(etd);
 	}
 
 
 	/**
-	 * @see IAdministrateur#modifierEtudiant(String, String, String, String, String, String, String)
+	 * @see IAdministrateur#modifierEtudiant(IEtudiant)
 	 *  
 	 */
-	public void modifierEtudiant(String matricule, String nouvMatricule, String nouvMdp, String nouvNom, String nouvPrenom, String nouvEmail, String nouvDateNais) {
+	public void modifierEtudiant(IEtudiant etudiant) {
+            IUpdateDAO upd = new UpdateDAO();
+            upd.updEtudiant(etudiant);
+	}
 
+
+	/**
+	 * @see IAdministrateur#ajouterEnseignant(IEnseignant)
+	 *  
+	 */
+	public void ajouterEnseignant(IEnseignant enseignant) {
+            IInsertDAO insertion = new InsertDAO();
+            insertion.insertEnseignant(enseignant);
 	}
 
 
@@ -44,34 +66,50 @@ public class Administrateur extends Utilisateur implements IAdministrateur {
 	 *  
 	 */
 	public void supprimerEnseignant(String matricule) {
-
+            IEnseignant ens = new Enseignant();
+            ens.setMatricule(matricule);
+            IDeleteDAO delete = new DeleteDAO();
+            delete.delEnseignant(ens);
 	}
 
 
 	/**
-	 * @see IAdministrateur#modifierEnseignant(String, String, String, String, String, String, String, String)
+	 * @see IAdministrateur#modifierEnseignant(IEnseignant)
 	 *  
 	 */
-	public void modifierEnseignant(String matricule, String nouvMatricule, String nouvMdp, String nouvNom, String nouvPrenom, String nouvEmail, String nouvDateNais, String nouvGradeEns) {
-
+	public void modifierEnseignant(IEnseignant enseignant) {
+            IUpdateDAO upd = new UpdateDAO();
+            upd.updEnseignant(enseignant);
 	}
 
 
 	/**
-	 * @see IAdministrateur#supprimerSuivi(String, String, String, String, String)
+	 * @see IAdministrateur#ajouterSuivi(ISuiviCours)
 	 *  
 	 */
-	public void supprimerSuivi(String matriculeEns, String codeSalle, String codeGrp, String codeMat, String codeSem) {
-
+	public void ajouterSuivi(ISuiviCours suivi) {
+            IInsertDAO insertion = new InsertDAO();
+            insertion.insertSuivi(suivi);
 	}
 
 
 	/**
-	 * @see IAdministrateur#modifierSuivi(String, String, String, String, String, String, String, String, String, String)
+	 * @see IAdministrateur#supprimerSuivi(ISuiviCours)
 	 *  
 	 */
-	public void modifierSuivi(String matriculeEns, String codeSalle, String codeGrp, String codeMat, String codeSem, String nouvMatriculeEns, String nouvCodeSalle, String nouvCodeGrp, String nouvCodeMat, String nouvCodeSem) {
+	public void supprimerSuivi(ISuiviCours suivi) {
+            IDeleteDAO delete = new DeleteDAO();
+            delete.delSuivi(suivi);
+	}
 
+
+	/**
+	 * @see IAdministrateur#modifierSuivi(ISuiviCours)
+	 *  
+	 */
+	public void modifierSuivi(ISuiviCours suivi) {
+            IUpdateDAO upd = new UpdateDAO();
+            upd.updSuivi(suivi);
 	}
 
 	/**

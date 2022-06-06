@@ -123,7 +123,7 @@ public class Etudiant extends Utilisateur implements IEtudiant {
 	}
 
 	/**
-	 * @see Etudiant#fillEtd(IUtilisateur)
+	 * @see Etudiant#getTimeTable()
 	 */
 	public HashMap<String, List<ISuiviCours>> getTimeTable() {
             HashMap<String, List<ISuiviCours>> timeTable = new HashMap<String, List<ISuiviCours>>();

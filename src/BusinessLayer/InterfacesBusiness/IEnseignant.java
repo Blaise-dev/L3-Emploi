@@ -1,5 +1,7 @@
 package BusinessLayer.InterfacesBusiness;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public interface IEnseignant extends IUtilisateur {
@@ -44,9 +46,18 @@ public interface IEnseignant extends IUtilisateur {
 	 */
 	public abstract void setSuiviCours();
 
-
 	/**
 	 *
 	 */
 	public abstract void fillEns(IUtilisateur usr);
+
+	/**
+	 *
+	 */
+        public abstract ArrayList<IEnseignant> getColleagues();
+
+        /**
+	 *
+	 */
+        public HashMap<String, List<ISuiviCours>> getTimeTable();
 }

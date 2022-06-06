@@ -44,7 +44,7 @@ public class Utilisateur implements IUtilisateur {
 	 * @see Utilisateur#isStudent()
 	 */
 	public boolean isStudent() {
-            return this.type.equals("etudiant") || this.type.equals("etudiante") || this.type.equals("étudiante") || this.type.equals("étudiant");
+            return this.type.equals("etudiant");
 	}
 
 
@@ -65,7 +65,7 @@ public class Utilisateur implements IUtilisateur {
 
 
 	/**
-	 * @see IUtilisateur#deconnecter(String, String)
+	 * @see IUtilisateur#deconnecter()
 	 */
 	public void deconnecter() {
 

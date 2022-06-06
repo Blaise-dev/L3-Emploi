@@ -50,7 +50,7 @@ public interface IUpdateDAO {
 	/**
 	 *  
 	 */
-	public abstract void updEnseignant(Administrateur administrateur);
+	public abstract void updEnseignant(IEnseignant ens);
 
 	/**
 	 *  

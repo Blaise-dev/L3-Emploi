@@ -28,6 +28,8 @@ public interface ISelectDAO {
 
 	public void selEnseignant(IEnseignant ens);
 
+        public ArrayList<IEnseignant> selColleagues(IEnseignant enseignant);
+
 	public void selAdministrateur(IAdministrateur admin);
 
 	public void selEtudiant(IEtudiant etudiant);

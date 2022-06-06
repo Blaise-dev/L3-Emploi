@@ -1,6 +1,7 @@
 package BusinessLayer.DAOLayer;
 
 import BusinessLayer.DAOLayer.InterfacesDAO.*;
+import BusinessLayer.Enseignant;
 import BusinessLayer.Etudiant;
 
 import java.util.ArrayList;
@@ -238,7 +239,7 @@ public class SelectDAO implements ISelectDAO {
 		request.executeQuery("SELECT * FROM FaireCours WHERE matricule='"+enseignant.getMatricule()+"'");
 		while(request.next()) {
                     suivi = new HashMap<String, String>();
-                    suivi.put("matiere", request.getString("codeMatiere"));
+                    suivi.put("codeMatiere", request.getString("codeMatiere"));
                     suivi.put("matricule", request.getString("matricule"));
                     suivi.put("codeSalle", request.getString("codeSalle"));
                     suivi.put("idSem", request.getString("idSem"));
@@ -251,6 +252,28 @@ public class SelectDAO implements ISelectDAO {
                     suivis.add(suivi);
 		}
 		return suivis;
+	}
+
+
+	/**
+	 * @see projet.BusinessLayer.DAOLayer.ISelectDAO#selEtudiant(IEtudiant)
+	 */
+	public ArrayList<IEnseignant> selColleagues(IEnseignant enseignant) {
+		ArrayList<IEnseignant> colleagues = new ArrayList<>();
+		Enseignant ens;
+		Requete request = new Requete();
+		request.executeQuery("SELECT * FROM Enseignant WHERE codeDepartement='"+enseignant.getCodeDepartement()+"'");
+		while(request.next()) {
+                    ens = new Enseignant();
+                    ens.setMatricule(request.getString("matricule"));
+                    ens.setGradeEns(request.getString("gradeEns"));
+                    ens.setCodeDepartement(request.getString("codeDepartement"));
+                    colleagues.add(ens);
+		}
+                for(IEnseignant teacher: colleagues)
+                    teacher.fillEns(teacher);
+
+                return colleagues;
 	}
 
 }
